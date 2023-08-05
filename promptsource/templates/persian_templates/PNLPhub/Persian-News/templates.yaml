@@ -25,7 +25,7 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: classify_content_fs
+    name: classify_content_zs
     reference: ''
   fb09bcae-d4a3-4b5d-9db9-84899ae1a848: !Template
     answer_choices: null
