@@ -1,0 +1,17 @@
+dataset: PNLPhub/parsinlu-multiple-choice
+templates:
+  3e3ad299-266c-4adb-a8a8-f28b403d60c0: !Template
+    answer_choices: null
+    id: 3e3ad299-266c-4adb-a8a8-f28b403d60c0
+    jinja: "\u062C\u0648\u0627\u0628 \u0633\u0648\u0627\u0644 \u0631\u0627 \u0628\u0646\
+      \u0648\u06CC\u0633\n\n\u0633\u0648\u0627\u0644:\u200C {{question}}\n\u062C\u0648\
+      \u0627\u0628:\n|||\n{{answer}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: write_answer_fs
+    reference: ''
