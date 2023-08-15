@@ -12,10 +12,12 @@ requirements = [
     "pyyaml>=5",
     "streamlit==0.82",
     "numpy==1.20.3",
+    "protobuf==3.20.*",
     "jinja2",
     "plotly",
     "requests",
     "pandas",
+    "Pygments",
     ##############################################################
     # Dependencies in this section are added for specific datasets
     ##############################################################
