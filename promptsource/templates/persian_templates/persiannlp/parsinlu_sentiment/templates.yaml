@@ -37,3 +37,18 @@ templates:
       original_task: true
     name: question_aspect_fs
     reference: ''
+  ad4fb4cd-4bfc-4f07-9469-80c07d5c95d2: !Template
+    answer_choices: null
+    id: ad4fb4cd-4bfc-4f07-9469-80c07d5c95d2
+    jinja: '{{question}}
+
+      ||| {{review}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question_review_fs
+    reference: ''

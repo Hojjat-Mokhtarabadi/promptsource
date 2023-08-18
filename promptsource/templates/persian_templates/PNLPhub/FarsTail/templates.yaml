@@ -1,5 +1,27 @@
 dataset: PNLPhub/FarsTail
 templates:
+  22439c80-6afb-4a9e-8a19-f58d30e87dcb: !Template
+    answer_choices: null
+    id: 22439c80-6afb-4a9e-8a19-f58d30e87dcb
+    jinja: "{% if label == e %}\n \u06CC\u06A9 \u062C\u0645\u0644\u0647 \u0628\u0646\
+      \u0648\u06CC\u0633 \u06A9\u0647 \u0628\u0627 \u0645\u062A\u0646 \u0632\u06CC\
+      \u0631 \u0645\u0631\u062A\u0628\u0637 \u0628\u0627\u0634\u062F\n\n{% elif label\
+      \ == c %}\n \u06CC\u06A9 \u062C\u0645\u0644\u0647 \u0628\u0646\u0648\u06CC\u0633\
+      \ \u06A9\u0647 \u0628\u0627 \u0645\u062A\u0646 \u0632\u06CC\u0631 \u0645\u0631\
+      \u062A\u0628\u0637 \u0646\u0628\u0627\u0634\u062F\n\n{% else %}\n \u06CC\u06A9\
+      \ \u062C\u0645\u0644\u0647 \u0628\u0646\u0648\u06CC\u0633 \u06A9\u0647 \u0645\
+      \u0645\u06A9\u0646 \u0627\u0633\u062A \u0628\u0627 \u0645\u062A\u0646 \u0632\
+      \u06CC\u0631 \u0645\u0631\u062A\u0628\u0637 \u0628\u0627\u0634\u062F \u06CC\u0627\
+      \ \u0646\u0628\u0627\u0634\u062F\n{% endif %}\n{{premise}}\n|||\n{{hypothesis}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: label_to_hypothesis_zs
+    reference: ''
   a3fc412e-c150-4e84-aae0-31252f6f52f6: !Template
     answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631 ||| \u0634\u0627\u06CC\
       \u062F"
@@ -37,6 +59,31 @@ templates:
       - Accuracy
       original_task: true
     name: do_they_relate_fs
+    reference: ''
+  cdc38661-aff4-4f8c-a55e-7ee218beb4b8: !Template
+    answer_choices: null
+    id: cdc38661-aff4-4f8c-a55e-7ee218beb4b8
+    jinja: "{% if label == e %}\n \u067E\u0627\u0631\u0627\u06AF\u0631\u0627\u0641\
+      \u06CC \u0628\u0646\u0648\u06CC\u0633 \u06A9\u0647 \u0628\u062A\u0648\u0627\u0646\
+      \ \u0645\u062A\u0646 \u0632\u06CC\u0631 \u0631\u0627 \u0627\u0632 \u0622\u0646\
+      \ \u0627\u0633\u062A\u062E\u0631\u0627\u062C \u06A9\u0631\u062F\n\n{% elif label\
+      \ == c %}\n \u067E\u0627\u0631\u0627\u06AF\u0631\u0627\u0641\u06CC \u0628\u0646\
+      \u0648\u06CC\u0633 \u06A9\u0647 \u0646\u062A\u0648\u0627\u0646 \u0645\u062A\u0646\
+      \ \u0632\u06CC\u0631 \u0631\u0627 \u0627\u0632 \u0622\u0646 \u0627\u0633\u062A\
+      \u062E\u0631\u0627\u062C \u06A9\u0631\u062F\n\n{% else %}\n \u067E\u0627\u0631\
+      \u0627\u06AF\u0631\u0627\u0641\u06CC \u0628\u0646\u0648\u06CC\u0633 \u06A9\u0647\
+      \ \u0645\u062A\u0646 \u0632\u06CC\u0631 \u0645\u0645\u06A9\u0646 \u0627\u0633\
+      \u062A \u0627\u0632 \u0622\u0646 \u0642\u0627\u0628\u0644 \u0627\u0633\u062E\
+      \u0631\u0627\u062C \u0628\u0627\u0634\u062F \u06CC\u0627 \u0646\u0628\u0627\u0634\
+      \u062F\n{% endif %}\n{{hypothesis}}\n|||\n{{premise}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: label_to_premise_zs
     reference: ''
   d17c0a22-8bf1-4316-8930-b260af766333: !Template
     answer_choices: "\u0627\u0631\u0647 ||| \u0646\u0647 ||| \u0634\u0627\u06CC\u062F"
