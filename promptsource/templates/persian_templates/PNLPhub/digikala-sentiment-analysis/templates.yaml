@@ -59,10 +59,10 @@ templates:
       \ \u0633\u062A\u0627\u0631\u0647\u060C \u062F\u0648 \u0633\u062A\u0627\u0631\
       \u0647\u060C \u0633\u0647 \u0633\u062A\u0627\u0631\u0647\u060C \u0686\u0647\u0627\
       \u0631 \u0633\u062A\u0627\u0631\u0647\u060C \u067E\u0646\u0686 \u0633\u062A\u0627\
-      \u0631\u0647\n\u0646\u0638\u0631: {{Text}}\n\u0627\u0645\u062A\u06CC\u0627\u0632\
-      :\n|||\n{% macro round_score(score) %}\n  {% set quotient = score // 25 %}\n\
-      \  {% set remainder = score % 25 %}\n\n  {% if remainder >= 13 %}\n    {% set\
-      \ rounded_score = (quotient + 1) * 25 %}\n  {% else %}\n    {% set rounded_score\
+      \u0631\u0647\n\n\u0646\u0638\u0631: {{Text}}\n\u0627\u0645\u062A\u06CC\u0627\
+      \u0632:\n|||\n{% macro round_score(score) %}\n  {% set quotient = score // 25\
+      \ %}\n  {% set remainder = score % 25 %}\n\n  {% if remainder >= 13 %}\n   \
+      \ {% set rounded_score = (quotient + 1) * 25 %}\n  {% else %}\n    {% set rounded_score\
       \ = quotient * 25 %}\n  {% endif %}\n\n  {{\n  {\n    '0':  \"\u06CC\u06A9 \u0633\
       \u062A\u0627\u0631\u0647\",\n    '25': \"\u062F\u0648 \u0633\u062A\u0627\u0631\
       \u0647\",\n    '50': \"\u0633\u0647 \u0633\u062A\u0627\u0631\u0647\",\n    '75':\

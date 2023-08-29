@@ -25,18 +25,19 @@ templates:
       \u0638\u0631\u060C \u0627\u06CC\u0627 \u0627\u06CC\u0646 \u0633\u0641\u0627\u0631\
       \u0634 \u0631\u0627 \u0628\u0647 \u062F\u06CC\u06AF\u0631\u0627\u0646 \u067E\
       \u06CC\u0634\u0646\u0647\u0627\u062F \u0645\u06CC\u06A9\u0646\u06CC\u062F\u061F\
-      \ \u0628\u0644\u0647 \u06CC\u0627 \u062E\u06CC\u0631\n\u0645\u062A\u0646: {{comment}}\n\
-      \u0627\u062D\u0633\u0627\u0633:\n|||\n{% if label_id == 1 %}\n \u0645\u0646\u0641\
-      \u06CC\n{% else %}\n\u0645\u062B\u0628\u062A\n{% endif %}"
+      \ \u0628\u0644\u0647 \u06CC\u0627 \u062E\u06CC\u0631\n\n\u0645\u062A\u0646:\
+      \ {{comment}}\n\u0627\u062D\u0633\u0627\u0633: {% if label_id == 1 %}\u0645\u0646\
+      \u0641\u06CC{% else %}\u0645\u062B\u0628\u062A{% endif %}\n\u062C\u0648\u0627\
+      \u0628: \n|||\n{% if label_id == 1 %}\n \u062E\u06CC\u0631\n{% else %}\n\u0628\
+      \u0644\u0647\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
       - fa
       metrics:
       - Accuracy
-      - BLEU
       original_task: false
-    name: recommendation
+    name: recommendation_fs
     reference: ''
   79984cfe-1d62-4fbf-baf3-aca98cccb212: !Template
     answer_choices: "\u0645\u062B\u0628\u062A ||| \u0645\u0646\u0641\u06CC"
