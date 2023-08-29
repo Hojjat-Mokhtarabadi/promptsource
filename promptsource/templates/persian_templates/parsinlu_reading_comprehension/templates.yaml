@@ -15,6 +15,39 @@ templates:
       - fa
       metrics:
       - Accuracy
+      - BLEU
       original_task: true
-    name: question_url_context_zs
+    name: question_url_context_fs
+    reference: ''
+  6e5ca9d7-5aa7-4c41-a1aa-40b179a95f93: !Template
+    answer_choices: null
+    id: 6e5ca9d7-5aa7-4c41-a1aa-40b179a95f93
+    jinja: "\u0645\u062A\u0646 \u0632\u06CC\u0631 \u0631\u0627 \u062E\u0644\u0627\u0635\
+      \u0647 \u06A9\u0646\n\u0645\u062A\u0646: {{context}}\n|||\n{% for i in {{answers}}\
+      \ %}\nprint(i)\n{% endfor %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: false
+    name: summary_fs
+    reference: ''
+  a851b9b4-23d6-40bf-8c43-365c6ded729f: !Template
+    answer_choices: null
+    id: a851b9b4-23d6-40bf-8c43-365c6ded729f
+    jinja: "\u062F\u0631 \u0644\u06CC\u0646\u06A9 \u062F\u0627\u062F\u0647 \u0634\u062F\
+      \u0647\u060C \u062C\u0648\u0627\u0628 \u0627\u06CC\u0646\u06A9\u0647 {{question}}\
+      \ \u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\u0646.\n\u0644\u06CC\u0646\u06A9\
+      : {{url}}\n\u062C\u0648\u0627\u0628:\n|||\n{{context}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      - BLEU
+      original_task: true
+    name: question_url_context_2_fs
     reference: ''
