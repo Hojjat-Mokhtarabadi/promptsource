@@ -1,5 +1,21 @@
 dataset: persiannlp/parsinlu_sentiment
 templates:
+  8abcb093-4e91-4f61-a553-6d9dad5ad365: !Template
+    answer_choices: null
+    id: 8abcb093-4e91-4f61-a553-6d9dad5ad365
+    jinja: "\u062E\u0631\u06CC\u062F \u0634\u0645\u0627 \u0686\u0647 \u0628\u0648\u062F\
+      \u061F\n\u062F\u0631 \u0645\u0648\u0631\u062F {{aspect}} \u0627\u06CC\u0646\
+      \ \u0645\u062D\u0635\u0648\u0644 \u06CC\u06A9 \u0646\u0638\u0631 \u0628\u0646\
+      \u0648\u06CC\u0633\u06CC\u062F.\n|||\n{{category}}\n{{review}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: aspect_category_review_zs
+    reference: ''
   9d7565a0-38f1-495f-abe8-78ad9903cd3f: !Template
     answer_choices: null
     id: 9d7565a0-38f1-495f-abe8-78ad9903cd3f
@@ -38,17 +54,52 @@ templates:
     name: question_aspect_fs
     reference: ''
   ad4fb4cd-4bfc-4f07-9469-80c07d5c95d2: !Template
-    answer_choices: null
+    answer_choices: "\u0641\u06CC\u0644\u0645||| \u063A\u0630\u0627||| \u0641\u06CC\
+      \u0644\u0645 \u06CC\u0627 \u063A\u0630\u0627"
     id: ad4fb4cd-4bfc-4f07-9469-80c07d5c95d2
-    jinja: '{{question}}
-
-      ||| {{review}}'
+    jinja: "\u0645\u062A\u0646 \u0632\u06CC\u0631 \u06CC\u06A9 \u0646\u0638\u0631\
+      \ \u062F\u0631 \u0645\u0648\u0631\u062F \u06A9\u062F\u0627\u0645 \u06AF\u0632\
+      \u06CC\u0646\u0647 \u0627\u0633\u062A\u061F\n\u06F1. \u0641\u06CC\u0644\u0645\
+      \n\u06F2. \u063A\u0630\u0627\n\u06F3. \u0641\u06CC\u0644\u0645 \u06CC\u0627\
+      \ \u063A\u0630\u0627\n\u0645\u062A\u0646: {{review}}\n|||\n{%if  aspect== \"\
+      \u0637\u0639\u0645\" or aspect == \"\u0627\u0631\u0632\u0634 \u062E\u0631\u06CC\
+      \u062F\" or aspect ==\"\u0627\u0631\u0633\u0627\u0644\" or aspect == \"\u0628\
+      \u0633\u062A\u0647 \u0628\u0646\u062F\u06CC\" or aspect == \"\u0627\u0631\u0632\
+      \u0634 \u063A\u0630\u0627\u06CC\u06CC\" or aspect == \"\u0627\u0631\u0632\u0634\
+      \ \u062E\u0631\u06CC\u062F\"  or aspect == \"\u06A9\u06CC\u0641\u06CC\u062A\"\
+      \  %}\n\u06F2. \u063A\u0630\u0627\n{%elif aspect== \"\u0635\u062F\u0627\" or\
+      \ aspect== \"\u062F\u0627\u0633\u062A\u0627\u0646\" or aspect== \"\u0645\u0648\
+      \u0633\u06CC\u0642\u06CC\" or aspect== \"\u0641\u06CC\u0644\u0645\u0628\u0631\
+      \u062F\u0627\u0631\u06CC\" or aspect== \"\u06A9\u0627\u0631\u06AF\u0631\u062F\
+      \u0627\u0646\u06CC\" or aspect== \"\u0628\u0627\u0632\u06CC\" or aspect== \"\
+      \u0635\u062D\u0646\u0647\" %}\n\u06F1. \u0641\u06CC\u0644\u0645\n{%else%}\n\u06F3\
+      . \u0641\u06CC\u0644\u0645 \u06CC\u0627 \u063A\u0630\u0627\n{%endif%}"
     metadata: !TemplateMetadata
-      choices_in_prompt: false
+      choices_in_prompt: true
       languages:
       - fa
       metrics:
       - Accuracy
+      - BLEU
       original_task: true
-    name: question_review_fs
+    name: review_aspect_zs
+    reference: ''
+  d1ff4991-d474-4896-a6d8-d7b71b386133: !Template
+    answer_choices: null
+    id: d1ff4991-d474-4896-a6d8-d7b71b386133
+    jinja: "\u0627\u06CC\u0646 \u0633\u0648\u0627\u0644 \u0686\u0647 \u0645\u0648\u0627\
+      \u0631\u062F\u06CC \u0631\u0627 \u0645\u0648\u0631\u062F \u067E\u0631\u0633\u0634\
+      \ \u0642\u0631\u0627\u0631 \u062F\u0627\u062F\u0647 \u0627\u0633\u062A\u061F\
+      \ \n{{question}}\n|||\n{%if aspect == \"\u0637\u0639\u0645\" and example_id\
+      \ ==\"1\"%}\n\u0639\u0637\u0631\u060C \u0628\u0648\u060C \u0648 \u0637\u0639\
+      \u0645\n{%elif aspect == \"\u0637\u0639\u0645\" and example_id ==\"1\"%}\n\u0642\
+      \u06CC\u0645\u062A \u0648 \u0627\u0631\u0632\u0634 \u062E\u0631\u06CC\u062F\n\
+      \n\n{%else%}\nbye\n{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages: []
+      metrics:
+      - Accuracy
+      original_task: false
+    name: question_aspect_example_id_zs
     reference: ''
