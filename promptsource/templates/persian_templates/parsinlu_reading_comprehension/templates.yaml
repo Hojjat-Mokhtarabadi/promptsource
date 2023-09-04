@@ -14,10 +14,6 @@ templates:
       languages:
       - fa
       metrics:
-<<<<<<< HEAD
-      - Accuracy
-=======
->>>>>>> 63985ae4dabc9180242e8a833a8d8033f3cc615c
       - BLEU
       original_task: true
     name: question_url_context_fs
