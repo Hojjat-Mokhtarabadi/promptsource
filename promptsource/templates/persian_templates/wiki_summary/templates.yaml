@@ -31,8 +31,8 @@ templates:
       - fa
       metrics:
       - BLEU
-      original_task: false
-    name: write_title_fs
+      original_task: true
+    name: write_title_zs
     reference: ''
   55957f5e-3068-4ec9-8914-9d22ba3e9a25: !Template
     answer_choices: null
@@ -64,7 +64,7 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: title_summary_fs
+    name: title_summary_zs
     reference: ''
   f86d7e8e-b440-4744-b738-a01b972349fb: !Template
     answer_choices: null
@@ -78,7 +78,6 @@ templates:
       - fa
       metrics:
       - BLEU
-      - Accuracy
       original_task: true
-    name: write_article_fs
+    name: write_article_zs
     reference: ''

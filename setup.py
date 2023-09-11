@@ -5,13 +5,11 @@ with open("README.md", "r", encoding="utf-8") as readme_file:
 
 requirements = [
     "black<=21.12b0",
-    "datasets>=1.7.0",
     "flake8",
     "isort==5.8.0",
     "pytest",
     "pyyaml>=5",
     "streamlit==0.82",
-    "numpy==1.20.3",
     "protobuf==3.20.*",
     "jinja2",
     "plotly",
