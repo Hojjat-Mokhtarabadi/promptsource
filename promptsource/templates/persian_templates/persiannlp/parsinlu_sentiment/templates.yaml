@@ -89,22 +89,3 @@ templates:
       original_task: true
     name: review_aspect_zs
     reference: ''
-  d1ff4991-d474-4896-a6d8-d7b71b386133: !Template
-    answer_choices: null
-    id: d1ff4991-d474-4896-a6d8-d7b71b386133
-    jinja: "\u0627\u06CC\u0646 \u0633\u0648\u0627\u0644 \u0686\u0647 \u0645\u0648\u0627\
-      \u0631\u062F\u06CC \u0631\u0627 \u0645\u0648\u0631\u062F \u067E\u0631\u0633\u0634\
-      \ \u0642\u0631\u0627\u0631 \u062F\u0627\u062F\u0647 \u0627\u0633\u062A\u061F\
-      \ \n{{question}}\n|||\n{%if aspect == \"\u0637\u0639\u0645\" and example_id\
-      \ ==\"1\"%}\n\u0639\u0637\u0631\u060C \u0628\u0648\u060C \u0648 \u0637\u0639\
-      \u0645\n{%elif aspect == \"\u0637\u0639\u0645\" and example_id ==\"1\"%}\n\u0642\
-      \u06CC\u0645\u062A \u0648 \u0627\u0631\u0632\u0634 \u062E\u0631\u06CC\u062F\n\
-      \n\n{%else%}\nbye\n{%endif%}"
-    metadata: !TemplateMetadata
-      choices_in_prompt: false
-      languages: []
-      metrics:
-      - Accuracy
-      original_task: false
-    name: question_aspect_example_id_zs
-    reference: ''
