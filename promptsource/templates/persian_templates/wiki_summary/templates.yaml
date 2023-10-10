@@ -4,9 +4,7 @@ templates:
     answer_choices: null
     id: 0f0d6c93-4d1f-48d7-a144-999d1f3639c8
     jinja: "\u06CC\u06A9 \u0645\u0642\u0627\u0644\u0647 \u062F\u0631 \u0645\u0648\u0631\
-      \u062F \"{{title}}\" \u0628\u0646\u0648\u06CC\u0633 \u0648 \u0627\u0646 \u0631\
-      \u0627 \u062E\u0644\u0627\u0635\u0647 \u06A9\u0646.\n|||\n\u0645\u0642\u0627\
-      \u0644\u0647: {{article}}\n\u062E\u0644\u0627\u0635\u0647: {{highlights}}\n"
+      \u062F \"{{title}}\" \u0628\u0646\u0648\u06CC\u0633\n|||\n{{highlights}}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -23,16 +21,16 @@ templates:
       \ \u0648\u0628 \u0633\u0627\u06CC\u062A \u0648\u06CC\u06A9\u06CC\u067E\u062F\
       \u06CC\u0627 \u0627\u0645\u062F\u0647 \u0627\u0633\u062A. \u0645\u0648\u0636\
       \u0648\u0639 \u0627\u0646 \u0631\u0627 \u0645\u0634\u062E\u0635 \u06A9\u0646\
-      \u06CC\u062F.\n\u0645\u0642\u0627\u0644\u0647: {{article}}\n\u0645\u0648\u0636\
-      \u0648\u0639: \n|||\n{{title}}"
+      \u06CC\u062F\n\n\u0645\u0642\u0627\u0644\u0647: \n{{highlights}}\n\u0645\u0648\
+      \u0636\u0648\u0639: \n|||\n{{title}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
       - fa
       metrics:
       - BLEU
-      original_task: false
-    name: write_title_fs
+      original_task: true
+    name: write_title_zs
     reference: ''
   55957f5e-3068-4ec9-8914-9d22ba3e9a25: !Template
     answer_choices: null
@@ -64,21 +62,21 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: title_summary_fs
+    name: title_summary_zs
     reference: ''
   f86d7e8e-b440-4744-b738-a01b972349fb: !Template
     answer_choices: null
     id: f86d7e8e-b440-4744-b738-a01b972349fb
-    jinja: "\u06CC\u06A9 \u0645\u0642\u0627\u0644\u0647 \u062F\u0631 \u0645\u0648\u0631\
-      \u062F \"{{title}}\" \u0628\u0646\u0648\u06CC\u0633\u06CC\u062F\n\u0645\u0642\
-      \u0627\u0644\u0647:\n|||\n{{article}}"
+    jinja: "\u0645\u062A\u0646 \u0632\u06CC\u0631 \u0686\u0647 \u0645\u0648\u0636\u0648\
+      \u0639\u06CC \u0631\u0627 \u0645\u0648\u0631\u062F \u0628\u062D\u062B \u0642\
+      \u0631\u0627\u0631 \u062F\u0627\u062F\u0647 \u0627\u0633\u062A\u061F\n{{highlights}}\n\
+      \u0645\u0648\u0636\u0648\u0639:\n|||\n{{title}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
       - fa
       metrics:
       - BLEU
-      - Accuracy
       original_task: true
-    name: write_article_fs
+    name: write_article_zs
     reference: ''

@@ -8,14 +8,14 @@ templates:
       \u062F\u0627\u0645 \u06AF\u0632\u06CC\u0646\u0647 \u0627\u0633\u062A\u061F\n\
       \u0633\u0648\u0627\u0644: {{question}}\n1) {{candidates[0]}}\n2) {{candidates[1]}}\n\
       3) {{candidates[2]}}\n4) {{candidates[3]}}\n\u062C\u0648\u0627\u0628:\n|||\n\
-      {{answer}}) {{candidates[answer-1]}}"
+      {{candidates[answer-1]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
       - fa
       metrics:
       - Accuracy
-      original_task: false
+      original_task: true
     name: which_candidate_zs
     reference: ''
   3e3ad299-266c-4adb-a8a8-f28b403d60c0: !Template
@@ -23,7 +23,7 @@ templates:
     id: 3e3ad299-266c-4adb-a8a8-f28b403d60c0
     jinja: "\u062C\u0648\u0627\u0628 \u0633\u0648\u0627\u0644 \u0631\u0627 \u0628\u0646\
       \u0648\u06CC\u0633\n\n\u0633\u0648\u0627\u0644:\u200C {{question}}\n\u062C\u0648\
-      \u0627\u0628:\n|||\n{{answer}}\n"
+      \u0627\u0628:\n|||\n{{candidates[answer-1]}}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -34,53 +34,65 @@ templates:
     name: write_answer_fs
     reference: ''
   82278234-ea56-4006-a9e6-26f5970daa07: !Template
-    answer_choices: null
+    answer_choices: "\u0631\u06CC\u0627\u0636\u06CC \u0648 \u0645\u0646\u0637\u0642\
+      \ ||| \u0627\u0637\u0644\u0627\u0639\u0627\u062A \u0639\u0645\u0648\u0645\u06CC\
+      \ ||| \u0627\u062F\u0628\u06CC\u0627\u062A"
     id: 82278234-ea56-4006-a9e6-26f5970daa07
     jinja: "\u0645\u062A\u0646 \u0632\u06CC\u0631 \u062F\u0631 \u0686\u0647 \u0637\
       \u0628\u0642\u0647 \u0628\u0646\u062F\u06CC \u0645\u06CC\u062A\u0648\u0627\u0646\
-      \u062F \u0642\u0631\u0627\u0631 \u0628\u06AF\u06CC\u0631\u062F\u061F\n\u0645\
+      \u062F \u0642\u0631\u0627\u0631 \u0628\u06AF\u06CC\u0631\u062F\u061F\n\n\u0645\
       \u062A\u0646: {{question}} {{candidates[answer-1]}}\n\u0637\u0628\u0642\u0647\
-      \ \u0628\u0646\u062F\u06CC: \n|||\n{{category}}"
-    metadata: !TemplateMetadata
-      choices_in_prompt: false
-      languages:
-      - fa
-      metrics:
-      - BLEU
-      - Accuracy
-      original_task: false
-    name: category_answer_fs
-    reference: ''
-  8b9b06d1-1b8d-458c-b408-e064d2efba99: !Template
-    answer_choices: null
-    id: 8b9b06d1-1b8d-458c-b408-e064d2efba99
-    jinja: "\u062C\u0648\u0627\u0628 \u0633\u0648\u0627\u0644 \u0632\u06CC\u0631 \u06A9\
-      \u062F\u0627\u0645 \u06AF\u0632\u06CC\u0646\u0647 \u0627\u0633\u062A\u061F\n\
-      {{question}} \"{{candidates[0]}}\" , \"{{candidates[1]}}\" , \"{{candidates[2]}}\"\
-      \ , \"{{candidates[3]}}\"\n|||\n{{candidates[answer-1]}}"
+      \ \u0628\u0646\u062F\u06CC: \n|||\n{% if category == 'math_and_logic' %}\n\u0631\
+      \u06CC\u0627\u0636\u06CC \u0648 \u0645\u0646\u0637\u0642\n{% elif category ==\
+      \ 'common_knowledge'%}\n\u0627\u0637\u0644\u0627\u0639\u0627\u062A \u0639\u0645\
+      \u0648\u0645\u06CC\n{% else  %}\n\u0627\u062F\u0628\u06CC\u0627\u062A\n{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
       - fa
       metrics:
       - Accuracy
-      original_task: false
-    name: candidate_fs
+      original_task: true
+    name: category_answer_fs
+    reference: ''
+  8b9b06d1-1b8d-458c-b408-e064d2efba99: !Template
+    answer_choices: "\u0627\u0648\u0644|||\u062F\u0648\u0645 ||| \u0633\u0648\u0645\
+      ||| \u0686\u0647\u0627\u0631\u0645"
+    id: 8b9b06d1-1b8d-458c-b408-e064d2efba99
+    jinja: "\u062C\u0648\u0627\u0628 \u062F\u0631\u0633\u062A \u0631\u0627 \u0627\u0646\
+      \u062A\u062E\u0627\u0628 \u06A9\u0646\n1) \"{{candidates[0]}}\"\n2) \"{{candidates[1]}}\"\
+      \n3) \"{{candidates[2]}}\" \n4) \"{{candidates[3]}}\" \n\n\u0633\u0648\u0627\
+      \u0644: {{question}}\n\u062C\u0648\u0627\u0628: \n|||\n{% if answer == 1 %}\n\
+      \    \u0627\u0648\u0644\n{% elif answer == 2 %}\n    \u062F\u0648\u0645\n{%\
+      \ elif answer == 3 %}\n    \u0633\u0648\u0645\n{% elif answer == 4 %}\n    \u0686\
+      \u0647\u0627\u0631\u0645\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_the_correct_candidate_fs
     reference: ''
   ad325068-0dbb-43eb-ba87-83bd466ab8ac: !Template
     answer_choices: null
     id: ad325068-0dbb-43eb-ba87-83bd466ab8ac
     jinja: "\u0628\u0631\u0627\u06CC \u0645\u062A\u0646 \u0632\u06CC\u0631 \u06CC\u06A9\
       \ \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC \u0645\u0646\u0627\u0633\
-      \u0628 \u0628\u0646\u0648\u06CC\u0633\u06CC\u062F\n{{question}} \"{{candidates[0]}}\"\
-      \ , \"{{candidates[1]}}\" , \"{{candidates[2]}}\" , \"{{candidates[3]}}\"\u061F\
-      \n\u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC:\n|||\n{{category}}"
+      \u0628 \u0628\u0646\u0648\u06CC\u0633\u06CC\u062F\n\n{{question}}\n\u062F\u0633\
+      \u062A\u0647 \u0628\u0646\u062F\u06CC:\n|||\n{% if category == 'math_and_logic'\
+      \ %}\n\u0631\u06CC\u0627\u0636\u06CC \u0648 \u0645\u0646\u0637\u0642\n{% elif\
+      \ category == 'common_knowledge'%}\n\u0627\u0637\u0644\u0627\u0639\u0627\u062A\
+      \ \u0639\u0645\u0648\u0645\u06CC\n{% else  %}\n\u0627\u062F\u0628\u06CC\u0627\
+      \u062A\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
       - fa
       metrics:
       - BLEU
-      original_task: false
+      original_task: true
     name: category_zs
     reference: ''
