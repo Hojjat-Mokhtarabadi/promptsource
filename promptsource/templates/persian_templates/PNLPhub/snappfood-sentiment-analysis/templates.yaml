@@ -18,6 +18,23 @@ templates:
       original_task: true
     name: what_is_sentiment_fs
     reference: ''
+  1148638e-63e2-4de4-bfa3-28c1daced9e1: !Template
+    answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
+    id: 1148638e-63e2-4de4-bfa3-28c1daced9e1
+    jinja: "\u0627\u06CC\u0627 \u0645\u062A\u0646 \u062F\u0627\u062F\u0647 \u0634\u062F\
+      \u0647 \u0627\u062D\u0633\u0627\u0633 \n\u0628\u062F\" \u0631\u0627 \u0645\u0646\
+      \u062A\u0642\u0644 \u0645\u06CC\u06A9\u0646\u062F\u061F\"\n\n\u0645\u062A\u0646\
+      : {{comment}}\n\u0627\u062D\u0633\u0627\u0633: \n|||\n{% if label_id == 1%}\n\
+      \ \u0628\u0644\u0647\n{% else %}\n \u062E\u06CC\u0631\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: is_it_neg_zs
+    reference: ''
   717da5b7-df45-483e-9d90-57807ca4b027: !Template
     answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
     id: 717da5b7-df45-483e-9d90-57807ca4b027
@@ -73,6 +90,23 @@ templates:
       - BLEU
       original_task: true
     name: gen_sentiment_fs
+    reference: ''
+  d7be4430-9112-441e-abdd-d7f2b24f1192: !Template
+    answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
+    id: d7be4430-9112-441e-abdd-d7f2b24f1192
+    jinja: "\u0627\u06CC\u0627 \u0645\u062A\u0646 \u062F\u0627\u062F\u0647 \u0634\u062F\
+      \u0647 \u0627\u062D\u0633\u0627\u0633 \n\u062E\u0648\u0628\" \u0631\u0627 \u0645\
+      \u0646\u062A\u0642\u0644 \u0645\u06CC\u06A9\u0646\u062F\u061F\"\n\n\u0645\u062A\
+      \u0646: {{comment}}\n\u0627\u062D\u0633\u0627\u0633: \n|||\n{% if label_id ==\
+      \ 0%}\n \u0628\u0644\u0647\n{% else %}\n \u062E\u06CC\u0631\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: is_it_pos_zs
     reference: ''
   fe6815c7-81ea-4301-b8fe-b18c4adebc30: !Template
     answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
