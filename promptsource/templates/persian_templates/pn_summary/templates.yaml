@@ -305,3 +305,21 @@ templates:
       original_task: true
     name: classify_summary_fs
     reference: ''
+  f68010b7-c020-487c-957d-1bdf5802d96f: !Template
+    answer_choices: null
+    id: f68010b7-c020-487c-957d-1bdf5802d96f
+    jinja: "\u0628\u0627 \u062F\u0631 \u0646\u0638\u0631 \u06AF\u0631\u0641\u062A\u0646\
+      \ \u0645\u062A\u0646 \u0648 \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC\
+      \ \u062F\u0627\u062F\u0647 \u0634\u062F\u0647 \u06CC\u06A9 \u062E\u0644\u0627\
+      \u0635\u0647 \u0628\u0646\u0648\u06CC\u0633\n\n\u0645\u062A\u0646: \n{{article}}\n\
+      \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC: \n{{categories}}\n\u062E\u0644\
+      \u0627\u0635\u0647:\n||| {{summary}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: gen_sum_with_category_article_zs
+    reference: ''

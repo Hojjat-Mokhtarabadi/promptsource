@@ -1,5 +1,53 @@
 dataset: PNLPhub/digikala-sentiment-analysis
 templates:
+  1394018e-19d9-421c-be92-0d70115d6fdf: !Template
+    answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
+    id: 1394018e-19d9-421c-be92-0d70115d6fdf
+    jinja: "\"\u0627\u06CC\u0627 \u0645\u062A\u0646 \u062F\u0627\u062F\u0647 \u0634\
+      \u062F\u0647 \u0627\u062D\u0633\u0627\u0633 \"\u0628\u062F\n \u0631\u0627 \u0645\
+      \u0646\u062A\u0642\u0644 \u0645\u06CC\u06A9\u0646\u062F\u061F \n\n\u0645\u062A\
+      \u0646: {{Text}}\n\u062C\u0648\u0627\u0628: \n|||\n{% macro round_score(score)\
+      \ %}\n  {% set quotient = score // 25 %}\n  {% set remainder = score % 25 %}\n\
+      \n  {% if remainder >= 13 %}\n    {% set rounded_score = (quotient + 1) * 25\
+      \ %}\n  {% else %}\n    {% set rounded_score = quotient * 25 %}\n  {% endif\
+      \ %}\n\n  {{\n  {\n    '0':  0,\n    '25': 1,\n    '50':  2,\n    '75':  3,\n\
+      \    '100': 4\n  }[rounded_score|string]|int\n}}\n{% endmacro %}\n\n{% set rounded_score\
+      \ = round_score(Score) %}\n\n{% set rounded_score = round_score | int %}\n\n\
+      {% if rounded_score == 1 %}\n \u0628\u0644\u0647\n{% else %}\n \u062E\u06CC\u0631\
+      \n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: is_bad_fs
+    reference: ''
+  19c638f6-7f60-4517-9736-2a6afe3ca769: !Template
+    answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
+    id: 19c638f6-7f60-4517-9736-2a6afe3ca769
+    jinja: "\"\u0627\u06CC\u0627 \u0645\u062A\u0646 \u062F\u0627\u062F\u0647 \u0634\
+      \u062F\u0647 \u0627\u062D\u0633\u0627\u0633 \"\u0627\u0641\u062A\u0636\u0627\
+      \u062D\n \u0631\u0627 \u0645\u0646\u062A\u0642\u0644 \u0645\u06CC\u06A9\u0646\
+      \u062F\u061F \n\n\u0645\u062A\u0646: {{Text}}\n\u062C\u0648\u0627\u0628: \n\
+      |||\n{% macro round_score(score) %}\n  {% set quotient = score // 25 %}\n  {%\
+      \ set remainder = score % 25 %}\n\n  {% if remainder >= 13 %}\n    {% set rounded_score\
+      \ = (quotient + 1) * 25 %}\n  {% else %}\n    {% set rounded_score = quotient\
+      \ * 25 %}\n  {% endif %}\n\n  {{\n  {\n    '0':  0,\n    '25': 1,\n    '50':\
+      \  2,\n    '75':  3,\n    '100': 4\n  }[rounded_score|string]|int\n}}\n{% endmacro\
+      \ %}\n\n{% set rounded_score = round_score(Score) %}\n\n{% set rounded_score\
+      \ = round_score | int %}\n\n{% if 0 == rounded_score %}\n \u0628\u0644\u0647\
+      \n{% else %}\n \u062E\u06CC\u0631\n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: is_terrible_fs
+    reference: ''
   4da79537-25dd-4ffe-9c9f-6f44ec4b3d35: !Template
     answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
     id: 4da79537-25dd-4ffe-9c9f-6f44ec4b3d35
@@ -53,6 +101,54 @@ templates:
       original_task: true
     name: what_is_sentiment_fs
     reference: ''
+  6df72b8e-49d9-46f6-86d6-b390acfe1604: !Template
+    answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
+    id: 6df72b8e-49d9-46f6-86d6-b390acfe1604
+    jinja: "\"\u0627\u06CC\u0627 \u0645\u062A\u0646 \u062F\u0627\u062F\u0647 \u0634\
+      \u062F\u0647 \u0627\u062D\u0633\u0627\u0633 \"\u062E\u0648\u0628\n \u0631\u0627\
+      \ \u0645\u0646\u062A\u0642\u0644 \u0645\u06CC\u06A9\u0646\u062F\u061F \n\n\u0645\
+      \u062A\u0646: {{Text}}\n\u062C\u0648\u0627\u0628: \n|||\n{% macro round_score(score)\
+      \ %}\n  {% set quotient = score // 25 %}\n  {% set remainder = score % 25 %}\n\
+      \n  {% if remainder >= 13 %}\n    {% set rounded_score = (quotient + 1) * 25\
+      \ %}\n  {% else %}\n    {% set rounded_score = quotient * 25 %}\n  {% endif\
+      \ %}\n\n  {{\n  {\n    '0':  0,\n    '25': 1,\n    '50':  2,\n    '75':  3,\n\
+      \    '100': 4\n  }[rounded_score|string]|int\n}}\n{% endmacro %}\n\n{% set rounded_score\
+      \ = round_score(Score) %}\n\n{% set rounded_score = round_score | int %}\n\n\
+      {% if rounded_score == 3 %}\n \u0628\u0644\u0647\n{% else %}\n \u062E\u06CC\u0631\
+      \n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: is_good_fs
+    reference: ''
+  7459680b-6f41-4dc1-a8e5-b93b6628efdd: !Template
+    answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
+    id: 7459680b-6f41-4dc1-a8e5-b93b6628efdd
+    jinja: "\"\u0627\u06CC\u0627 \u0645\u062A\u0646 \u062F\u0627\u062F\u0647 \u0634\
+      \u062F\u0647 \u0627\u062D\u0633\u0627\u0633 \"\u0645\u062A\u0648\u0633\u0637\
+      \n \u0631\u0627 \u0645\u0646\u062A\u0642\u0644 \u0645\u06CC\u06A9\u0646\u062F\
+      \u061F \n\n\u0645\u062A\u0646: {{Text}}\n\u062C\u0648\u0627\u0628: \n|||\n{%\
+      \ macro round_score(score) %}\n  {% set quotient = score // 25 %}\n  {% set\
+      \ remainder = score % 25 %}\n\n  {% if remainder >= 13 %}\n    {% set rounded_score\
+      \ = (quotient + 1) * 25 %}\n  {% else %}\n    {% set rounded_score = quotient\
+      \ * 25 %}\n  {% endif %}\n\n  {{\n  {\n    '0':  0,\n    '25': 1,\n    '50':\
+      \  2,\n    '75':  3,\n    '100': 4\n  }[rounded_score|string]|int\n}}\n{% endmacro\
+      \ %}\n\n{% set rounded_score = round_score(Score) %}\n\n{% set rounded_score\
+      \ = round_score | int %}\n\n{% if rounded_score == 2 %}\n \u0628\u0644\u0647\
+      \n{% else %}\n \u062E\u06CC\u0631\n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: is_avg_fs
+    reference: ''
   80d513d4-47fd-4383-893c-89d07f79b5ec: !Template
     answer_choices: "\u06CC\u06A9 \u0633\u062A\u0627\u0631\u0647||| \u062F\u0648 \u0633\
       \u062A\u0627\u0631\u0647||| \u0633\u0647 \u0633\u062A\u0627\u0631\u0647||| \u0686\
@@ -84,6 +180,30 @@ templates:
       - Accuracy
       original_task: true
     name: star_rating_fs
+    reference: ''
+  b58bf0f2-aabb-45e6-9e46-c43e1dc4e6d5: !Template
+    answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
+    id: b58bf0f2-aabb-45e6-9e46-c43e1dc4e6d5
+    jinja: "\"\u0627\u06CC\u0627 \u0645\u062A\u0646 \u062F\u0627\u062F\u0647 \u0634\
+      \u062F\u0647 \u0627\u062D\u0633\u0627\u0633 \"\u0639\u0627\u0644\u06CC\n \u0631\
+      \u0627 \u0645\u0646\u062A\u0642\u0644 \u0645\u06CC\u06A9\u0646\u062F\u061F \n\
+      \n\u0645\u062A\u0646: {{Text}}\n\u062C\u0648\u0627\u0628: \n|||\n{% macro round_score(score)\
+      \ %}\n  {% set quotient = score // 25 %}\n  {% set remainder = score % 25 %}\n\
+      \n  {% if remainder >= 13 %}\n    {% set rounded_score = (quotient + 1) * 25\
+      \ %}\n  {% else %}\n    {% set rounded_score = quotient * 25 %}\n  {% endif\
+      \ %}\n\n  {{\n  {\n    '0':  0,\n    '25': 1,\n    '50':  2,\n    '75':  3,\n\
+      \    '100': 4\n  }[rounded_score|string]|int\n}}\n{% endmacro %}\n\n{% set rounded_score\
+      \ = round_score(Score) %}\n\n{% set rounded_score = round_score | int %}\n\n\
+      {% if rounded_score == 4 %}\n \u0628\u0644\u0647\n{% else %}\n \u062E\u06CC\u0631\
+      \n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: is_perfect_fs
     reference: ''
   c7ecab15-1e66-4880-8e25-abb7c2cfe32c: !Template
     answer_choices: null
