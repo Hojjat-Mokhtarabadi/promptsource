@@ -64,9 +64,9 @@ templates:
       \u062A\u062E\u0627\u0628 \u06A9\u0646\n1) \"{{candidates[0]}}\"\n2) \"{{candidates[1]}}\"\
       \n3) \"{{candidates[2]}}\" \n4) \"{{candidates[3]}}\" \n\n\u0633\u0648\u0627\
       \u0644: {{question}}\n\u062C\u0648\u0627\u0628: \n|||\n{% if answer == 1 %}\n\
-      \    \u0627\u0648\u0644\n{% elif answer == 2 %}\n    \u062F\u0648\u0645\n{%\
-      \ elif answer == 3 %}\n    \u0633\u0648\u0645\n{% elif answer == 4 %}\n    \u0686\
-      \u0647\u0627\u0631\u0645\n{% endif %}"
+      \    \"{{candidates[0]}}\"\n{% elif answer == 2 %}\n    \"{{candidates[1]}}\"\
+      \n{% elif answer == 3 %}\n    \"{{candidates[2]}}\"\n{% elif answer == 4 %}\n\
+      \    \"{{candidates[3]}}\" \n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -79,10 +79,13 @@ templates:
   ad325068-0dbb-43eb-ba87-83bd466ab8ac: !Template
     answer_choices: null
     id: ad325068-0dbb-43eb-ba87-83bd466ab8ac
-    jinja: "\u0628\u0631\u0627\u06CC \u0645\u062A\u0646 \u0632\u06CC\u0631 \u06CC\u06A9\
-      \ \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC \u0645\u0646\u0627\u0633\
-      \u0628 \u0628\u0646\u0648\u06CC\u0633\u06CC\u062F\n\n{{question}}\n\u062F\u0633\
-      \u062A\u0647 \u0628\u0646\u062F\u06CC:\n|||\n{% if category == 'math_and_logic'\
+    jinja: "\u0628\u0631\u0627\u06CC \u0645\u062A\u0646 \u0632\u06CC\u0631 \u06A9\u062F\
+      \u0627\u0645 \u06CC\u06A9 \u0627\u0632 \u062F\u0633\u062A\u0647 \u0628\u0646\
+      \u062F\u06CC \u0647\u0627\u06CC \"\u0631\u06CC\u0627\u0636\u06CC \u0648 \u0645\
+      \u0646\u0637\u0642\"\u060C \"\u0627\u0637\u0644\u0627\u0639\u0627\u062A \u0639\
+      \u0645\u0648\u0645\u06CC\" \u0648 \u06CC\u0627 \"\u0627\u062F\u0628\u06CC\u0627\
+      \u062A\" \u0645\u0646\u0627\u0633\u0628 \u0627\u0633\u062A\u061F\n\n{{question}}\n\
+      \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC:\n|||\n{% if category == 'math_and_logic'\
       \ %}\n\u0631\u06CC\u0627\u0636\u06CC \u0648 \u0645\u0646\u0637\u0642\n{% elif\
       \ category == 'common_knowledge'%}\n\u0627\u0637\u0644\u0627\u0639\u0627\u062A\
       \ \u0639\u0645\u0648\u0645\u06CC\n{% else  %}\n\u0627\u062F\u0628\u06CC\u0627\
@@ -92,7 +95,7 @@ templates:
       languages:
       - fa
       metrics:
-      - BLEU
+      - Accuracy
       original_task: true
     name: category_zs
     reference: ''
