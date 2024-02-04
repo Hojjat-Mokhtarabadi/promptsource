@@ -24,7 +24,7 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: choose_title_zs
+    name: choose_category_zs
     reference: ''
   bb2b4f1f-d42c-4fa7-9a20-0b8db5179872: !Template
     answer_choices: null

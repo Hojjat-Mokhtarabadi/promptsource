@@ -1,21 +1,85 @@
 dataset: SajjadAyoubi/persian_qa
 templates:
-  430daaec-4947-4286-bf3c-a25a9ee8bf43: !Template
-    answer_choices: null
-    id: 430daaec-4947-4286-bf3c-a25a9ee8bf43
-    jinja: "\u0628\u0627 \u062A\u0648\u062C\u0647 \u0628\u0647 \u0645\u062A\u0646\
-      \ \u062F\u0627\u062F\u0647 \u0634\u062F\u0647 \u0628\u0647 \u0633\u0648\u0627\
-      \u0644 \u062C\u0648\u0627\u0628 \u0628\u062F\u0647\n\n\u0645\u062A\u0646: {{context}}\n\
-      \u0633\u0648\u0627\u0644: {{question}}\n\u062C\u0648\u0627\u0628: \n||| {{answers[\"\
-      text\"][0]}}\n"
+  0578a5ac-a747-4426-a064-7e69bda9a9fc: !Template
+    answer_choices: "\u0633\u0648\u0627\u0644 ||| \u0645\u062A\u0646 \u062E\u0628\u0631\
+      \u06CC"
+    id: 0578a5ac-a747-4426-a064-7e69bda9a9fc
+    jinja: "\u0646\u0648\u0634\u062A\u0647 \u0632\u06CC\u0631 \u0628\u062E\u0634\u06CC\
+      \ \u0627\u0632 \u06CC\u06A9 \u0645\u062A\u0646 \u062E\u0628\u0631\u06CC \u0645\
+      \u06CC\u0628\u0627\u0634\u062F \u06CC\u0627 \u06CC\u06A9 \u0633\u0648\u0627\u0644\
+      \ \u0627\u0633\u062A\u061F\n{% set random_number = range(2)|random %} {% if\
+      \ random_number == 1 %}\n    \u0646\u0648\u0634\u062A\u0647: {{question}}\n\
+      {% else %}\n    \u0646\u0648\u0634\u062A\u0647: {{context}}\n{% endif %}\n|||\n\
+      {% if random_number == 1 %}\n    \u0633\u0648\u0627\u0644\n{% else %}\n    \u0645\
+      \u062A\u0646 \u062E\u0628\u0631\u06CC\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
       - fa
       metrics:
-      - Squad
+      - Accuracy
       original_task: true
-    name: answer_question_give_text_fs
+    name: question_or_answer_catg_fs
+    reference: ''
+  34a69f32-cbbf-4dc9-8be7-b1bc730d917b: !Template
+    answer_choices: null
+    id: 34a69f32-cbbf-4dc9-8be7-b1bc730d917b
+    jinja: "\u0645\u062A\u0646 \u062E\u0628\u0631\u06CC \u062F\u0627\u062F\u0647 \u0634\
+      \u062F\u0647 \u062F\u0631 \u06CC\u06A9 \u0645\u0646\u0628\u0639 \u0645\u0639\
+      \u062A\u0628\u0631 \u0627\u0648\u0631\u062F\u0647 \u0634\u062F\u0647 \u0627\u0633\
+      \u062A. \u0628\u0647 \u0646\u0638\u0631 \u0634\u0645\u0627 \u0686\u0647 \u0639\
+      \u0646\u0648\u0627\u0646 \u062E\u0628\u0631\u06CC \u0628\u0631\u0627\u06CC \u0627\
+      \u06CC\u0646 \u0645\u062A\u0646 \u0628\u0627 \u062A\u0648\u062C\u0647 \u0628\
+      \u0647 \u0633\u0648\u0627\u0644 \u0627\u0648\u0631\u062F\u0647 \u0634\u062F\u0647\
+      \ \u0645\u06CC\u0628\u0627\u0634\u062F\u061F\n\u0645\u062A\u0646 \u062E\u0628\
+      \u0631: {{context}}\n\u0633\u0648\u0627\u0644: {{question}}\n|||\n\u0639\u0646\
+      \u0648\u0627\u0646 \u062E\u0628\u0631\u06CC : {{title}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: title_generate_zs
+    reference: ''
+  4d30acd1-443b-4b90-ba62-c40d9353cf22: !Template
+    answer_choices: null
+    id: 4d30acd1-443b-4b90-ba62-c40d9353cf22
+    jinja: ".\u062F\u0631 \u0645\u062C\u0644\u0647 \u0627\u06CC \u0627\u06CC\u0646\
+      \ \u0628\u0646\u062F \u0628\u0627 \u0639\u0646\u0648\u0627\u0646 \"{{title}}\"\
+      \ \u0646\u0634\u0631 \u0634\u062F\u0647 \u0628\u0648\u062F\n\u0628\u0627 \u062F\
+      \u0631 \u0646\u0638\u0631 \u06AF\u0631\u0641\u062A\u0646 \u0627\u0646\u060C\
+      \ \u0628\u0647 \u0633\u0648\u0627\u0644 \u0632\u06CC\u0631 \u067E\u0627\u0633\
+      \u062E \u0628\u062F\u0647\n\u0628\u0646\u062F \u0646\u0634\u0631 \u0634\u062F\
+      \u0647: {{context}}\n\u0633\u0648\u0627\u0644:\u200C {{question}}\n\u067E\u0627\
+      \u0633\u062E:\n|||\n {{answers[\"text\"][0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: title_text_question_zs
+    reference: ''
+  50f7c273-89a7-4356-9a4a-7c51a12a2635: !Template
+    answer_choices: null
+    id: 50f7c273-89a7-4356-9a4a-7c51a12a2635
+    jinja: "\u0627\u0632 \u062A\u0648\u06A9\u0646 \u0634\u0645\u0627\u0631\u0647 \u06CC\
+      \ {{answers[\"answer_start\"][0]}} \u062C\u0648\u0627\u0628 \u0633\u0648\u0627\
+      \u0644 \u06AF\u0641\u062A\u0647 \u0634\u062F\u0647 \u0631\u0627 \u062F\u0631\
+      \ \u0645\u062A\u0646 \u0632\u06CC\u0631 \u0628\u06AF\u0648\n\u0633\u0648\u0627\
+      \u0644: {{question}}\n\u0645\u062A\u0646: {{context}}\n\u062C\u0648\u0627\u0628\
+      :\n|||\n{{answers[\"text\"][0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: token_answer_fs
     reference: ''
   7ca9eaf9-0c13-4711-bf14-5be71c073c40: !Template
     answer_choices: null
@@ -65,4 +129,25 @@ templates:
       - BLEU
       original_task: true
     name: generate_question_fs
+    reference: ''
+  fad36bbf-9ec4-4026-b9be-2288fc0ef925: !Template
+    answer_choices: null
+    id: fad36bbf-9ec4-4026-b9be-2288fc0ef925
+    jinja: "\u0628\u0627 \u062F\u0631 \u0646\u0638\u0631 \u06AF\u0631\u0641\u062A\u0646\
+      \ \u067E\u0627\u0631\u0627\u06AF\u0631\u0627\u0641 \u067E\u0627\u06CC\u06CC\u0646\
+      \u060C \u067E\u0627\u0633\u062E \u0627\u06CC\u0646 \u0633\u0648\u0627\u0644\
+      \ \u06A9\u0647 \"{{question}}\" \u0631\u0627 \u0628\u062F\u0647 \u0648 \u0628\
+      \u06AF\u0648 \u062C\u0648\u0627\u0628 \u0627\u0632 \u06A9\u062F\u0627\u0645\
+      \ \u062A\u0648\u06A9\u0646 \u0634\u0631\u0648\u0639 \n\u0645\u06CC\u0634\u0648\
+      \u062F\u061F\n{{context}}\n\u067E\u0627\u0633\u062E: \n|||\n{{answers[\"text\"\
+      ][0]}}\n\u0634\u0631\u0648\u0639 \u062C\u0648\u0627\u0628 \u0627\u0632 \u062A\
+      \u0648\u06A9\u0646 {{answers[\"answer_start\"][0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: answer_start_zs
     reference: ''

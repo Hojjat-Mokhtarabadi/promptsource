@@ -1,43 +1,11 @@
 dataset: PNLPhub/PEYMA
 templates:
-  027e8ad3-9b2a-4d11-a30d-40c93395c1e9: !Template
-    answer_choices: null
-    id: 027e8ad3-9b2a-4d11-a30d-40c93395c1e9
-    jinja: "\u0647\u0631 \u062A\u0648\u06A9\u0646 \u0631\u0627 \u062F\u0631 \u062A\
-      \u0631\u062A\u06CC\u0628 \u0627\u0631\u0627\u0626\u0647 \u0634\u062F\u0647 \u0628\
-      \u0647 \u062F\u0642\u062A \u0628\u0631\u0631\u0633\u06CC \u06A9\u0646\u06CC\u062F\
-      \n\u062A\u06AF BOI \u0645\u0631\u0628\u0648\u0637\u0647 \u0631\u0627 \u0628\u0647\
-      \ \u0647\u0631 \u062A\u0648\u06A9\u0646 \u0627\u0632 \u0644\u06CC\u0633\u062A\
-      \ \u0632\u06CC\u0631 \u0627\u062E\u062A\u0635\u0627\u0635 \u062F\u0647\u06CC\
-      \u062F\nO: None/Outside\nB_DAT: Beginning of a Date entity\nI_DAT: Inside of\
-      \ a Date entity\nB_LOC: Beginning of a Location entity\nI_LOC: Inside of a Location\
-      \ entity\nB_MON: Beginning of a Money entity\nI_MON: Inside of a Money entity\n\
-      B_ORG: Beginning of an Organization entity\nI_ORG: Inside of an Organization\
-      \ entity\nB_PCT: Beginning of a Percentage entity\nI_PCT: Inside of a Percentage\
-      \ entity\nB_PER: Beginning of a Person entity\nI_PER: Inside of a Person entity\n\
-      B_TIM: Beginning of a Time entity\nI_TIM: Inside of a Time entity\n|||\n\u062A\
-      \u06AF \u0647\u0627:\n{% for item in tags %}\n{% if item == 0 %}\nO\n{% elif\
-      \ item == 1 %}\nB_DAT\n{% elif item == 2 %}\nB_LOC\n{% elif item == 3 %}\nB_MON\n\
-      {% elif item == 4 %}\nB_ORG\n{% elif item == 5 %}\nB_PCT\n{% elif item == 6\
-      \ %}\nB_PER\n{% elif item == 7 %}\nB_TIM\n{% elif item == 8 %}\nI_DAT\n{% elif\
-      \ item == 9 %}\nI_LOC\n{% elif item == 10 %}\nI_MON\n{% elif item == 11 %}\n\
-      I_ORG\n{% elif item == 12 %}\nI_PCT\n{% elif item == 13 %}\nI_PER\n{% elif item\
-      \ == 14 %}\nI_TIM\n    \n{% endif %}\n{% endfor %}\n"
-    metadata: !TemplateMetadata
-      choices_in_prompt: false
-      languages:
-      - fa
-      metrics:
-      - Accuracy
-      original_task: true
-    name: token_find
-    reference: ''
   0bddb806-e4c8-439a-b3d0-0d6e42c2fea0: !Template
     answer_choices: null
     id: 0bddb806-e4c8-439a-b3d0-0d6e42c2fea0
-    jinja: "\n\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0633\u0627\
-      \u0632\u0645\u0627\u0646 \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\
-      \u0646:\n\u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence\
+    jinja: "\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u062A\u0627\u0631\
+      \u06CC\u062E \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\u0646\
+      :\n\u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence\
       \ = [] %}\n{% for token, tag in zip(tokens, tags) %}\n    {% if tag==1 or tag\
       \ == 8 %}\n        {% set _ = sentence.append(token) %}\n    {% endif %}\n{%\
       \ endfor %}\n{{ ' '.join(sentence) }}\n"
@@ -46,34 +14,19 @@ templates:
       languages:
       - fa
       metrics:
-      - BLEU
+      - Accuracy
       original_task: true
     name: find_date
     reference: ''
-  9dbd28ed-afd7-41c7-b387-7fe35f5e2762: !Template
+  1b02e956-871b-413c-8610-3925420a246b: !Template
     answer_choices: null
-    id: 9dbd28ed-afd7-41c7-b387-7fe35f5e2762
-    jinja: "\u0647\u0631 \u062A\u0648\u06A9\u0646 \u0631\u0627 \u062F\u0631 \u062A\
-      \u0631\u062A\u06CC\u0628 \u0627\u0631\u0627\u0626\u0647 \u0634\u062F\u0647 \u0628\
-      \u0647 \u062F\u0642\u062A \u0628\u0631\u0631\u0633\u06CC \u06A9\u0646\u06CC\u062F\
-      \n\u062A\u06AF BOI \u0645\u0631\u0628\u0648\u0637\u0647 \u0631\u0627 \u0628\u0647\
-      \ \u0647\u0631 \u062A\u0648\u06A9\u0646 \u0627\u0632 \u0644\u06CC\u0633\u062A\
-      \ \u0632\u06CC\u0631 \u0627\u062E\u062A\u0635\u0627\u0635 \u062F\u0647\u06CC\
-      \u062F\nO: None/Outside\nB_DAT: Beginning of a Date entity\nI_DAT: Inside of\
-      \ a Date entity\nB_LOC: Beginning of a Location entity\nI_LOC: Inside of a Location\
-      \ entity\nB_MON: Beginning of a Money entity\nI_MON: Inside of a Money entity\n\
-      B_ORG: Beginning of an Organization entity\nI_ORG: Inside of an Organization\
-      \ entity\nB_PCT: Beginning of a Percentage entity\nI_PCT: Inside of a Percentage\
-      \ entity\nB_PER: Beginning of a Person entity\nI_PER: Inside of a Person entity\n\
-      B_TIM: Beginning of a Time entity\nI_TIM: Inside of a Time entity\n|||\n\u062A\
-      \u06AF \u0647\u0627:\n{% for item in tokens %}\n{{item}}\n{% endfor%}\n\n{%\
-      \ for item in tags %}\n{% if item == 0 %}\nO\n{% elif item == 1 %}\nB_DAT\n\
-      {% elif item == 2 %}\nB_LOC\n{% elif item == 3 %}\nB_MON\n{% elif item == 4\
-      \ %}\nB_ORG\n{% elif item == 5 %}\nB_PCT\n{% elif item == 6 %}\nB_PER\n{% elif\
-      \ item == 7 %}\nB_TIM\n{% elif item == 8 %}\nI_DAT\n{% elif item == 9 %}\nI_LOC\n\
-      {% elif item == 10 %}\nI_MON\n{% elif item == 11 %}\nI_ORG\n{% elif item ==\
-      \ 12 %}\nI_PCT\n{% elif item == 13 %}\nI_PER\n{% elif item == 14 %}\nI_TIM\n\
-      \    \n{% endif %}\n{% endfor %}\n"
+    id: 1b02e956-871b-413c-8610-3925420a246b
+    jinja: "\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0632\u0645\u0627\
+      \u0646 \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\u0646:\n\u062C\
+      \u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence = [] %}\n\
+      {% for token, tag in zip(tokens, tags) %}\n    {% if tag==7 or tag == 14 %}\n\
+      \        {% set _ = sentence.append(token) %}\n    {% endif %}\n{% endfor %}\n\
+      {{ ' '.join(sentence) }}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -81,14 +34,86 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: token_find_2
+    name: find_time
+    reference: ''
+  24c578ba-9297-4275-8e3b-19a00688b5ca: !Template
+    answer_choices: null
+    id: 24c578ba-9297-4275-8e3b-19a00688b5ca
+    jinja: "\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0632\u0645\u0627\
+      \u0646 \u0648 \u0645\u06A9\u0627\u0646 \u0647\u0627\u0631\u0627 \u067E\u06CC\
+      \u062F\u0627 \u06A9\u0646:\n\u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n\
+      |||\n\n{% set sentence = [] %}\n{% for token, tag in zip(tokens, tags) %}\n\
+      \    {% if tag==7 or tag == 14 or tag==2 or tag==9 %}\n        {% set _ = sentence.append(token)\
+      \ %}\n    {% endif %}\n{% endfor %}\n{{ ' '.join(sentence) }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: find_time_and_loc_zs
+    reference: ''
+  605716b4-e828-4058-9a99-70b817959eaa: !Template
+    answer_choices: null
+    id: 605716b4-e828-4058-9a99-70b817959eaa
+    jinja: "\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0645\u06A9\u0627\
+      \u0646 \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\u0646:\n\u062C\
+      \u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence = [] %}\n\
+      {% for token, tag in zip(tokens, tags) %}\n    {% if tag==2 or tag == 9 %}\n\
+      \        {% set _ = sentence.append(token) %}\n    {% endif %}\n{% endfor %}\n\
+      {{ ' '.join(sentence) }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: find_loc
+    reference: ''
+  73b0d870-8edf-4908-be9d-27c14b5209ea: !Template
+    answer_choices: null
+    id: 73b0d870-8edf-4908-be9d-27c14b5209ea
+    jinja: "\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0627\u0646\u0633\
+      \u0627\u0646 \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\u0646\
+      :\n\u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence\
+      \ = [] %}\n{% for token, tag in zip(tokens, tags) %}\n    {% if tag==6 or tag\
+      \ == 13 %}\n        {% set _ = sentence.append(token) %}\n    {% endif %}\n\
+      {% endfor %}\n{{ ' '.join(sentence) }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: find_per
+    reference: ''
+  e65b5d7a-1348-415a-8ead-5e004304a336: !Template
+    answer_choices: null
+    id: e65b5d7a-1348-415a-8ead-5e004304a336
+    jinja: "\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u062F\u0631\u0635\
+      \u062F \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\u0646:\n\u062C\
+      \u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence = [] %}\n\
+      {% for token, tag in zip(tokens, tags) %}\n    {% if tag==5 or tag == 12 %}\n\
+      \        {% set _ = sentence.append(token) %}\n    {% endif %}\n{% endfor %}\n\
+      {{ ' '.join(sentence) }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: find_pct
     reference: ''
   f3c0b15f-8e16-40a7-ae0d-8e1f6d700ba1: !Template
     answer_choices: null
     id: f3c0b15f-8e16-40a7-ae0d-8e1f6d700ba1
-    jinja: "\n\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0633\u0627\
-      \u0632\u0645\u0627\u0646 \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\
-      \u0646:\n\u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence\
+    jinja: "\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0633\u0627\u0632\
+      \u0645\u0627\u0646 \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\u0646\
+      :\n\u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence\
       \ = [] %}\n{% for token, tag in zip(tokens, tags) %}\n    {% if tag==4 or tag\
       \ == 11 %}\n        {% set _ = sentence.append(token) %}\n    {% endif %}\n\
       {% endfor %}\n{{ ' '.join(sentence) }}\n"
@@ -97,7 +122,25 @@ templates:
       languages:
       - fa
       metrics:
-      - BLEU
+      - Accuracy
       original_task: true
     name: find_org
+    reference: ''
+  fcfc8288-7d58-4a1c-8e3c-a2903347337e: !Template
+    answer_choices: null
+    id: fcfc8288-7d58-4a1c-8e3c-a2903347337e
+    jinja: "\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u067E\u0648\u0644\
+      \ \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\u0646:\n\u062C\u0645\
+      \u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence = [] %}\n{% for\
+      \ token, tag in zip(tokens, tags) %}\n    {% if tag==3 or tag == 10 %}\n   \
+      \     {% set _ = sentence.append(token) %}\n    {% endif %}\n{% endfor %}\n\
+      {{ ' '.join(sentence) }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: find_money
     reference: ''
