@@ -1,6 +1,43 @@
 dataset: persian_ner
 subset: fold1
 templates:
+  0acc4687-47a4-4092-b3aa-b5b21172b451: !Template
+    answer_choices: "\u0636\u0645\u06CC\u0631 ||| \u062A\u0633\u0647\u06CC\u0644\u0627\
+      \u062A \u06CC\u0627 \u0633\u0627\u062E\u062A\u0645\u0627\u0646 ||| \u0633\u0627\
+      \u0632\u0645\u0627\u0646 ||| \u0634\u062E\u0635 ||| \u0631\u0648\u06CC\u062F\
+      \u0627\u062F||| \u0645\u06A9\u0627\u0646 ||| \u0647\u06CC\u0686\u06A9\u062F\u0627\
+      \u0645"
+    id: 0acc4687-47a4-4092-b3aa-b5b21172b451
+    jinja: " \u06A9\u062F\u0627\u0645 \u06CC\u06A9 \u0627\u0632 \u0627\u06CC\u0646\
+      \ \u0645\u0648\u0627\u0631\u062F \u062F\u0631 \u062C\u0645\u0644\u0647 \u06CC\
+      \ \u062F\u0627\u062F\u0647 \u0634\u062F\u0647 \u0648\u062C\u0648\u062F \u062F\
+      \u0627\u0631\u062F\u061F (\u0636\u0645\u06CC\u0631\u060C \u062A\u0633\u0647\u06CC\
+      \u0644\u0627\u062A \u06CC\u0627 \u0633\u0627\u062E\u062A\u0645\u0627\u0646\u060C\
+      \ \u0633\u0627\u0632\u0645\u0627\u0646\u060C \u0634\u062E\u0635\u060C \u0631\
+      \u0648\u06CC\u062F\u0627\u062F\u060C \u0645\u06A9\u0627\u0646\u060C \u0647\u06CC\
+      \u0686\u06A9\u062F\u0627\u0645)\n\u062C\u0645\u0644\u0647 : {{ tokens|join('\
+      \ ') }}\n|||\n{% set sentence = [] %}\n{% for token, tag in zip(tokens, ner_tags)\
+      \ %}\n    {% if tag==7 %}\n        {% set _ = sentence.append(\"\u0631\u0648\
+      \u06CC\u062F\u0627\u062F\") %}\n    {% endif %}\n{% if tag==8 %}\n        {%\
+      \ set _ = sentence.append(\"\u062A\u0633\u0647\u06CC\u0644\u0627\u062A \u06CC\
+      \u0627 \u0633\u0627\u062E\u062A\u0645\u0627\u0646\") %}\n    {% endif %}\n{%\
+      \ if tag==9 %}\n        {% set _ = sentence.append(\"\u0645\u06A9\u0627\u0646\
+      \") %}\n    {% endif %}\n{% if tag==10 %}\n        {% set _ = sentence.append(\"\
+      \u0633\u0627\u0632\u0645\u0627\u0646\") %}\n    {% endif %}\n{% if tag==11 %}\n\
+      \        {% set _ = sentence.append(\"\u0634\u062E\u0635\") %}\n    {% endif\
+      \ %}\n{% if tag==12 %}\n        {% set _ = sentence.append(\"\u0636\u0645\u06CC\
+      \u0631\") %}\n    {% endif %}\n{% endfor %}\n\n{% if sentence %}\n    {{ sentence\
+      \ | unique | join(' ') }}\n{% else %}\n    \u0647\u06CC\u0686\u06A9\u062F\u0627\
+      \u0645\n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_entity_fs
+    reference: ''
   116ae827-e69f-4096-8e30-25b49dd13789: !Template
     answer_choices: null
     id: 116ae827-e69f-4096-8e30-25b49dd13789
@@ -22,20 +59,20 @@ templates:
   4c867a7e-baf2-4622-870b-f790b36ef5e0: !Template
     answer_choices: null
     id: 4c867a7e-baf2-4622-870b-f790b36ef5e0
-    jinja: "\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0631\u0648\u06CC\
-      \u062F\u0627\u062F \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\u0646\
-      :\n\u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence\
-      \ = [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n    {% if tag==12\
-      \ or tag == 6 %}\n        {% set _ = sentence.append(token) %}\n    {% endif\
-      \ %}\n{% endfor %}\n{{ ' '.join(sentence) }}\n"
+    jinja: "\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0636\u0645\u06CC\
+      \u0631 \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\u0646:\n\u062C\
+      \u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence = [] %}\n\
+      {% for token, tag in zip(tokens, ner_tags) %}\n    {% if tag==12 or tag == 6\
+      \ %}\n        {% set _ = sentence.append(token) %}\n    {% endif %}\n{% endfor\
+      \ %}\n{{ ' '.join(sentence) }}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
       - fa
       metrics:
-      - Accuracy
+      - BLEU
       original_task: true
-    name: find_pronoun?????
+    name: find_pronoun_zs
     reference: ''
   5cc4d388-22ec-42f4-9c82-f754983a485d: !Template
     answer_choices: null
@@ -97,7 +134,7 @@ templates:
     id: e69a92f4-4440-4ebc-b8da-f66780945785
     jinja: ":\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0631\u0648\
       \u06CC\u062F\u0627\u062F \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\
-      \u0646\n\u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence\
+      \u0646\n\u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n{% set sentence\
       \ = [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n    {% if tag==1 or\
       \ tag == 7 %}\n        {% set _ = sentence.append(token) %}\n    {% endif %}\n\
       {% endfor %}\n{{ ' '.join(sentence) }}\n"

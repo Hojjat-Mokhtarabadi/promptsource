@@ -14,9 +14,9 @@ templates:
       languages:
       - fa
       metrics:
-      - Accuracy
+      - BLEU
       original_task: true
-    name: find_date
+    name: find_date_zs
     reference: ''
   1b02e956-871b-413c-8610-3925420a246b: !Template
     answer_choices: null
@@ -32,9 +32,9 @@ templates:
       languages:
       - fa
       metrics:
-      - Accuracy
+      - BLEU
       original_task: true
-    name: find_time
+    name: find_time_zs
     reference: ''
   24c578ba-9297-4275-8e3b-19a00688b5ca: !Template
     answer_choices: null
@@ -68,9 +68,44 @@ templates:
       languages:
       - fa
       metrics:
+      - BLEU
+      original_task: true
+    name: find_loc_zs
+    reference: ''
+  72701349-e9af-4519-8294-cc5163495c23: !Template
+    answer_choices: "\u0632\u0645\u0627\u0646||| \u0645\u06A9\u0627\u0646||| \u0627\
+      \u0631\u0632||| \u0633\u0627\u0632\u0645\u0627\u0646||| \u062F\u0631\u0635\u062F\
+      ||| \u0634\u062E\u0635||| \u0647\u06CC\u0686\u06A9\u062F\u0627\u0645||| \u062A\
+      \u0627\u0631\u06CC\u062E"
+    id: 72701349-e9af-4519-8294-cc5163495c23
+    jinja: " \u06A9\u062F\u0627\u0645 \u06CC\u06A9 \u0627\u0632 \u0627\u06CC\u0646\
+      \ \u0645\u0648\u0627\u0631\u062F \u062F\u0631 \u062C\u0645\u0644\u0647 \u06CC\
+      \ \u062F\u0627\u062F\u0647 \u0634\u062F\u0647 \u0648\u062C\u0648\u062F \u062F\
+      \u0627\u0631\u062F\u061F (\u062A\u0627\u0631\u06CC\u062E\u060C \u0632\u0645\u0627\
+      \u0646\u060C \u0645\u06A9\u0627\u0646\u060C \u0627\u0631\u0632\u060C \u0633\u0627\
+      \u0632\u0645\u0627\u0646\u060C \u062F\u0631\u0635\u062F\u060C \u0634\u062E\u0635\
+      \u060C \u0647\u06CC\u0686\u06A9\u062F\u0627\u0645)\n\u062C\u0645\u0644\u0647\
+      \ : {{ tokens|join(' ') }}\n|||\n{% set sentence = [] %}\n{% for token, tag\
+      \ in zip(tokens, tags) %}\n    {% if tag==1 %}\n        {% set _ = sentence.append(\"\
+      \u062A\u0627\u0631\u06CC\u062E\") %}\n    {% endif %}\n{% if tag==2 %}\n   \
+      \     {% set _ = sentence.append(\"\u0645\u06A9\u0627\u0646\") %}\n    {% endif\
+      \ %}\n{% if tag==3 %}\n        {% set _ = sentence.append(\"\u0627\u0631\u0632\
+      \") %}\n    {% endif %}\n{% if tag==4 %}\n        {% set _ = sentence.append(\"\
+      \u0633\u0627\u0632\u0645\u0627\u0646\") %}\n    {% endif %}\n{% if tag==5 %}\n\
+      \        {% set _ = sentence.append(\"\u062F\u0631\u0635\u062F\") %}\n    {%\
+      \ endif %}\n{% if tag==6 %}\n        {% set _ = sentence.append(\"\u0634\u062E\
+      \u0635\") %}\n    {% endif %}\n{% if tag==7 %}\n        {% set _ = sentence.append(\"\
+      \u0632\u0645\u0627\u0646\") %}\n    {% endif %}\n{% endfor %}\n\n{% if sentence\
+      \ %}\n    {{ sentence | unique | join(' ') }}\n{% else %}\n    \u0647\u06CC\u0686\
+      \u06A9\u062F\u0627\u0645\n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
       - Accuracy
       original_task: true
-    name: find_loc
+    name: which_entity_fs
     reference: ''
   73b0d870-8edf-4908-be9d-27c14b5209ea: !Template
     answer_choices: null
@@ -86,9 +121,9 @@ templates:
       languages:
       - fa
       metrics:
-      - Accuracy
+      - BLEU
       original_task: true
-    name: find_per
+    name: find_per_zs
     reference: ''
   e65b5d7a-1348-415a-8ead-5e004304a336: !Template
     answer_choices: null
@@ -104,9 +139,9 @@ templates:
       languages:
       - fa
       metrics:
-      - Accuracy
+      - BLEU
       original_task: true
-    name: find_pct
+    name: find_pct_zs
     reference: ''
   f3c0b15f-8e16-40a7-ae0d-8e1f6d700ba1: !Template
     answer_choices: null
@@ -122,9 +157,9 @@ templates:
       languages:
       - fa
       metrics:
-      - Accuracy
+      - BLEU
       original_task: true
-    name: find_org
+    name: find_org_zs
     reference: ''
   fcfc8288-7d58-4a1c-8e3c-a2903347337e: !Template
     answer_choices: null
@@ -140,7 +175,7 @@ templates:
       languages:
       - fa
       metrics:
-      - Accuracy
+      - BLEU
       original_task: true
-    name: find_money
+    name: find_money_zs
     reference: ''

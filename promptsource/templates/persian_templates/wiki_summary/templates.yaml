@@ -12,7 +12,7 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: write_article_summary_fs
+    name: write_article_summary_zs
     reference: ''
   3ffd4a3c-62ed-40ad-baae-aac67775dfbf: !Template
     answer_choices: null
@@ -31,6 +31,49 @@ templates:
       - BLEU
       original_task: true
     name: write_title_zs
+    reference: ''
+  4435c917-20b6-4a7a-99e4-027fbee08c5a: !Template
+    answer_choices: '{{title}} ||| {{highlights}}'
+    id: 4435c917-20b6-4a7a-99e4-027fbee08c5a
+    jinja: "\u0627\u06CC\u0646 \u0645\u0642\u0627\u0644\u0647 \u06CC \u0645\u0639\u062A\
+      \u0628\u0631 \u062F\u0631 \u0633\u0627\u06CC\u062A \u0648\u06CC\u06A9\u06CC\u067E\
+      \u062F\u06CC\u0627 \u06AF\u0630\u0627\u0634\u062A\u0647 \u0634\u062F\u0647 \u0627\
+      \u0633\u062A. \u0634\u0645\u0627 \u0628\u0647 \u0639\u0646\u0648\u0627\u0646\
+      \ \u0646\u0627\u0634\u0631\u060C \u06A9\u062F\u0627\u0645 \u06CC\u06A9 \u0627\
+      \u0632 \u0645\u062A\u0646 \u0647\u0627\u06CC \u0632\u06CC\u0631 \u0631\u0627\
+      \ \u0628\u0631\u0627\u06CC \u062A\u06CC\u062A\u0631 \u0627\u0646\u062A\u062E\
+      \u0627\u0628 \u0645\u06CC\u06A9\u0646\u06CC\u062F\u061F\n\u0645\u0642\u0627\u0644\
+      \u0647: {{article}}\n\u0645\u062A\u0646 \u06F1: \n\u0645\u062A\u0646 \u06F2\
+      :\n|||\n{% set random_number = range(2)|random %} {% if random_number == 1 %}\n\
+      \  \u06F1 \u0645\u062A\u0646: {{title}}\n{% else %}\n    \u06F2 \u0645\u062A\
+      \u0646: {{highlights}}\n{% endif %}\n|||\n{% if random_number == 1 %}\n    \u0645\
+      \u062A\u0646 : \u0633\u0648\u0627\u0644\u06CC\n{% else %}\n    \u0645\u062A\u0646\
+      : \u062E\u0628\u0631\u06CC\n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_title_fs
+    reference: ''
+  4cd30382-3993-427e-891c-0658a0b88ec5: !Template
+    answer_choices: null
+    id: 4cd30382-3993-427e-891c-0658a0b88ec5
+    jinja: "\u0627\u0637\u0644\u0627\u0639\u0627\u062A \u0645\u0631\u062A\u0628\u0637\
+      \ \u0628\u0627 \"{{title}}\" \u0631\u0627 \u062C\u0645\u0639\u200C\u0622\u0648\
+      \u0631\u06CC \u06A9\u0646\u06CC\u062F \u0648 \u06CC\u06A9 \u062E\u0628\u0631\
+      \ \u06A9\u0648\u062A\u0627\u0647 \u0628\u0646\u0648\u06CC\u0633\u06CC\u062F\n\
+      |||\n{{highlights}}\n\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: write_news_zs
     reference: ''
   55957f5e-3068-4ec9-8914-9d22ba3e9a25: !Template
     answer_choices: null
