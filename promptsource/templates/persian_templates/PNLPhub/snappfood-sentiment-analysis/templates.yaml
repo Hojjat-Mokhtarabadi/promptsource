@@ -16,7 +16,7 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: what_is_sentiment_fs
+    name: what_is_sentiment
     reference: ''
   1148638e-63e2-4de4-bfa3-28c1daced9e1: !Template
     answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
@@ -33,7 +33,7 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: is_it_neg_zs
+    name: is_it_neg
     reference: ''
   717da5b7-df45-483e-9d90-57807ca4b027: !Template
     answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
@@ -55,7 +55,7 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: recommendation_fs
+    name: recommendation
     reference: ''
   79984cfe-1d62-4fbf-baf3-aca98cccb212: !Template
     answer_choices: "\u0645\u062B\u0628\u062A ||| \u0645\u0646\u0641\u06CC"
@@ -72,7 +72,7 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: is_it_pos_or_neg_fs
+    name: is_it_pos_or_neg
     reference: ''
   b571c6b9-1b6b-4d57-b7ce-c89630a2423c: !Template
     answer_choices: null
@@ -89,7 +89,7 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: gen_sentiment_fs
+    name: gen_sentiment
     reference: ''
   d7be4430-9112-441e-abdd-d7f2b24f1192: !Template
     answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
@@ -106,7 +106,7 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: is_it_pos_zs
+    name: is_it_pos
     reference: ''
   fe6815c7-81ea-4301-b8fe-b18c4adebc30: !Template
     answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
@@ -125,5 +125,5 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: to_which_does_belong_zs
+    name: to_which_does_belong
     reference: ''
