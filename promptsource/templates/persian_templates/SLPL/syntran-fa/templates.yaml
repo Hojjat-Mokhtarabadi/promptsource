@@ -6,9 +6,9 @@ templates:
     jinja: "\u0628\u0627 \u062A\u0648\u062C\u0647 \u0628\u0647 \u0633\u0648\u0627\u0644\
       \ \u0648 \u062C\u0648\u0627\u0628 \u06A9\u0648\u062A\u0627\u0647 \u0632\u06CC\
       \u0631 \u06CC\u06A9 \u062C\u0648\u0627\u0628 \u0628\u0644\u0646\u062F \u0628\
-      \u0646\u0648\u06CC\u0633\n\n\u0633\u0648\u0627\u0644: {{question}}\n\u062C\u0648\
-      \u0627\u0628 \u06A9\u0648\u062A\u0627\u0647: {{short_answer}}\n\u062C\u0648\u0627\
-      \u0628 \u0628\u0644\u0646\u062F: \n||| {{fluent_answer}}"
+      \u0646\u0648\u06CC\u0633\n\n\n\u0633\u0648\u0627\u0644: {{question}}\n\u062C\
+      \u0648\u0627\u0628 \u06A9\u0648\u062A\u0627\u0647: {{short_answer}}\n\u062C\u0648\
+      \u0627\u0628 \u0628\u0644\u0646\u062F: \n||| {{fluent_answer}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -16,7 +16,7 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: gen_fluent_with_short_fs
+    name: gen_fluent_with_short
     reference: ''
   30332ad2-288a-44b0-9d52-5d3382ab4620: !Template
     answer_choices: " \u0645\u062A\u0646 \u0627\u0648\u0644 \u0633\u0648\u0627\u0644\
@@ -31,7 +31,7 @@ templates:
       \u0648\u0627\u0628 \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0622\u0646\
       \ \u0627\u0633\u062A\u061F\n{% set random_number = range(2)|random %} {% if\
       \ random_number == 1 %}\n\u0645\u062A\u0646 \u0627\u0648\u0644: {{question}}\n\
-      \u0645\u062A\u0646 \u062F\u0648\u0645: {{fluent_answer}}\n{% else %}\n\u0645\
+      \u0645\u062A\u0646 \u062F\u0648\u0645: {{fluent_answer}}\n{% else %}\n\n\u0645\
       \u062A\u0646 \u0627\u0648\u0644: {{fluent_answer}}\n\u0645\u062A\u0646 \u062F\
       \u0648\u0645: {{question}}\n{% endif %}\n|||\n{% if random_number == 1 %}\n\
       \    \u0645\u062A\u0646 \u0627\u0648\u0644 \u0633\u0648\u0627\u0644 \u0648 \u0645\
@@ -46,7 +46,7 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: Question_or_Answer_fs
+    name: Question_or_Answer
     reference: ''
   79781403-8250-4402-a2be-96c40c287871: !Template
     answer_choices: null
@@ -54,9 +54,9 @@ templates:
     jinja: "\u0628\u0627 \u062F\u0631 \u0646\u0638\u0631 \u06AF\u0631\u0641\u062A\u0646\
       \ \u0633\u0648\u0627\u0644 \u06CC\u06A9 \u062C\u0648\u0627\u0628 \u06A9\u0648\
       \u062A\u0627\u0647 \u0648 \u06CC\u06A9 \u062C\u0648\u0627\u0628 \u0628\u0644\
-      \u0646\u062F \u0628\u0646\u0648\u06CC\u0633\n\n\u0633\u0648\u0627\u0644: {{question}}\n\
+      \u0646\u062F \u0628\u0646\u0648\u06CC\u0633\n\n\n\u0633\u0648\u0627\u0644: {{question}}\n\
       \u062C\u0648\u0627\u0628 \u06A9\u0648\u062A\u0627\u0647: \n||| {{short_answer}}\
-      \ \n\n\u062C\u0648\u0627\u0628 \u0628\u0644\u0646\u062F : {{fluent_answer}}"
+      \ \n\u062C\u0648\u0627\u0628 \u0628\u0644\u0646\u062F : {{fluent_answer}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -64,14 +64,14 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: gen_short_long_ans_zs
+    name: gen_short_long_ans
     reference: ''
   9d4db4db-b764-4828-9cc2-6e4a184e9b8b: !Template
     answer_choices: null
     id: 9d4db4db-b764-4828-9cc2-6e4a184e9b8b
     jinja: "\u0628\u0631\u0627\u0633\u0627\u0633 \u0633\u0648\u0627\u0644 \u0648 \u062C\
       \u0648\u0627\u0628 \u0628\u0644\u0646\u062F \u06CC\u06A9 \u062C\u0648\u0627\u0628\
-      \ \u06A9\u0648\u062A\u0627\u0647 \u0628\u0646\u0648\u06CC\u0633\n\n\u0633\u0648\
+      \ \u06A9\u0648\u062A\u0627\u0647 \u0628\u0646\u0648\u06CC\u0633\n\n\n\u0633\u0648\
       \u0627\u0644: {{question}}\n\u062C\u0648\u0627\u0628 \u0628\u0644\u0646\u062F\
       : {{fluent_answer}}\n\u062C\u0648\u0627\u0628 \u06A9\u0648\u062A\u0627\u0647\
       :\n||| {{short_answer}}"
@@ -90,8 +90,8 @@ templates:
     jinja: "\u0633\u0648\u0627\u0644 \u062F\u0627\u062F\u0647 \u0634\u062F\u0647 \u0631\
       \u0627 \u062F\u0642\u06CC\u0642 \u0645\u0637\u0627\u0644\u0639\u0647 \u06A9\u0646\
       \ \u0648 \u062C\u0648\u0627\u0628 \u0645\u0631\u062A\u0628\u0637 \u0628\u0627\
-      \ \u0622\u0646 \u0631\u0627 \u0628\u0646\u0648\u06CC\u0633\n\n\u0633\u0648\u0627\
-      \u0644: {{question}}\n\u062C\u0648\u0627\u0628: \n||| {{short_answer}}\n"
+      \ \u0622\u0646 \u0631\u0627 \u0628\u0646\u0648\u06CC\u0633\n\n\n\u0633\u0648\
+      \u0627\u0644: {{question}}\n\u062C\u0648\u0627\u0628: \n||| {{short_answer}}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -99,7 +99,7 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: answer_question_fs
+    name: answer_question
     reference: ''
   e1562dfa-d5a1-4ee1-9404-93ef3b8fd264: !Template
     answer_choices: null
@@ -109,9 +109,9 @@ templates:
       \ \u06CC\u06A9 \u0633\u0648\u0627\u0644 \u0627\u0632 \u0645\u062A\u0646 \u0627\
       \u0648\u0644 \u06A9\u0647 \u062C\u0648\u0627\u0628\u0634 \u0645\u062A\u0646\
       \ \u062F\u0648\u0645 \u0647\u0633\u062A \u0631\u0627 \u0628\u0646\u0648\u06CC\
-      \u0633 \n\n\u0645\u062A\u0646 \u0627\u0648\u0644: {{fluent_answer}}\n\u0645\u062A\
-      \u0646 \u062F\u0648\u0645: {{short_answer}}\n\u0633\u0648\u0627\u0644: \n|||\
-      \ {{question}}"
+      \u0633 \n\n\n\u0645\u062A\u0646 \u0627\u0648\u0644: {{fluent_answer}}\n\u0645\
+      \u062A\u0646 \u062F\u0648\u0645: {{short_answer}}\n\u0633\u0648\u0627\u0644\
+      : \n||| {{question}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -119,5 +119,5 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: gen_q_with_long_short_ans_zs
+    name: gen_q_with_long_short_ans
     reference: ''
