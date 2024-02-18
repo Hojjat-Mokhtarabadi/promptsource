@@ -97,8 +97,8 @@ templates:
     jinja: "\u0627\u06CC\u0627 \u0645\u062A\u0646 \u062F\u0627\u062F\u0647 \u0634\u062F\
       \u0647 \u0627\u062D\u0633\u0627\u0633 \n\u062E\u0648\u0628\" \u0631\u0627 \u0645\
       \u0646\u062A\u0642\u0644 \u0645\u06CC\u06A9\u0646\u062F\u061F\"\n\n\u0645\u062A\
-      \u0646: {{comment}}\n\u0627\u062D\u0633\u0627\u0633: \n|||\n{% if label_id ==\
-      \ 0%}\n \u0628\u0644\u0647\n{% else %}\n \u062E\u06CC\u0631\n{% endif %}"
+      \u0646: {{comment}}\n\u062C\u0648\u0627\u0628:  \n|||\n{% if label_id == 0%}\n\
+      \ \u0628\u0644\u0647\n{% else %}\n \u062E\u06CC\u0631\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -115,8 +115,8 @@ templates:
       \u0646 \u062F\u0627\u062F\u0647 \u0634\u062F\u0647 \u0627\u062D\u0633\u0627\u0633\
       \ {{\n{0: \"\u062E\u0648\u0628\",\n1: \"\u0628\u062F\"}[random]\n}} \u0631\u0627\
       \ \u0645\u0646\u062A\u0642\u0644 \u0645\u06CC\u06A9\u0646\u062F\u061F \n\n\u0645\
-      \u062A\u0646: {{comment}}\n\u0627\u062D\u0633\u0627\u0633: \n|||\n{% if random\
-      \ == label_id%}\n \u0628\u0644\u0647\n{% else %}\n \u062E\u06CC\u0631\n{% endif\
+      \u062A\u0646: {{comment}}\n\u062C\u0648\u0627\u0628: \n|||\n{% if random ==\
+      \ label_id%}\n \u0628\u0644\u0647\n{% else %}\n \u062E\u06CC\u0631\n{% endif\
       \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

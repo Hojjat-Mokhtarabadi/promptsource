@@ -7,11 +7,11 @@ templates:
       \u06A9 \u0645\u062A\u0646 \u062E\u0628\u0631\u06CC \u06CC\u0627 \u0633\u0648\
       \u0627\u0644\u06CC \u0627\u0633\u062A\u061F\n{% set random_number = range(2)|random\
       \ %}\n {% if random_number == 1 %}\n\u0645\u062A\u0646: {{question}}\n{% else\
-      \ %}\n\u0645\u062A\u0646: {{context}}\n{% endif %}\n|||\n{% if random_number\
-      \ == 1 %}\n    \u0645\u062A\u0646 : \u0633\u0648\u0627\u0644\u06CC\n{% else\
-      \ %}\n    \u0645\u062A\u0646: \u062E\u0628\u0631\u06CC\n{% endif %}\n"
+      \ %}\n\u0645\u062A\u0646: {{context}}\n{% endif %}\n\u067E\u0627\u0633\u062E\
+      : \n|||\n{% if random_number == 1 %}\n\u0633\u0648\u0627\u0644\u06CC\n{% else\
+      \ %}\n \u062E\u0628\u0631\u06CC\n{% endif %}\n"
     metadata: !TemplateMetadata
-      choices_in_prompt: false
+      choices_in_prompt: true
       languages:
       - fa
       metrics:
@@ -66,8 +66,8 @@ templates:
     id: 4a765168-1f75-44d5-9b1c-c7a82c239ad2
     jinja: ".\u0627\u0632 \u0645\u062A\u0646 \u062F\u0627\u062F\u0647 \u0634\u062F\
       \u0647\u060C \u06CC\u06A9 \u0633\u0648\u0627\u0644 \u0627\u0633\u062A\u062E\u0631\
-      \u0627\u062C \u06A9\u0646\n\n\n\u0645\u062A\u0646: {{context}}\n\u0633\u0648\
-      \u0627\u0644: \n|||\n{{question}}"
+      \u0627\u062C \u06A9\u0646\n\n\n\u0645\u062A\u0646: {{context}}\n\u062C\u0648\
+      \u0627\u0628: \n|||\n{{question}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -88,15 +88,16 @@ templates:
       \ \u0648 \u06A9\u062F\u0627\u0645 \u06CC\u06A9 \u0633\u0648\u0627\u0644 \u0645\
       \u0631\u062A\u0628\u0637 \u0628\u0627 \u0627\u0646 \u0627\u0633\u062A\u061F\n\
       \n\n\u0645\u062A\u0646 \u06F1: {{context}}\n\u0645\u062A\u0646 \u06F2: {{question}}\n\
-      |||\n\u0645\u062A\u0646 \u0627\u0648\u0644 \u0645\u062A\u0646 \u062E\u0628\u0631\
-      \u06CC \u0648 \u0645\u062A\u0646 \u062F\u0648\u0645 \u0633\u0648\u0627\u0644\
-      \ \u0645\u0631\u0628\u0648\u0637\u0647 \u0627\u0633\u062A\n"
+      \u067E\u0627\u0633\u062E: \n|||\n\u0645\u062A\u0646 \u0627\u0648\u0644 \u0645\
+      \u062A\u0646 \u062E\u0628\u0631\u06CC \u0648 \u0645\u062A\u0646 \u062F\u0648\
+      \u0645 \u0633\u0648\u0627\u0644 \u0645\u0631\u0628\u0648\u0637\u0647 \u0627\u0633\
+      \u062A\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
       - fa
       metrics:
-      - Accuracy
+      - BLEU
       original_task: true
     name: which_is_context_question
     reference: ''

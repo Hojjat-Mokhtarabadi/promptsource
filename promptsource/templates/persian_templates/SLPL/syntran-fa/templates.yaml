@@ -33,12 +33,12 @@ templates:
       \ random_number == 1 %}\n\u0645\u062A\u0646 \u0627\u0648\u0644: {{question}}\n\
       \u0645\u062A\u0646 \u062F\u0648\u0645: {{fluent_answer}}\n{% else %}\n\n\u0645\
       \u062A\u0646 \u0627\u0648\u0644: {{fluent_answer}}\n\u0645\u062A\u0646 \u062F\
-      \u0648\u0645: {{question}}\n{% endif %}\n|||\n{% if random_number == 1 %}\n\
-      \    \u0645\u062A\u0646 \u0627\u0648\u0644 \u0633\u0648\u0627\u0644 \u0648 \u0645\
-      \u062A\u0646 \u062F\u0648\u0645 \u062C\u0648\u0627\u0628 \u0627\u0633\u062A\n\
-      {% else %}\n    \u0645\u062A\u0646 \u062F\u0648\u0645 \u0633\u0648\u0627\u0644\
-      \ \u0648 \u0645\u062A\u0646 \u0627\u0648\u0644 \u062C\u0648\u0627\u0628 \u0627\
-      \u0633\u062A\n{% endif %}"
+      \u0648\u0645: {{question}}\n{% endif %}\u062C\u0648\u0627\u0628:\n|||\n{% if\
+      \ random_number == 1 %}\n    \u0645\u062A\u0646 \u0627\u0648\u0644 \u0633\u0648\
+      \u0627\u0644 \u0648 \u0645\u062A\u0646 \u062F\u0648\u0645 \u062C\u0648\u0627\
+      \u0628 \u0627\u0633\u062A\n{% else %}\n    \u0645\u062A\u0646 \u062F\u0648\u0645\
+      \ \u0633\u0648\u0627\u0644 \u0648 \u0645\u062A\u0646 \u0627\u0648\u0644 \u062C\
+      \u0648\u0627\u0628 \u0627\u0633\u062A\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -90,8 +90,8 @@ templates:
     jinja: "\u0633\u0648\u0627\u0644 \u062F\u0627\u062F\u0647 \u0634\u062F\u0647 \u0631\
       \u0627 \u062F\u0642\u06CC\u0642 \u0645\u0637\u0627\u0644\u0639\u0647 \u06A9\u0646\
       \ \u0648 \u062C\u0648\u0627\u0628 \u0645\u0631\u062A\u0628\u0637 \u0628\u0627\
-      \ \u0622\u0646 \u0631\u0627 \u0628\u0646\u0648\u06CC\u0633\n\n\n\u0633\u0648\
-      \u0627\u0644: {{question}}\n\u062C\u0648\u0627\u0628: \n||| {{short_answer}}\n"
+      \ \u0622\u0646 \u0631\u0627 \u0628\u0646\u0648\u06CC\u0633\n\n\u0633\u0648\u0627\
+      \u0644: {{question}}\n\u062C\u0648\u0627\u0628: \n||| {{short_answer}}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
