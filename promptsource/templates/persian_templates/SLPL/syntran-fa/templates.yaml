@@ -29,7 +29,7 @@ templates:
       \ \u0628\u0647 \u0646\u0638\u0631 \u0634\u0645\u0627 \u06A9\u062F\u0627\u0645\
       \ \u0633\u0648\u0627\u0644 \u0648 \u06A9\u062F\u0627\u0645\u06CC\u06A9 \u062C\
       \u0648\u0627\u0628 \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0622\u0646\
-      \ \u0627\u0633\u062A\u061F\n{% set random_number = range(2)|random %} {% if\
+      \ \u0627\u0633\u062A\u061F\n\n{% set random_number = range(2)|random %} {% if\
       \ random_number == 1 %}\n\u0645\u062A\u0646 \u0627\u0648\u0644: {{question}}\n\
       \u0645\u062A\u0646 \u062F\u0648\u0645: {{fluent_answer}}\n{% else %}\n\n\u0645\
       \u062A\u0646 \u0627\u0648\u0644: {{fluent_answer}}\n\u0645\u062A\u0646 \u062F\
@@ -82,7 +82,7 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: gen_short_ans_with_long_fs
+    name: gen_short_ans_with_long
     reference: ''
   a0ce61da-0f70-4f2b-9384-b1ff53666113: !Template
     answer_choices: null
