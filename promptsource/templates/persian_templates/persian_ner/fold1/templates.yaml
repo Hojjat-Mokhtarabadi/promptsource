@@ -2,33 +2,142 @@ dataset: persian_ner
 subset: fold1
 templates:
   0acc4687-47a4-4092-b3aa-b5b21172b451: !Template
-    answer_choices: "\u0636\u0645\u06CC\u0631 ||| \u062A\u0633\u0647\u06CC\u0644\u0627\
-      \u062A \u06CC\u0627 \u0633\u0627\u062E\u062A\u0645\u0627\u0646 ||| \u0633\u0627\
-      \u0632\u0645\u0627\u0646 ||| \u0634\u062E\u0635 ||| \u0631\u0648\u06CC\u062F\
-      \u0627\u062F||| \u0645\u06A9\u0627\u0646 ||| \u0647\u06CC\u0686\u06A9\u062F\u0627\
-      \u0645"
+    answer_choices: null
     id: 0acc4687-47a4-4092-b3aa-b5b21172b451
     jinja: " \u06A9\u062F\u0627\u0645 \u06CC\u06A9 \u0627\u0632 \u0627\u06CC\u0646\
       \ \u0645\u0648\u0627\u0631\u062F \u062F\u0631 \u062C\u0645\u0644\u0647 \u06CC\
       \ \u062F\u0627\u062F\u0647 \u0634\u062F\u0647 \u0648\u062C\u0648\u062F \u062F\
-      \u0627\u0631\u062F\u061F (\u0636\u0645\u06CC\u0631\u060C \u062A\u0633\u0647\u06CC\
-      \u0644\u0627\u062A \u06CC\u0627 \u0633\u0627\u062E\u062A\u0645\u0627\u0646\u060C\
-      \ \u0633\u0627\u0632\u0645\u0627\u0646\u060C \u0634\u062E\u0635\u060C \u0631\
+      \u0627\u0631\u062F\u061F (\u0645\u062D\u0635\u0648\u0644\u060C \u062A\u0633\u0647\
+      \u06CC\u0644\u0627\u062A \u06CC\u0627 \u0633\u0627\u062E\u062A\u0645\u0627\u0646\
+      \u060C \u0633\u0627\u0632\u0645\u0627\u0646\u060C \u0634\u062E\u0635\u060C \u0631\
       \u0648\u06CC\u062F\u0627\u062F\u060C \u0645\u06A9\u0627\u0646\u060C \u0647\u06CC\
-      \u0686\u06A9\u062F\u0627\u0645)\n\u062C\u0645\u0644\u0647 : {{ tokens|join('\
-      \ ') }}\n|||\n{% set sentence = [] %}\n{% for token, tag in zip(tokens, ner_tags)\
-      \ %}\n    {% if tag==7 %}\n        {% set _ = sentence.append(\"\u0631\u0648\
-      \u06CC\u062F\u0627\u062F\") %}\n    {% endif %}\n{% if tag==8 %}\n        {%\
-      \ set _ = sentence.append(\"\u062A\u0633\u0647\u06CC\u0644\u0627\u062A \u06CC\
-      \u0627 \u0633\u0627\u062E\u062A\u0645\u0627\u0646\") %}\n    {% endif %}\n{%\
-      \ if tag==9 %}\n        {% set _ = sentence.append(\"\u0645\u06A9\u0627\u0646\
-      \") %}\n    {% endif %}\n{% if tag==10 %}\n        {% set _ = sentence.append(\"\
+      \u0686\u06A9\u062F\u0627\u0645)\n\n\n\u062C\u0645\u0644\u0647 : {{ tokens|join('\
+      \ ') }}\n\u067E\u0627\u0633\u062E:\n|||\n{% set sentence = [] %}\n{% for token,\
+      \ tag in zip(tokens, ner_tags) %}\n    {% if tag==7 %}\n        {% set _ = sentence.append(\"\
+      \u0631\u0648\u06CC\u062F\u0627\u062F\") %}\n    {% endif %}\n{% if tag==8 %}\n\
+      \        {% set _ = sentence.append(\"\u062A\u0633\u0647\u06CC\u0644\u0627\u062A\
+      \ \u06CC\u0627 \u0633\u0627\u062E\u062A\u0645\u0627\u0646\") %}\n    {% endif\
+      \ %}\n{% if tag==9 %}\n        {% set _ = sentence.append(\"\u0645\u06A9\u0627\
+      \u0646\") %}\n    {% endif %}\n{% if tag==10 %}\n        {% set _ = sentence.append(\"\
       \u0633\u0627\u0632\u0645\u0627\u0646\") %}\n    {% endif %}\n{% if tag==11 %}\n\
       \        {% set _ = sentence.append(\"\u0634\u062E\u0635\") %}\n    {% endif\
-      \ %}\n{% if tag==12 %}\n        {% set _ = sentence.append(\"\u0636\u0645\u06CC\
-      \u0631\") %}\n    {% endif %}\n{% endfor %}\n\n{% if sentence %}\n    {{ sentence\
-      \ | unique | join(' ') }}\n{% else %}\n    \u0647\u06CC\u0686\u06A9\u062F\u0627\
-      \u0645\n{% endif %}\n"
+      \ %}\n{% if tag==12 %}\n        {% set _ = sentence.append(\"\u0645\u062D\u0635\
+      \u0648\u0644\") %}\n    {% endif %}\n{% endfor %}\n\n{% if sentence %}\n   \
+      \ {{ sentence | unique | join(' ') }}\n{% else %}\n    \u0647\u06CC\u0686\u06A9\
+      \u062F\u0627\u0645\n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: which_entity
+    reference: ''
+  116ae827-e69f-4096-8e30-25b49dd13789: !Template
+    answer_choices: null
+    id: 116ae827-e69f-4096-8e30-25b49dd13789
+    jinja: "\u062F\u0631 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0628\u0647\
+      \ \u062F\u0646\u0628\u0627\u0644 \u0646\u0627\u0645 \u0645\u06A9\u0627\u0646\
+      \u200C\u0647\u0627 \u0628\u0627\u0634 \u0648 \u0627\u06AF\u0631 \u0647\u06CC\
+      \u0686 \u0646\u0627\u0645\u06CC \u06CC\u0627\u0641\u062A \u0646\u0634\u062F\u060C\
+      \ \u062C\u0648\u0627\u0628\u062A \"\u0646\u062F\u0627\u0631\u062F\" \u0628\u0627\
+      \u0634\u062F\n\n\n\u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n\u062C\u0648\
+      \u0627\u0628: \n|||\n{% set sentence = [] %}\n{% for token, tag in zip(tokens,\
+      \ ner_tags) %}\n    {% if tag==9 or tag == 3 %}\n        {% set _ = sentence.append(token)\
+      \ %}\n    {% endif %}\n{% endfor %}\n{% if sentence %} {{ sentence | unique\
+      \ | join(' ') }}\n{% else %} \u0646\u062F\u0627\u0631\u062F {% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: find_loc
+    reference: ''
+  4c867a7e-baf2-4622-870b-f790b36ef5e0: !Template
+    answer_choices: null
+    id: 4c867a7e-baf2-4622-870b-f790b36ef5e0
+    jinja: "\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0645\u062D\u0635\
+      \u0648\u0644\u0627\u062A \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\
+      \u0646 \u0648 \u0627\u06AF\u0631 \u0645\u0648\u062C\u0648\u062F\u06CC\u062A\u06CC\
+      \ \u0634\u0646\u0627\u0633\u0627\u06CC\u06CC \u0646\u06A9\u0631\u062F\u06CC\
+      \ \"\u0646\u062F\u0627\u0631\u062F\" \u0631\u0627 \u062F\u0631 \u062C\u0648\u0627\
+      \u0628 \u0628\u0646\u0648\u06CC\u0633\n\n\n\u062C\u0645\u0644\u0647 : {{ tokens|join('\
+      \ ') }}\n\u062C\u0648\u0627\u0628: \n|||\n{% set sentence = [] %}\n{% for token,\
+      \ tag in zip(tokens, ner_tags) %}\n    {% if tag==12 or tag == 6 %}\n      \
+      \  {% set _ = sentence.append(token) %}\n    {% endif %}\n{% endfor %}\n\n{%\
+      \ if sentence %} {{ sentence | unique | join(' ') }}\n{% else %} \u0646\u062F\
+      \u0627\u0631\u062F {% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: find_pronoun
+    reference: ''
+  5cc4d388-22ec-42f4-9c82-f754983a485d: !Template
+    answer_choices: null
+    id: 5cc4d388-22ec-42f4-9c82-f754983a485d
+    jinja: "\u062F\u0631 \u0627\u06CC\u0646 \u0639\u0628\u0627\u0631\u062A  \u0646\
+      \u0627\u0645 \u062A\u0633\u0647\u06CC\u0644\u0627\u062A \u06CC\u0627 \u0633\u0627\
+      \u062E\u062A\u0645\u0627\u0646 \u0647\u0627 \u0631\u0627 \u062C\u0633\u062A\u062C\
+      \u0648 \u06A9\u0646 \u0648 \u062F\u0631 \u0635\u0648\u0631\u062A \u0639\u062F\
+      \u0645 \u06CC\u0627\u0641\u062A\u0646 \u0647\u0631\u06AF\u0648\u0646\u0647 \u0645\
+      \u0648\u0631\u062F\u060C \u0639\u0628\u0627\u0631\u062A \"\u0646\u062F\u0627\
+      \u0631\u062F\" \u0631\u0627 \u067E\u0627\u0633\u062E \u062F\u0647\n\n\n\u0639\
+      \u0628\u0627\u0631\u062A: {{ tokens|join(' ') }}\n\u062C\u0648\u0627\u0628:\
+      \ \n|||\n{% set sentence = [] %}\n{% for token, tag in zip(tokens, ner_tags)\
+      \ %}\n    {% if tag==8 or tag == 2 %}\n        {% set _ = sentence.append(token)\
+      \ %}\n    {% endif %}\n{% endfor %}\n{{ ' '.join(sentence) }}\n{% if sentence\
+      \ %} {{ sentence | unique | join(' ') }}\n{% else %} \u0646\u062F\u0627\u0631\
+      \u062F {% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: find_fac
+    reference: ''
+  5f0cc5aa-6816-4ca5-bd53-842af7663931: !Template
+    answer_choices: null
+    id: 5f0cc5aa-6816-4ca5-bd53-842af7663931
+    jinja: "\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0627\u0633\u0627\
+      \u0645\u06CC \u0627\u0646\u0633\u0627\u0646 \u0647\u0627\u0631\u0627 \u067E\u06CC\
+      \u062F\u0627 \u06A9\u0646 \u0648 \u0627\u06AF\u0631 \u0645\u0648\u062C\u0648\
+      \u062F\u06CC\u062A\u06CC \u0634\u0646\u0627\u0633\u0627\u06CC\u06CC \u0646\u06A9\
+      \u0631\u062F\u06CC \"\u0646\u062F\u0627\u0631\u062F\" \u0631\u0627 \u062F\u0631\
+      \ \u062C\u0648\u0627\u0628 \u0628\u0646\u0648\u06CC\u0633\n\n\n\u062C\u0645\u0644\
+      \u0647 : {{ tokens|join(' ') }}\n\u062C\u0648\u0627\u0628: \n|||\n{% set sentence\
+      \ = [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n    {% if tag==11\
+      \ or tag == 5 %}\n        {% set _ = sentence.append(token) %}\n    {% endif\
+      \ %}\n{% endfor %}\n{% if sentence %} {{ sentence | unique | join(' ') }}\n\
+      {% else %} \u0646\u062F\u0627\u0631\u062F {% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: find_person
+    reference: ''
+  72174e59-05b8-454c-87ee-a5c6b853586a: !Template
+    answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
+    id: 72174e59-05b8-454c-87ee-a5c6b853586a
+    jinja: "\u0622\u06CC\u0627 \u062F\u0631 \u0627\u06CC\u0646 \u0639\u0628\u0627\u0631\
+      \u062A \u0646\u0627\u0645 \u0647\u0631 \u0633\u0627\u0632\u0645\u0627\u0646\u06CC\
+      \ \u0648\u062C\u0648\u062F \u062F\u0627\u0631\u062F\u061F\n- \u0628\u0644\u0647\
+      \n- \u062E\u06CC\u0631\n\n\n\u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n\
+      \u062C\u0648\u0627\u0628: \n|||\n{% set sentence = [] %}\n{% for token, tag\
+      \ in zip(tokens, ner_tags) %}\n    {% if tag==10 or tag == 4 %}\n        {%\
+      \ set _ = sentence.append(token) %}\n    {% endif %}\n{% endfor %}\n{% if sentence\
+      \ %} \u0628\u0644\u0647\n{% else %} \u062E\u06CC\u0631{% endif %}\n\n"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -36,90 +145,22 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: which_entity_fs
-    reference: ''
-  116ae827-e69f-4096-8e30-25b49dd13789: !Template
-    answer_choices: null
-    id: 116ae827-e69f-4096-8e30-25b49dd13789
-    jinja: ":\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0645\u06A9\
-      \u0627\u0646 \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\u0646\n\
-      \u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence =\
-      \ [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n    {% if tag==9 or\
-      \ tag == 3 %}\n        {% set _ = sentence.append(token) %}\n    {% endif %}\n\
-      {% endfor %}\n{{ ' '.join(sentence) }}\n"
-    metadata: !TemplateMetadata
-      choices_in_prompt: false
-      languages:
-      - fa
-      metrics:
-      - BLEU
-      original_task: true
-    name: find_loc_zs
-    reference: ''
-  4c867a7e-baf2-4622-870b-f790b36ef5e0: !Template
-    answer_choices: null
-    id: 4c867a7e-baf2-4622-870b-f790b36ef5e0
-    jinja: "\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0636\u0645\u06CC\
-      \u0631 \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\u0646:\n\u062C\
-      \u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence = [] %}\n\
-      {% for token, tag in zip(tokens, ner_tags) %}\n    {% if tag==12 or tag == 6\
-      \ %}\n        {% set _ = sentence.append(token) %}\n    {% endif %}\n{% endfor\
-      \ %}\n{{ ' '.join(sentence) }}\n"
-    metadata: !TemplateMetadata
-      choices_in_prompt: false
-      languages:
-      - fa
-      metrics:
-      - BLEU
-      original_task: true
-    name: find_pronoun_zs
-    reference: ''
-  5cc4d388-22ec-42f4-9c82-f754983a485d: !Template
-    answer_choices: null
-    id: 5cc4d388-22ec-42f4-9c82-f754983a485d
-    jinja: ":\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u062A\u0633\
-      \u0647\u06CC\u0644\u0627\u062A \u06CC\u0627 \u0633\u0627\u062E\u062A\u0645\u0627\
-      \u0646 \u0647\u0627 \u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\u0646\n\u062C\
-      \u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence = [] %}\n\
-      {% for token, tag in zip(tokens, ner_tags) %}\n    {% if tag==8 or tag == 2\
-      \ %}\n        {% set _ = sentence.append(token) %}\n    {% endif %}\n{% endfor\
-      \ %}\n{{ ' '.join(sentence) }}\n"
-    metadata: !TemplateMetadata
-      choices_in_prompt: false
-      languages:
-      - fa
-      metrics:
-      - BLEU
-      original_task: true
-    name: find_fac_zs
-    reference: ''
-  5f0cc5aa-6816-4ca5-bd53-842af7663931: !Template
-    answer_choices: null
-    id: 5f0cc5aa-6816-4ca5-bd53-842af7663931
-    jinja: ":\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0627\u0646\
-      \u0633\u0627\u0646 \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\u0646\
-      \n\u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence\
-      \ = [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n    {% if tag==11\
-      \ or tag == 5 %}\n        {% set _ = sentence.append(token) %}\n    {% endif\
-      \ %}\n{% endfor %}\n{{ ' '.join(sentence) }}\n"
-    metadata: !TemplateMetadata
-      choices_in_prompt: false
-      languages:
-      - fa
-      metrics:
-      - BLEU
-      original_task: true
-    name: find_person_zs
+    name: does_there_exist_org
     reference: ''
   93a3ef90-e673-416e-9d06-6740b6b8b7e3: !Template
     answer_choices: null
     id: 93a3ef90-e673-416e-9d06-6740b6b8b7e3
-    jinja: ":\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0633\u0627\
-      \u0632\u0645\u0627\u0646 \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\
-      \u0646\n\u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n\n{% set sentence\
-      \ = [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n    {% if tag==10\
-      \ or tag == 4 %}\n        {% set _ = sentence.append(token) %}\n    {% endif\
-      \ %}\n{% endfor %}\n{{ ' '.join(sentence) }}\n"
+    jinja: "\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0627\u0633\u0627\
+      \u0645\u06CC \u0633\u0627\u0632\u0645\u0627\u0646 \u0647\u0627\u0631\u0627 \u067E\
+      \u06CC\u062F\u0627 \u06A9\u0646 \u0648 \u0627\u06AF\u0631 \u0645\u0648\u062C\
+      \u0648\u062F\u06CC\u062A\u06CC \u0634\u0646\u0627\u0633\u0627\u06CC\u06CC \u0646\
+      \u06A9\u0631\u062F\u06CC \"\u0646\u062F\u0627\u0631\u062F\" \u0631\u0627 \u062F\
+      \u0631 \u062C\u0648\u0627\u0628 \u0628\u0646\u0648\u06CC\u0633\n\n\n\u062C\u0645\
+      \u0644\u0647 : {{ tokens|join(' ') }}\n\u062C\u0648\u0627\u0628: \n|||\n{% set\
+      \ sentence = [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n    {% if\
+      \ tag==10 or tag == 4 %}\n        {% set _ = sentence.append(token) %}\n   \
+      \ {% endif %}\n{% endfor %}\n{% if sentence %} {{ sentence | unique | join('\
+      \ ') }}\n{% else %} \u0646\u062F\u0627\u0631\u062F {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -127,17 +168,55 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: find_org_zs
+    name: find_org
+    reference: ''
+  afb397b9-7c34-4bf1-8933-23a16e9715f8: !Template
+    answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
+    id: afb397b9-7c34-4bf1-8933-23a16e9715f8
+    jinja: "\u0622\u06CC\u0627 \u062F\u0631 \u0645\u062A\u0646 \u0627\u0631\u0627\u0626\
+      \u0647 \u0634\u062F\u0647\u060C \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC\
+      \ \u0647\u0627\u06CC \u0631\u0648\u0628\u0631\u0648 \u0642\u0627\u0628\u0644\
+      \ \u0634\u0646\u0627\u0633\u0627\u06CC\u06CC \u0627\u0633\u062A: \u0645\u062D\
+      \u0635\u0648\u0644\u060C \u062A\u0633\u0647\u06CC\u0644\u0627\u062A \u06CC\u0627\
+      \ \u0633\u0627\u062E\u062A\u0645\u0627\u0646\u060C \u0633\u0627\u0632\u0645\u0627\
+      \u0646\u060C \u0634\u062E\u0635\u060C \u0631\u0648\u06CC\u062F\u0627\u062F,\
+      \ \u0645\u06A9\u0627\u0646\n- \u0628\u0644\u0647\n- \u062E\u06CC\u0631\n\n\n\
+      \u0645\u062A\u0646: {{ tokens|join(' ') }}\n\u067E\u0627\u0633\u062E:\n|||\n\
+      {% set sentence = [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n   \
+      \ {% if tag==7 %}\n        {% set _ = sentence.append(\"\u0631\u0648\u06CC\u062F\
+      \u0627\u062F\") %}\n    {% endif %}\n{% if tag==8 %}\n        {% set _ = sentence.append(\"\
+      \u062A\u0633\u0647\u06CC\u0644\u0627\u062A \u06CC\u0627 \u0633\u0627\u062E\u062A\
+      \u0645\u0627\u0646\") %}\n    {% endif %}\n{% if tag==9 %}\n        {% set _\
+      \ = sentence.append(\"\u0645\u06A9\u0627\u0646\") %}\n    {% endif %}\n{% if\
+      \ tag==10 %}\n        {% set _ = sentence.append(\"\u0633\u0627\u0632\u0645\u0627\
+      \u0646\") %}\n    {% endif %}\n{% if tag==11 %}\n        {% set _ = sentence.append(\"\
+      \u0634\u062E\u0635\") %}\n    {% endif %}\n{% if tag==12 %}\n        {% set\
+      \ _ = sentence.append(\"\u0645\u062D\u0635\u0648\u0644\") %}\n    {% endif %}\n\
+      {% endfor %}\n\n{% if sentence %}\u0628\u0644\u0647\n{% else %}\n\u062E\u06CC\
+      \u0631\n{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does_there_exist_any
     reference: ''
   e69a92f4-4440-4ebc-b8da-f66780945785: !Template
     answer_choices: null
     id: e69a92f4-4440-4ebc-b8da-f66780945785
-    jinja: ":\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0631\u0648\
-      \u06CC\u062F\u0627\u062F \u0647\u0627\u0631\u0627 \u067E\u06CC\u062F\u0627 \u06A9\
-      \u0646\n\u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n|||\n{% set sentence\
-      \ = [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n    {% if tag==1 or\
-      \ tag == 7 %}\n        {% set _ = sentence.append(token) %}\n    {% endif %}\n\
-      {% endfor %}\n{{ ' '.join(sentence) }}\n"
+    jinja: "\u062F\u0631 \u0645\u062A\u0646 \u062F\u0627\u062F\u0647 \u0634\u062F\u0647\
+      \ \u0628\u0647 \u062F\u0646\u0628\u0627\u0644 \u0631\u0648\u06CC\u062F\u0627\
+      \u062F\u0647\u0627 \u0628\u06AF\u0631\u062F \u0648 \u0627\u06AF\u0631 \u0686\
+      \u06CC\u0632\u06CC \u0634\u0646\u0627\u0633\u0627\u06CC\u06CC \u0646\u0634\u062F\
+      \u060C \u067E\u0627\u0633\u062E \u0628\u0627\u06CC\u062F \"\u0646\u062F\u0627\
+      \u0631\u062F\" \u0628\u0627\u0634\u062F\n\n\n\u062C\u0645\u0644\u0647 : {{ tokens|join('\
+      \ ') }}\n\u062C\u0648\u0627\u0628: \n|||\n{% set sentence = [] %}\n{% for token,\
+      \ tag in zip(tokens, ner_tags) %}\n    {% if tag==1 or tag == 7 %}\n       \
+      \ {% set _ = sentence.append(token) %}\n    {% endif %}\n{% endfor %}\n{% if\
+      \ sentence %} {{ sentence | unique | join(' ') }}\n{% else %} \u0646\u062F\u0627\
+      \u0631\u062F {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -145,5 +224,25 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: find_event_zs
+    name: find_event
+    reference: ''
+  f50ecb9f-d289-4366-83d0-df648b80bdb3: !Template
+    answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
+    id: f50ecb9f-d289-4366-83d0-df648b80bdb3
+    jinja: "\u0622\u06CC\u0627 \u062F\u0631 \u0645\u062A\u0646 \u0632\u06CC\u0631\
+      \ \u0631\u0648\u06CC\u062F\u0627\u062F\u06CC \u06CC\u0627\u0641\u062A \u0645\
+      \u06CC\u200C\u0634\u0648\u062F\u061F\n- \u0628\u0644\u0647\n- \u062E\u06CC\u0631\
+      \n\n\n\u0645\u062A\u0646 : {{ tokens|join(' ') }}\n\u062C\u0648\u0627\u0628\
+      : \n|||\n{% set sentence = [] %}\n{% for token, tag in zip(tokens, ner_tags)\
+      \ %}\n    {% if tag==1 or tag == 7 %}\n        {% set _ = sentence.append(token)\
+      \ %}\n    {% endif %}\n{% endfor %}\n{% if sentence %}\n\u0628\u0644\u0647\n\
+      {% else %}\n\u062E\u06CC\u0631\n {% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does_there_exist_event
     reference: ''
