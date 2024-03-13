@@ -4,7 +4,8 @@ templates:
     answer_choices: null
     id: 0f0d6c93-4d1f-48d7-a144-999d1f3639c8
     jinja: "\u06CC\u06A9 \u0645\u0642\u0627\u0644\u0647 \u062F\u0631 \u0645\u0648\u0631\
-      \u062F \"{{title}}\" \u0628\u0646\u0648\u06CC\u0633\n|||\n{{highlights}}\n"
+      \u062F \"{{title}}\" \u0628\u0646\u0648\u06CC\u0633\n\n\n:\u0645\u0642\u0627\
+      \u0644\u0647\n|||\n{{highlights}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -12,17 +13,37 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: write_article_summary_zs
+    name: write_article_summary
+    reference: ''
+  1bbbd54a-0d63-4c4a-b88e-4cecf061acfc: !Template
+    answer_choices: null
+    id: 1bbbd54a-0d63-4c4a-b88e-4cecf061acfc
+    jinja: "\u0645\u0642\u0627\u0644\u0647 \u06CC \u0632\u06CC\u0631 \u0628\u0647\
+      \ \u0647\u0645\u0631\u0627\u0647 \u062E\u0644\u0627\u0635\u0647 \u0622\u0646\
+      \ \u062F\u0631 \u0648\u0628 \u0633\u0627\u06CC\u062A \u0648\u06CC\u06A9\u06CC\
+      \u067E\u062F\u06CC\u0627 \u0622\u0645\u062F\u0647 \u0627\u0633\u062A. \u0645\
+      \u0648\u0636\u0648\u0639 \u0622\u0646 \u0631\u0627 \u0645\u0634\u062E\u0635\
+      \ \u06A9\u0646\u06CC\u062F\n\n\n\u0645\u0642\u0627\u0644\u0647: {{article}}\n\
+      \u062E\u0644\u0627\u0635\u0647: {{highlights}}\n:\u0645\u0648\u0636\u0648\u0639\
+      \ \n|||\n{{title}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: write_title_highlight
     reference: ''
   3ffd4a3c-62ed-40ad-baae-aac67775dfbf: !Template
     answer_choices: null
     id: 3ffd4a3c-62ed-40ad-baae-aac67775dfbf
     jinja: "\u0645\u0642\u0627\u0644\u0647 \u06CC \u0632\u06CC\u0631 \u062F\u0631\
       \ \u0648\u0628 \u0633\u0627\u06CC\u062A \u0648\u06CC\u06A9\u06CC\u067E\u062F\
-      \u06CC\u0627 \u0627\u0645\u062F\u0647 \u0627\u0633\u062A. \u0645\u0648\u0636\
-      \u0648\u0639 \u0627\u0646 \u0631\u0627 \u0645\u0634\u062E\u0635 \u06A9\u0646\
-      \u06CC\u062F\n\n\u0645\u0642\u0627\u0644\u0647: \n{{highlights}}\n\u0645\u0648\
-      \u0636\u0648\u0639: \n|||\n{{title}}"
+      \u06CC\u0627 \u0622\u0645\u062F\u0647 \u0627\u0633\u062A. \u0645\u0648\u0636\
+      \u0648\u0639 \u0622\u0646 \u0631\u0627 \u0645\u0634\u062E\u0635 \u06A9\u0646\
+      \u06CC\u062F\n\n\n\u0645\u0642\u0627\u0644\u0647: {{article}}\n:\u0645\u0648\
+      \u0636\u0648\u0639 \n|||\n{{title}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -30,10 +51,11 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: write_title_zs
+    name: write_title
     reference: ''
   4435c917-20b6-4a7a-99e4-027fbee08c5a: !Template
-    answer_choices: '{{title}} ||| {{highlights}}'
+    answer_choices: "\u0645\u062A\u0646 \u0627\u0648\u0644|||\u0645\u062A\u0646 \u062F\
+      \u0648\u0645"
     id: 4435c917-20b6-4a7a-99e4-027fbee08c5a
     jinja: "\u0627\u06CC\u0646 \u0645\u0642\u0627\u0644\u0647 \u06CC \u0645\u0639\u062A\
       \u0628\u0631 \u062F\u0631 \u0633\u0627\u06CC\u062A \u0648\u06CC\u06A9\u06CC\u067E\
@@ -42,13 +64,14 @@ templates:
       \ \u0646\u0627\u0634\u0631\u060C \u06A9\u062F\u0627\u0645 \u06CC\u06A9 \u0627\
       \u0632 \u0645\u062A\u0646 \u0647\u0627\u06CC \u0632\u06CC\u0631 \u0631\u0627\
       \ \u0628\u0631\u0627\u06CC \u062A\u06CC\u062A\u0631 \u0627\u0646\u062A\u062E\
-      \u0627\u0628 \u0645\u06CC\u06A9\u0646\u06CC\u062F\u061F\n\u0645\u0642\u0627\u0644\
-      \u0647: {{article}}\n\u0645\u062A\u0646 \u06F1: \n\u0645\u062A\u0646 \u06F2\
-      :\n|||\n{% set random_number = range(2)|random %} {% if random_number == 1 %}\n\
-      \  \u06F1 \u0645\u062A\u0646: {{title}}\n{% else %}\n    \u06F2 \u0645\u062A\
-      \u0646: {{highlights}}\n{% endif %}\n|||\n{% if random_number == 1 %}\n    \u0645\
-      \u062A\u0646 : \u0633\u0648\u0627\u0644\u06CC\n{% else %}\n    \u0645\u062A\u0646\
-      : \u062E\u0628\u0631\u06CC\n{% endif %}\n"
+      \u0627\u0628 \u0645\u06CC\u06A9\u0646\u06CC\u062F\u061F\n\n\n\n\u0645\u0642\u0627\
+      \u0644\u0647: {{article}}\n{% set random_number = range(2)|random %}\n{% if\
+      \ random_number == 1 %}\n\u0645\u062A\u0646 \u0627\u0648\u0644: {{title}}\n\u0645\
+      \u062A\u0646 \u062F\u0648\u0645: {{highlights}}\n{% else %}\n\u0645\u062A\u0646\
+      \ \u0627\u0648\u0644: {{highlights}}\n\u0645\u062A\u0646 \u062F\u0648\u0645\
+      : {{title}}\n{% endif %}\n|||\n{% if random_number == 1 %}\n\u0645\u062A\u0646\
+      \ \u0627\u0648\u0644\n{% else %}\n\u0645\u062A\u0646 \u062F\u0648\u0645\n{%\
+      \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -56,16 +79,16 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: which_title_fs
+    name: which_title
     reference: ''
   4cd30382-3993-427e-891c-0658a0b88ec5: !Template
     answer_choices: null
     id: 4cd30382-3993-427e-891c-0658a0b88ec5
     jinja: "\u0627\u0637\u0644\u0627\u0639\u0627\u062A \u0645\u0631\u062A\u0628\u0637\
-      \ \u0628\u0627 \"{{title}}\" \u0631\u0627 \u062C\u0645\u0639\u200C\u0622\u0648\
-      \u0631\u06CC \u06A9\u0646\u06CC\u062F \u0648 \u06CC\u06A9 \u062E\u0628\u0631\
-      \ \u06A9\u0648\u062A\u0627\u0647 \u0628\u0646\u0648\u06CC\u0633\u06CC\u062F\n\
-      |||\n{{highlights}}\n\n"
+      \ \u0628\u0627 \"{{title}}\" \u0631\u0627 \u062C\u0645\u0639 \u0622\u0648\u0631\
+      \u06CC \u06A9\u0646\u06CC\u062F \u0648 \u06CC\u06A9 \u062E\u0628\u0631 \u06A9\
+      \u0648\u062A\u0627\u0647 \u0628\u0646\u0648\u06CC\u0633\u06CC\u062F\n\n\n:\u062E\
+      \u0628\u0631\n|||\n{{highlights}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -73,14 +96,14 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: write_news_zs
+    name: write_news
     reference: ''
   55957f5e-3068-4ec9-8914-9d22ba3e9a25: !Template
     answer_choices: null
     id: 55957f5e-3068-4ec9-8914-9d22ba3e9a25
-    jinja: "\u0645\u062A\u0646 \u062F\u0627\u062F\u0647 \u0634\u062F\u0647 \u0631\u0627\
-      \ \u062E\u0644\u0627\u0635\u0647 \u06A9\u0646\n\n\u0645\u062A\u0646:\u200C \
-      \ {{article}}\n\u062E\u0644\u0627\u0635\u0647:\u200C \n|||\n{{highlights}}"
+    jinja: ".\u0645\u062A\u0646 \u062F\u0627\u062F\u0647 \u0634\u062F\u0647 \u0631\
+      \u0627 \u062E\u0644\u0627\u0635\u0647 \u06A9\u0646\n\u0645\u062A\u0646:\u200C\
+      \  {{article}}\n:\u062E\u0644\u0627\u0635\u0647 \n|||\n{{highlights}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -88,16 +111,45 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: summarize_article_zs
+    name: summarize_article
+    reference: ''
+  a4bd404d-d488-4620-aeb3-de68fa4634a5: !Template
+    answer_choices: "\u0645\u062A\u0646 \u062F\u0648\u0645|||\u0645\u062A\u0646 \u0627\
+      \u0648\u0644"
+    id: a4bd404d-d488-4620-aeb3-de68fa4634a5
+    jinja: "\u0627\u06CC\u0646 \u0645\u0637\u0644\u0628 \u062F\u0631 \u0648\u0628\u0633\
+      \u0627\u06CC\u062A \u0648\u06CC\u06A9\u06CC\u067E\u062F\u06CC\u0627 \u0642\u0631\
+      \u0627\u0631 \u062F\u0627\u062F\u0647 \u0634\u062F\u0647. \u0634\u0645\u0627\
+      \ \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u06CC\u06A9 \u0646\u0627\u0634\
+      \u0631\u060C \u06A9\u062F\u0627\u0645 \u06CC\u06A9 \u0627\u0632 \u0645\u062A\
+      \u0646 \u0647\u0627\u06CC \u0632\u06CC\u0631 \u0631\u0627 \u0628\u0647 \u0639\
+      \u0646\u0648\u0627\u0646 \u062E\u0644\u0627\u0635\u0647 \u0627\u0646\u062A\u062E\
+      \u0627\u0628 \u0645\u06CC\u06A9\u0646\u06CC\u062F\u061F\n\n\n\u0645\u0642\u0627\
+      \u0644\u0647: {{article}}\n{% set random_number = range(2)|random %}\n{% if\
+      \ random_number == 1 %}\n\u0645\u062A\u0646 \u0627\u0648\u0644: {{title}}\n\u0645\
+      \u062A\u0646 \u062F\u0648\u0645: {{highlights}}\n{% else %}\n\u0645\u062A\u0646\
+      \ \u0627\u0648\u0644: {{highlights}}\n\u0645\u062A\u0646 \u062F\u0648\u0645\
+      : {{title}}\n{% endif %}\n|||\n{% if random_number == 1 %}\n\u0645\u062A\u0646\
+      \ \u062F\u0648\u0645\n{% else %}\n\u0645\u062A\u0646 \u0627\u0648\u0644\n{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_highlights
     reference: ''
   f8422238-9108-4f51-be45-88584ab64e3d: !Template
     answer_choices: null
     id: f8422238-9108-4f51-be45-88584ab64e3d
-    jinja: "\u0645\u062A\u0646\u0627\u0633\u0628 \u0628\u0627 \u0645\u062A\u0646 \u0632\
-      \u06CC\u0631\u060C \u06CC\u06A9 \u062A\u06CC\u062A\u0631 \u0628\u0646\u0648\u06CC\
-      \u0633\u06CC\u062F \u0648 \u0627\u0646 \u0631\u0627 \u062E\u0644\u0627\u0635\
-      \u0647 \u06A9\u0646\u06CC\u062F\n\u0645\u062A\u0646:\u200C {{article}}\n|||\n\
-      \u062A\u06CC\u062A\u0631: {{title}}\n\u062E\u0644\u0627\u0635\u0647: {{highlights}}"
+    jinja: ".\u0645\u062A\u0646\u0627\u0633\u0628 \u0628\u0627 \u0645\u062A\u0646\
+      \ \u0632\u06CC\u0631\u060C \u06CC\u06A9 \u0639\u0646\u0648\u0627\u0646 \u0627\
+      \u0646\u062A\u062E\u0627\u0628 \u06A9\u0631\u062F\u0647 \u0648 \u0622\u0646\
+      \ \u0631\u0627 \u062E\u0644\u0627\u0635\u0647 \u06A9\u0646\u06CC\u062F\n\u0645\
+      \u062A\u0646:\u200C {{article}}\n|||\n\u0639\u0646\u0648\u0627\u0646: {{title}}\n\
+      \u062E\u0644\u0627\u0635\u0647: {{highlights}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -105,15 +157,15 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: title_summary_zs
+    name: title_summary
     reference: ''
   f86d7e8e-b440-4744-b738-a01b972349fb: !Template
     answer_choices: null
     id: f86d7e8e-b440-4744-b738-a01b972349fb
     jinja: "\u0645\u062A\u0646 \u0632\u06CC\u0631 \u0686\u0647 \u0645\u0648\u0636\u0648\
       \u0639\u06CC \u0631\u0627 \u0645\u0648\u0631\u062F \u0628\u062D\u062B \u0642\
-      \u0631\u0627\u0631 \u062F\u0627\u062F\u0647 \u0627\u0633\u062A\u061F\n{{highlights}}\n\
-      \u0645\u0648\u0636\u0648\u0639:\n|||\n{{title}}"
+      \u0631\u0627\u0631 \u062F\u0627\u062F\u0647 \u0627\u0633\u062A\u061F\n\n\n\u0645\
+      \u062A\u0646: {{highlights}}\n:\u0645\u0648\u0636\u0648\u0639\n|||\n{{title}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -121,5 +173,5 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: write_article_zs
+    name: write_article
     reference: ''
