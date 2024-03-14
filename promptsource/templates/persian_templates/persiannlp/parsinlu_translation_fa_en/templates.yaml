@@ -1,0 +1,107 @@
+dataset: persiannlp/parsinlu_translation_fa_en
+templates:
+  0fa0ae4c-b2bc-4830-a03d-efae3b3d778f: !Template
+    answer_choices: null
+    id: 0fa0ae4c-b2bc-4830-a03d-efae3b3d778f
+    jinja: "\u0639\u0628\u0627\u0631\u062A \u0646\u0648\u0634\u062A\u0647 \u0634\u062F\
+      \u0647 \u0631\u0627 \u0627\u0632 \u0632\u0628\u0627\u0646 \u0641\u0627\u0631\
+      \u0633\u06CC \u0628\u0647 \u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC \u0628\u0646\
+      \u0648\u06CC\u0633\u06CC\u062F\n\n\n\u0639\u0628\u0627\u0631\u062A: {{source}}\n\
+      :\u062C\u0648\u0627\u0628\n|||\n{{targets[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: write_farsi
+    reference: ''
+  631f4f5e-5e41-4528-b83e-9ee65546149f: !Template
+    answer_choices: null
+    id: 631f4f5e-5e41-4528-b83e-9ee65546149f
+    jinja: "\u0645\u062A\u0646 \u0641\u0627\u0631\u0633\u06CC \u0631\u0627 \u0628\u0647\
+      \ \u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC \u062A\u0628\u062F\u06CC\u0644\
+      \ \u06A9\u0646\u06CC\u062F\n\n\n\u0645\u062A\u0646: {{source}}\n:\u062C\u0648\
+      \u0627\u0628\n|||\n{{targets[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: convert
+    reference: ''
+  6fc8e88b-8d5f-49bc-90a0-8b8003264dc6: !Template
+    answer_choices: null
+    id: 6fc8e88b-8d5f-49bc-90a0-8b8003264dc6
+    jinja: "\u0627\u0632 \u0632\u0628\u0627\u0646 \u0641\u0627\u0631\u0633\u06CC \u0628\
+      \u0647 \u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC \u062A\u0631\u062C\u0645\u0647\
+      \ \u06A9\u0646\u06CC\u062F\n\n\n\u0645\u062A\u0646: {{source}}\n:\u062C\u0648\
+      \u0627\u0628\n|||\n{{targets[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: translate_farsi
+    reference: ''
+  88f2cf01-5936-4fb2-8c3c-39e3fe5889aa: !Template
+    answer_choices: null
+    id: 88f2cf01-5936-4fb2-8c3c-39e3fe5889aa
+    jinja: "\u062A\u0631\u062C\u0645\u0647 \u06CC \u0641\u0627\u0631\u0633\u06CC \u0628\
+      \u0647 \u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC \u0627\u06CC\u0646 \u0645\u0637\
+      \u0644\u0628 \u0631\u0627 \u0641\u0631\u0627\u0647\u0645 \u06A9\u0646\u06CC\u062F\
+      \n\n\n\u0645\u0637\u0644\u0628: {{source}}\n:\u062A\u0631\u062C\u0645\u0647\n\
+      |||\n{{targets[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: provide_english
+    reference: ''
+  89526f76-d938-4db3-8d04-540f2b2349f4: !Template
+    answer_choices: "\u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC|||\u0641\u0627\u0631\
+      \u0633\u06CC"
+    id: 89526f76-d938-4db3-8d04-540f2b2349f4
+    jinja: "\u06A9\u062F\u0627\u0645 \u0645\u062A\u0646 \u0641\u0627\u0631\u0633\u06CC\
+      \ \u0648 \u06A9\u062F\u0627\u0645 \u0645\u062A\u0646 \u0627\u0646\u06AF\u0644\
+      \u06CC\u0633\u06CC \u0627\u0633\u062A\u061F\n\n\n{% set random_number = range(2)|random\
+      \ %}{% if random_number == 1 %}\u0645\u062A\u0646: {{source}}\n{% else %} \u0645\
+      \u062A\u0646: {{targets[0]}}{% endif %}\n:\u062C\u0648\u0627\u0628\n|||\n{%\
+      \ if random_number == 1 %}\n \u0641\u0627\u0631\u0633\u06CC\n{% else %}\n\u0627\
+      \u0646\u06AF\u0644\u06CC\u0633\u06CC\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_english_farsi
+    reference: ''
+  be84a088-b7f3-4bbb-a71b-f196881fa9c4: !Template
+    answer_choices: null
+    id: be84a088-b7f3-4bbb-a71b-f196881fa9c4
+    jinja: "\u0627\u06CC\u0646 \u0645\u0637\u0644\u0628 \u0627\u0632 \u06CC\u06A9\
+      \ \u0645\u0646\u0628\u0639 \u0641\u0627\u0631\u0633\u06CC \u0632\u0628\u0627\
+      \u0646 \u062A\u0647\u06CC\u0647 \u0634\u062F\u0647. \u0622\u0646 \u0631\u0627\
+      \ \u0627\u0632 \u0632\u0628\u0627\u0646 \u0641\u0627\u0631\u0633\u06CC \u0628\
+      \u0647 \u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC \u0631\u0648\u0627\u0646 \u0628\
+      \u0631\u06AF\u0631\u062F\u0627\u0646\u06CC\u062F\n\n\n\u0645\u0637\u0644\u0628\
+      : {{source}}\n:\u062C\u0648\u0627\u0628\n|||\n{{targets[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: turn_into_english
+    reference: ''

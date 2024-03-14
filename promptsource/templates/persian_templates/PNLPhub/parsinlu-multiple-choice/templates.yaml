@@ -1,13 +1,13 @@
 dataset: PNLPhub/parsinlu-multiple-choice
 templates:
   0834126c-95e4-41e7-8b55-7572614e7feb: !Template
-    answer_choices: '{{candidates[0]}} ||| {{candidates[1]}} ||| {{candidates[2]}}
-      ||| {{candidates[3]}}'
+    answer_choices: '{{candidates[0]}}|||{{candidates[1]}}|||{{candidates[2]}}|||{{candidates[3]}}'
     id: 0834126c-95e4-41e7-8b55-7572614e7feb
     jinja: "\u062C\u0648\u0627\u0628 \u0633\u0648\u0627\u0644 \u0632\u06CC\u0631 \u06A9\
       \u062F\u0627\u0645 \u06AF\u0632\u06CC\u0646\u0647 \u0627\u0633\u062A\u061F\n\
-      \u0633\u0648\u0627\u0644: {{question}}\n- {{candidates[0]}}\n- {{candidates[1]}}\n\
-      - {{candidates[2]}}\n- {{candidates[3]}}\n\u062C\u0648\u0627\u0628:\n|||\n{{candidates[answer-1]}}"
+      \n\n\u0633\u0648\u0627\u0644: {{question}}\n:\u06AF\u0632\u06CC\u0646\u0647\
+      \ \u0647\u0627\n- {{candidates[0]}}\n- {{candidates[1]}}\n- {{candidates[2]}}\n\
+      - {{candidates[3]}}\n:\u062C\u0648\u0627\u0628\n|||\n{{candidates[answer-1]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -20,11 +20,12 @@ templates:
   30c7f9ad-2559-4729-8821-82ae41cc335a: !Template
     answer_choices: "\u0628\u0644\u0647|||\u062E\u06CC\u0631"
     id: 30c7f9ad-2559-4729-8821-82ae41cc335a
-    jinja: "\u0627\u06CC\u0627 \u0645\u062A\u0646 \u0632\u06CC\u0631 \u0639\u0636\u0648\
+    jinja: "\u0622\u06CC\u0627 \u0645\u062A\u0646 \u0632\u06CC\u0631 \u0639\u0636\u0648\
       \ \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC \"\u0631\u06CC\u0627\u0636\
-      \u06CC \u0648 \u0645\u0646\u0637\u0642\" \u0627\u0633\u062A\u061F\n\u0645\u062A\
-      \u0646: {{question}} {{candidates[answer-1]}}\n|||\n{% if category == 'math_and_logic'\
-      \ %}\n\u0628\u0644\u0647\n{% else  %}\n\u062E\u06CC\u0631\n{% endif %}"
+      \u06CC \u0648 \u0645\u0646\u0637\u0642\" \u0627\u0633\u062A\u061F\n\n\n\u0645\
+      \u062A\u0646: {{question}} {{candidates[answer-1]}}\n|||\n{% if category ==\
+      \ 'math_and_logic' %}\n\u0628\u0644\u0647\n{% else  %}\n\u062E\u06CC\u0631\n\
+      {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -41,8 +42,8 @@ templates:
       \ \u0631\u0627 \u06A9\u0627\u0645\u0644 \u0648 \u062F\u0642\u06CC\u0642 \u0645\
       \u0637\u0627\u0644\u0639\u0647 \u06A9\u0646 \u0648 \u062C\u0648\u0627\u0628\
       \ \u0645\u0646\u0627\u0633\u0628 \u0631\u0627 \u0628\u0646\u0648\u06CC\u0633\
-      \n\n\n\u0633\u0648\u0627\u0644:\u200C {{question}}\n\u062C\u0648\u0627\u0628\
-      :\n|||\n{{candidates[answer-1]}}\n"
+      \n\n\n\u0633\u0648\u0627\u0644:\u200C {{question}}\n:\u062C\u0648\u0627\u0628\
+      \n|||\n{{candidates[answer-1]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -53,19 +54,19 @@ templates:
     name: write_answer
     reference: ''
   77757649-3d37-40bb-8eae-6b100c15951f: !Template
-    answer_choices: candidates[0] ||| candidates[1] ||| candidates[2] ||| candidates[3]
+    answer_choices: candidates[0]|||candidates[1]|||candidates[2]|||candidates[3]
     id: 77757649-3d37-40bb-8eae-6b100c15951f
     jinja: "\u0628\u0627\u062A\u0648\u062C\u0647 \u0628\u0647 \u06AF\u0632\u06CC\u0646\
       \u0647 \u0647\u0627\u06CC \u062F\u0627\u062F\u0647 \u0634\u062F\u0647\u060C\
       \ \u06A9\u062F\u0627\u0645\u06CC\u06A9 \u0635\u062D\u06CC\u062D \u062A\u0631\
       \u06CC\u0646 \u062C\u0648\u0627\u0628 \u0628\u0631\u0627\u06CC \u0633\u0648\u0627\
       \u0644 \u062F\u0627\u062F\u0647 \u0634\u062F\u0647 \u0627\u0633\u062A\u061F\
-      \ \n\n\n\u0633\u0648\u0627\u0644: {{question}}\n\u06AF\u0632\u06CC\u0646\u0647\
-      \ \u0647\u0627: \n\u06AF\u0632\u06CC\u0646\u0647 \u0627\u0648\u0644: {{candidates[0]}}\n\
+      \ \n\n\n\u0633\u0648\u0627\u0644: {{question}}\n:\u06AF\u0632\u06CC\u0646\u0647\
+      \ \u0647\u0627\n\u06AF\u0632\u06CC\u0646\u0647 \u0627\u0648\u0644: {{candidates[0]}}\n\
       \u06AF\u0632\u06CC\u0646\u0647 \u062F\u0648\u0645: {{candidates[1]}}\n\u06AF\
       \u0632\u06CC\u0646\u0647 \u0633\u0648\u0645: {{candidates[2]}}\n\u06AF\u0632\
-      \u06CC\u0646\u0647 \u0686\u0647\u0627\u0631\u0645: {{candidates[3]}}\n\u062C\
-      \u0648\u0627\u0628: \n|||{% if answer == 1%}\n{{candidates[answer-1]}}\n{%elif\
+      \u06CC\u0646\u0647 \u0686\u0647\u0627\u0631\u0645: {{candidates[3]}}\n:\u062C\
+      \u0648\u0627\u0628\n|||{% if answer == 1%}\n{{candidates[answer-1]}}\n{%elif\
       \ answer==2 %}\n  {{candidates[answer-1]}}\n{%elif answer==3 %}\n  {{candidates[answer-1]}}\n\
       {%else %}\n {{candidates[answer-1]}}\n{% endif %}\n"
     metadata: !TemplateMetadata
@@ -79,17 +80,17 @@ templates:
     reference: ''
   82278234-ea56-4006-a9e6-26f5970daa07: !Template
     answer_choices: "\u0631\u06CC\u0627\u0636\u06CC \u0648 \u0645\u0646\u0637\u0642\
-      \ ||| \u0627\u0637\u0644\u0627\u0639\u0627\u062A \u0639\u0645\u0648\u0645\u06CC\
-      \ ||| \u0627\u062F\u0628\u06CC\u0627\u062A"
+      |||\u0627\u0637\u0644\u0627\u0639\u0627\u062A \u0639\u0645\u0648\u0645\u06CC\
+      |||\u0627\u062F\u0628\u06CC\u0627\u062A"
     id: 82278234-ea56-4006-a9e6-26f5970daa07
     jinja: "\u0633\u0648\u0627\u0644 \u0648 \u062C\u0648\u0627\u0628 \u062F\u0627\u062F\
-      \u0647 \u0634\u062F\u0647 \u062F\u0631 \u0645\u062A\u0646 \u062F\u0631 \u062C\
+      \u0647 \u0634\u062F\u0647 \u062F\u0631 \u0645\u062A\u0646 \u062F\u0631 \u0686\
       \u0647 \u0637\u0628\u0642\u0647 \u0628\u0646\u062F\u06CC \u0642\u0631\u0627\u0631\
       \ \u0645\u06CC\u06AF\u06CC\u0631\u0646\u062F\u061F\n- \u0631\u06CC\u0627\u0636\
       \u06CC \u0648 \u0645\u0646\u0637\u0642\n- \u0627\u0637\u0644\u0627\u0639\u0627\
       \u062A \u0639\u0645\u0648\u0645\u06CC\n- \u0627\u062F\u0628\u06CC\u0627\u062A\
-      \n\n\n\u0645\u062A\u0646: {{question}} {{candidates[answer-1]}}\n\u0637\u0628\
-      \u0642\u0647 \u0628\u0646\u062F\u06CC: \n|||\n{% if category == 'math_and_logic'\
+      \n\n\n\u0645\u062A\u0646: {{question}} {{candidates[answer-1]}}\n:\u0637\u0628\
+      \u0642\u0647 \u0628\u0646\u062F\u06CC\n|||\n{% if category == 'math_and_logic'\
       \ %}\n\u0631\u06CC\u0627\u0636\u06CC \u0648 \u0645\u0646\u0637\u0642\n{% elif\
       \ category == 'common_knowledge'%}\n\u0627\u0637\u0644\u0627\u0639\u0627\u062A\
       \ \u0639\u0645\u0648\u0645\u06CC\n{% else  %}\n\u0627\u062F\u0628\u06CC\u0627\
@@ -104,21 +105,17 @@ templates:
     name: category_answer
     reference: ''
   8b9b06d1-1b8d-458c-b408-e064d2efba99: !Template
-    answer_choices: "\u06AF\u0632\u06CC\u0646\u0647 \u0627\u0648\u0644|||\u06AF\u0632\
-      \u06CC\u0646\u0647 \u062F\u0648\u0645 ||| \u06AF\u0632\u06CC\u0646\u0647 \u0633\
-      \u0648\u0645||| \u06AF\u0632\u06CC\u0646\u0647 \u0686\u0647\u0627\u0631\u0645"
+    answer_choices: candidates[3|||candidates[2|||candidates[1]|||candidates[0]
     id: 8b9b06d1-1b8d-458c-b408-e064d2efba99
     jinja: "\u06AF\u0632\u06CC\u0646\u0647 \u0645\u0646\u0627\u0633\u0628 \u0628\u0631\
       \u0627\u06CC \u0633\u0648\u0627\u0644 \u0631\u0627 \u0627\u0632 \u0628\u06CC\
       \u0646 \u062C\u0648\u0627\u0628 \u0647\u0627\u06CC \u0632\u06CC\u0631 \u0627\
       \u0646\u062A\u062E\u0627\u0628 \u06A9\u0646\n1) \"{{candidates[0]}}\"\n2) \"\
-      {{candidates[1]}}\"\n3) \"{{candidates[2]}}\" \n4) \"{{candidates[3]}}\" \n\u0633\
-      \u0648\u0627\u0644: {{question}}\n\u062C\u0648\u0627\u0628: \n|||\n{% if answer\
-      \ == 1 %}\n\u06AF\u0632\u06CC\u0646\u0647 \u0627\u0648\u0644\n{% elif answer\
-      \ == 2 %}\n\u06AF\u0632\u06CC\u0646\u0647 \u062F\u0648\u0645\n{% elif answer\
-      \ == 3 %}\n\u06AF\u0632\u06CC\u0646\u0647 \u0633\u0648\u0645\n{% elif answer\
-      \ == 4 %}\n\u06AF\u0632\u06CC\u0646\u0647 \u0686\u0647\u0627\u0631\u0645\n{%\
-      \ endif %}"
+      {{candidates[1]}}\"\n3) \"{{candidates[2]}}\" \n4) \"{{candidates[3]}}\" \n\n\
+      \n\u0633\u0648\u0627\u0644: {{question}}\n:\u062C\u0648\u0627\u0628\n|||\n{%\
+      \ if answer == 1 %}\n1) \"{{candidates[0]}}\"\n{% elif answer == 2 %}\n2) \"\
+      {{candidates[1]}}\"\n{% elif answer == 3 %}\n3) \"{{candidates[2]}}\" \n{% elif\
+      \ answer == 4 %}\n4) \"{{candidates[3]}}\" \n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -131,12 +128,12 @@ templates:
   916db177-c67b-4a6a-8008-0e745772a7c4: !Template
     answer_choices: "\u0628\u0644\u0647|||\u062E\u06CC\u0631"
     id: 916db177-c67b-4a6a-8008-0e745772a7c4
-    jinja: "\u0627\u06CC\u0627 \u0645\u062A\u0646 \u0632\u06CC\u0631 \u0639\u0636\u0648\
+    jinja: "\u0622\u06CC\u0627 \u0645\u062A\u0646 \u0632\u06CC\u0631 \u0639\u0636\u0648\
       \ \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC \"\u0627\u0637\u0644\u0627\
       \u0639\u0627\u062A \u0639\u0645\u0648\u0645\u06CC\" \u0627\u0633\u062A\u061F\
-      \n\u0645\u062A\u0646: {{question}} {{candidates[answer-1]}}\n|||\n{% if category\
-      \ == 'common_knowledge' %}\n\u0628\u0644\u0647\n{% else  %}\n\u062E\u06CC\u0631\
-      \n{% endif %}"
+      \n\n\n\u0645\u062A\u0646: {{question}} {{candidates[answer-1]}}\n:\u062C\u0648\
+      \u0627\u0628\n|||\n{% if category == 'common_knowledge' %}\n\u0628\u0644\u0647\
+      \n{% else  %}\n\u062E\u06CC\u0631\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -156,12 +153,12 @@ templates:
       \u062F\u06CC \u0647\u0627\u06CC \"\u0631\u06CC\u0627\u0636\u06CC \u0648 \u0645\
       \u0646\u0637\u0642\"\u060C \"\u0627\u0637\u0644\u0627\u0639\u0627\u062A \u0639\
       \u0645\u0648\u0645\u06CC\" \u0648 \u06CC\u0627 \"\u0627\u062F\u0628\u06CC\u0627\
-      \u062A\" \u0645\u0646\u0627\u0633\u0628 \u0627\u0633\u062A\u061F\n\n{{question}}\n\
-      \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC:\n|||\n{% if category == 'math_and_logic'\
-      \ %}\n\u0631\u06CC\u0627\u0636\u06CC \u0648 \u0645\u0646\u0637\u0642\n{% elif\
-      \ category == 'common_knowledge'%}\n\u0627\u0637\u0644\u0627\u0639\u0627\u062A\
-      \ \u0639\u0645\u0648\u0645\u06CC\n{% else  %}\n\u0627\u062F\u0628\u06CC\u0627\
-      \u062A\n{% endif %}"
+      \u062A\" \u0645\u0646\u0627\u0633\u0628 \u0627\u0633\u062A\u061F\n\n\n\u0645\
+      \u062A\u0646: {{question}}\n:\u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC\
+      \n|||\n{% if category == 'math_and_logic' %}\n\u0631\u06CC\u0627\u0636\u06CC\
+      \ \u0648 \u0645\u0646\u0637\u0642\n{% elif category == 'common_knowledge'%}\n\
+      \u0627\u0637\u0644\u0627\u0639\u0627\u062A \u0639\u0645\u0648\u0645\u06CC\n\
+      {% else  %}\n\u0627\u062F\u0628\u06CC\u0627\u062A\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -172,7 +169,7 @@ templates:
     name: category
     reference: ''
   cc36ee96-997e-4e0c-839e-d9d3698feca5: !Template
-    answer_choices: candidates[0] ||| candidates[1] ||| candidates[2] ||| candidates[3]
+    answer_choices: candidates[0]|||candidates[1]|||candidates[2]|||candidates[3]
     id: cc36ee96-997e-4e0c-839e-d9d3698feca5
     jinja: "\u062F\u0633\u062A\u0648\u0631\u0627\u0644\u0639\u0645\u0644 \u0646\u0648\
       \u0634\u062A\u0647 \u0634\u062F\u0647 \u0631\u0627 \u0628\u0627 \u062F\u0642\
@@ -184,7 +181,7 @@ templates:
       \u062A\n\u062F\u0631 \u0627\u06CC\u0646 \u0632\u0645\u06CC\u0646\u0647 \u062A\
       \u062D\u0642\u06CC\u0642 \u06A9\u0646\u06CC\u062F \u0648 \u0628\u06AF\u0648\u06CC\
       \u06CC\u062F \u062C\u0648\u0627\u0628 \u0627\u0646 \u06A9\u062F\u0627\u0645\
-      \ \u06AF\u0632\u06CC\u0646\u0647 \u0627\u0633\u062A\n\n\u067E\u0631\u0633\u0634\
+      \ \u06AF\u0632\u06CC\u0646\u0647 \u0627\u0633\u062A\n\u067E\u0631\u0633\u0634\
       : {{question}}\n- {{candidates[0]}}\n- {{candidates[1]}}\n- {{candidates[2]}}\n\
       - {{candidates[3]}}\n\u062C\u0648\u0627\u0628:\n|||\n{{candidates[answer-1]}}"
     metadata: !TemplateMetadata
@@ -199,11 +196,11 @@ templates:
   d754b9b3-4a43-4641-887a-5f37612a1611: !Template
     answer_choices: "\u0628\u0644\u0647|||\u062E\u06CC\u0631"
     id: d754b9b3-4a43-4641-887a-5f37612a1611
-    jinja: "\u0627\u06CC\u0627 \u0645\u062A\u0646 \u0632\u06CC\u0631 \u0639\u0636\u0648\
+    jinja: "\u0622\u06CC\u0627 \u0645\u062A\u0646 \u0632\u06CC\u0631 \u0639\u0636\u0648\
       \ \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC \"\u0627\u062F\u0628\u06CC\
-      \u0627\u062A\" \u0627\u0633\u062A\u061F\n\u0645\u062A\u0646: {{question}} {{candidates[answer-1]}}\n\
-      |||\n{% if category == 'literature' %}\n\u0628\u0644\u0647\n{% else  %}\n\u062E\
-      \u06CC\u0631\n{% endif %}"
+      \u0627\u062A\" \u0627\u0633\u062A\u061F\n\n\n\u0645\u062A\u0646: {{question}}\
+      \ {{candidates[answer-1]}}\n|||\n{% if category == 'literature' %}\n\u0628\u0644\
+      \u0647\n{% else  %}\n\u062E\u06CC\u0631\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:

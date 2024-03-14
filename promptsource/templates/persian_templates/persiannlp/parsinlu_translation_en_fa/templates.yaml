@@ -1,0 +1,107 @@
+dataset: persiannlp/parsinlu_translation_en_fa
+templates:
+  251cb3c5-9279-4bbe-ba9a-a9a96f5001d5: !Template
+    answer_choices: null
+    id: 251cb3c5-9279-4bbe-ba9a-a9a96f5001d5
+    jinja: "\u0639\u0628\u0627\u0631\u062A \u0646\u0648\u0634\u062A\u0647 \u0634\u062F\
+      \u0647 \u0631\u0627 \u0627\u0632 \u0632\u0628\u0627\u0646 \u0627\u0646\u06AF\
+      \u0644\u06CC\u0633\u06CC \u0628\u0647 \u0641\u0627\u0631\u0633\u06CC \u0628\u0646\
+      \u0648\u06CC\u0633\u06CC\u062F\n\n\n\u0639\u0628\u0627\u0631\u062A: {{source}}\n\
+      :\u062C\u0648\u0627\u0628\n|||\n{{targets[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: write_english
+    reference: ''
+  53b6fbc1-f0d6-45c7-b3a0-4c1d3762f872: !Template
+    answer_choices: "\u0641\u0627\u0631\u0633\u06CC|||\u0627\u0646\u06AF\u0644\u06CC\
+      \u0633\u06CC"
+    id: 53b6fbc1-f0d6-45c7-b3a0-4c1d3762f872
+    jinja: "\u06A9\u062F\u0627\u0645 \u0645\u062A\u0646 \u0641\u0627\u0631\u0633\u06CC\
+      \ \u0648 \u06A9\u062F\u0627\u0645 \u0645\u062A\u0646 \u0627\u0646\u06AF\u0644\
+      \u06CC\u0633\u06CC \u0627\u0633\u062A\u061F\n\n\n{% set random_number = range(2)|random\
+      \ %}{% if random_number == 1 %}\u0645\u062A\u0646: {{source}}\n{% else %} \u0645\
+      \u062A\u0646: {{targets[0]}}{% endif %}\n:\u062C\u0648\u0627\u0628\n|||\n{%\
+      \ if random_number == 1 %}\n\u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC\n{% else\
+      \ %}\n\u0641\u0627\u0631\u0633\u06CC\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_farsi_english
+    reference: ''
+  89424bbc-1c6e-464c-ad7b-fe65c9b9bffd: !Template
+    answer_choices: null
+    id: 89424bbc-1c6e-464c-ad7b-fe65c9b9bffd
+    jinja: "\u0627\u0632 \u0632\u0628\u0627\u0646 \u0627\u0646\u06AF\u0644\u06CC\u0633\
+      \u06CC \u0628\u0647 \u0641\u0627\u0631\u0633\u06CC \u062A\u0631\u062C\u0645\u0647\
+      \ \u06A9\u0646\u06CC\u062F\n\n\n\u0645\u062A\u0646: {{source}}\n:\u062C\u0648\
+      \u0627\u0628\n|||\n{{targets[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: translate_english
+    reference: ''
+  971bb396-3747-4481-a53d-22105ccdc933: !Template
+    answer_choices: null
+    id: 971bb396-3747-4481-a53d-22105ccdc933
+    jinja: "\u06CC\u06A9 \u0645\u0637\u0644\u0628 \u0627\u0632 \u0645\u0646\u0628\u0639\
+      \ \u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC \u0632\u0628\u0627\u0646 \u062A\
+      \u0647\u06CC\u0647 \u0634\u062F\u0647. \u0622\u0646 \u0631\u0627 \u0627\u0632\
+      \ \u0632\u0628\u0627\u0646 \u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC \u0628\
+      \u0647 \u0641\u0627\u0631\u0633\u06CC \u0631\u0648\u0627\u0646 \u0628\u0631\u06AF\
+      \u0631\u062F\u0627\u0646\u06CC\u062F\n\n\n\u0645\u0637\u0644\u0628: {{source}}\n\
+      :\u062C\u0648\u0627\u0628\n|||\n{{targets[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: turn_into_farsi
+    reference: ''
+  a6ba3ed9-c192-47b8-9afd-953f9393ddb1: !Template
+    answer_choices: null
+    id: a6ba3ed9-c192-47b8-9afd-953f9393ddb1
+    jinja: "\u062A\u0631\u062C\u0645\u0647 \u06CC \u0627\u0646\u06AF\u0644\u06CC\u0633\
+      \u06CC \u0628\u0647 \u0641\u0627\u0631\u0633\u06CC \u0627\u06CC\u0646 \u0645\
+      \u0637\u0644\u0628 \u0631\u0627 \u0641\u0631\u0627\u0647\u0645 \u06A9\u0646\u06CC\
+      \u062F\n\n\n\u0645\u0637\u0644\u0628: {{source}}\n:\u062A\u0631\u062C\u0645\u0647\
+      \n|||\n{{targets[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: provide_farsi
+    reference: ''
+  cd50eace-c263-4a92-86ec-4a9c25226c6f: !Template
+    answer_choices: null
+    id: cd50eace-c263-4a92-86ec-4a9c25226c6f
+    jinja: "\u0645\u062A\u0646 \u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC \u0631\u0627\
+      \ \u0628\u0647 \u0641\u0627\u0631\u0633\u06CC \u062A\u0628\u062F\u06CC\u0644\
+      \ \u06A9\u0646\u06CC\u062F\n\n\n\u0645\u062A\u0646: {{source}}\n:\u062C\u0648\
+      \u0627\u0628\n|||\n{{targets[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: convert
+    reference: ''
