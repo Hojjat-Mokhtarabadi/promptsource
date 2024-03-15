@@ -211,14 +211,14 @@ templates:
     id: e69a92f4-4440-4ebc-b8da-f66780945785
     jinja: " \u0627\u06AF\u0631 \u0631\u0648\u06CC\u062F\u0627\u062F\u06CC \u062F\u0631\
       \ \u062C\u0645\u0644\u0647 \u067E\u06CC\u062F\u0627 \u06A9\u0631\u062F\u06CC\
-      \u060C \u0622\u0646 \u0631\u0627 \u0628\u0646\u0648\u06CC\u0633\n\"\u062F\u0631\
-      \ \u063A\u06CC\u0631 \u0627\u06CC\u0646\u0635\u0648\u0631\u062A\u060C \u0628\
-      \u0646\u0648\u06CC\u0633 \"\u0646\u062F\u0627\u0631\u062F\n\n\n\u062C\u0645\u0644\
-      \u0647 : {{ tokens|join(' ') }}\n:\u062C\u0648\u0627\u0628\n|||\n{% set sentence\
-      \ = [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n    {% if tag==1 or\
-      \ tag == 7 %}\n        {% set _ = sentence.append(token) %}\n    {% endif %}\n\
-      {% endfor %}\n{% if sentence %} {{ sentence | unique | join(' ') }}\n{% else\
-      \ %} \u0646\u062F\u0627\u0631\u062F {% endif %}"
+      \ \u0622\u0646 \u0631\u0627 \u0628\u0646\u0648\u06CC\u0633 \u0648 \u062F\u0631\
+      \ \u063A\u06CC\u0631 \u0627\u06CC\u0646\u0635\u0648\u0631\u062A \"\u0646\u062F\
+      \u0627\u0631\u062F\" \u0631\u0627 \u0628\u0646\u0648\u06CC\u0633\n\n\n\u062C\
+      \u0645\u0644\u0647 : {{ tokens|join(' ') }}\n:\u062C\u0648\u0627\u0628\n|||\n\
+      {% set sentence = [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n   \
+      \ {% if tag==1 or tag == 7 %}\n        {% set _ = sentence.append(token) %}\n\
+      \    {% endif %}\n{% endfor %}\n{% if sentence %} {{ sentence | unique | join('\
+      \ ') }}\n{% else %} \u0646\u062F\u0627\u0631\u062F {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:

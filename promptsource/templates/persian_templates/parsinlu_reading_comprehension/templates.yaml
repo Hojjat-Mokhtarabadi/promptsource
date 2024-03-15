@@ -185,12 +185,12 @@ templates:
   c6f3f3b8-1f07-422e-9e0b-14e0ad159784: !Template
     answer_choices: null
     id: c6f3f3b8-1f07-422e-9e0b-14e0ad159784
-    jinja: "\u062C\u0648\u0627\u0628 \u062E\u0644\u0627\u0635\u0647 \u0628\u0627\u062A\
-      \u0648\u062C\u0647 \u0628\u0647 \u0645\u062A\u0646 \u0628\u0646\u0648\u06CC\u0633\
-      \n\n\n\u0633\u0648\u0627\u0644: {{question}}\n\u0645\u062A\u0646: {{context}}\n\
-      :\u062C\u0648\u0627\u0628\n|||\n{{answers[\"answer_text\"][0]}}\n{{answers[\"\
-      answer_text\"][1]}}\n{{answers[\"answer_text\"][2]}}\n{{answers[\"answer_text\"\
-      ][3]}}\n{{answers[\"answer_text\"][4]}}"
+    jinja: "\u06CC\u06A9 \u062C\u0648\u0627\u0628 \u062E\u0644\u0627\u0635\u0647 \u0628\
+      \u0627\u062A\u0648\u062C\u0647 \u0628\u0647 \u0645\u062A\u0646 \u0628\u0646\u0648\
+      \u06CC\u0633\n\n\n\u0633\u0648\u0627\u0644: {{question}}\n\u0645\u062A\u0646\
+      : {{context}}\n:\u062C\u0648\u0627\u0628\n|||\n{{answers[\"answer_text\"][0]}}\n\
+      {{answers[\"answer_text\"][1]}}\n{{answers[\"answer_text\"][2]}}\n{{answers[\"\
+      answer_text\"][3]}}\n{{answers[\"answer_text\"][4]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -219,13 +219,14 @@ templates:
       \ else %}\u0645\u062A\u0646 \u0627\u0648\u0644:{{answers[\"answer_text\"][0]}}\n\
       {{answers[\"answer_text\"][1]}}\n{{answers[\"answer_text\"][2]}}\n{{answers[\"\
       answer_text\"][3]}}\n{{answers[\"answer_text\"][4]}}\n\u0645\u062A\u0646 \u062F\
-      \u0648\u0645: {{context}}{% endif %}\n|||\n{% if random_number == 1 %}\n\u0645\
-      \u062A\u0646 \u0627\u0648\u0644 \u067E\u0627\u0633\u062E \u0628\u0644\u0646\u062F\
-      \ \u0648 \u0645\u062A\u0646 \u062F\u0648\u0645 \u067E\u0627\u0633\u062E \u06A9\
-      \u0648\u062A\u0627\u0647 \u0627\u0633\u062A\n{% else %}\n\u0645\u062A\u0646\
-      \ \u0627\u0648\u0644 \u067E\u0627\u0633\u062E \u06A9\u0648\u062A\u0627\u0647\
-      \ \u0648 \u0645\u062A\u0646 \u062F\u0648\u0645 \u067E\u0627\u0633\u062E \u0628\
-      \u0644\u0646\u062F \u0627\u0633\u062A\n{% endif %}"
+      \u0648\u0645: {{context}}{% endif %}\n\u062C\u0648\u0627\u0628:\n|||\n{% if\
+      \ random_number == 1 %}\n\u0645\u062A\u0646 \u0627\u0648\u0644 \u067E\u0627\u0633\
+      \u062E \u0628\u0644\u0646\u062F \u0648 \u0645\u062A\u0646 \u062F\u0648\u0645\
+      \ \u067E\u0627\u0633\u062E \u06A9\u0648\u062A\u0627\u0647 \u0627\u0633\u062A\
+      \n{% else %}\n\u0645\u062A\u0646 \u0627\u0648\u0644 \u067E\u0627\u0633\u062E\
+      \ \u06A9\u0648\u062A\u0627\u0647 \u0648 \u0645\u062A\u0646 \u062F\u0648\u0645\
+      \ \u067E\u0627\u0633\u062E \u0628\u0644\u0646\u062F \u0627\u0633\u062A\n{% endif\
+      \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
