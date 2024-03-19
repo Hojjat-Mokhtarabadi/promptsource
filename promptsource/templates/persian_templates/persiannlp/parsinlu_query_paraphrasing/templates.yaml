@@ -1,15 +1,18 @@
 dataset: persiannlp/parsinlu_query_paraphrasing
 templates:
-  8a958a19-959f-4a87-be84-033645bb7c7e: !Template
-    answer_choices: "\u0627\u0631\u0647 ||| \u0646\u0647"
-    id: 8a958a19-959f-4a87-be84-033645bb7c7e
-    jinja: "\u0628\u0627 \u062A\u0648\u062C\u0647 \u0628\u0647 \u062C\u0645\u0644\u0647\
-      \ \u0627\u0648\u0644 \u0627\u06CC\u0627 \u062C\u0645\u0644\u0647 \u062F\u0648\
-      \u0645 \u0645\u0631\u062A\u0628\u0637 \u0628\u0647 \u0622\u0646 \u0627\u0633\
-      \u062A\u061F\n- \u0627\u0631\u0647\n- \u0646\u0647\n\n\n\u062C\u0645\u0644\u0647\
-      \ \u0627\u0648\u0644: {{q1}}\n\u062C\u0645\u0644\u0647 \u062F\u0648\u0645: {{q2}}\n\
-      \u062C\u0648\u0627\u0628: \n||| \n{{ { \"0\": \"\u0646\u0647\",\n        \"\
-      1\": \"\u0627\u0631\u0647\"}[label] }}"
+  6d15bea4-f5dd-4aa3-9f5e-cd905fd95b90: !Template
+    answer_choices: "\u0645\u0634\u0627\u0628\u0647|||\u0645\u062A\u0641\u0627\u0648\
+      \u062A"
+    id: 6d15bea4-f5dd-4aa3-9f5e-cd905fd95b90
+    jinja: "\u0645\u062D\u062A\u0648\u0627\u06CC \u062F\u0648 \u0645\u062A\u0646 \u0627\
+      \u0631\u0627\u0626\u0647 \u0634\u062F\u0647 \u0627\u0633\u062A. \u0622\u06CC\
+      \u0627 \u0627\u06CC\u0646 \u062F\u0648 \u0628\u0627 \u06CC\u06A9\u062F\u06CC\
+      \u06AF\u0631 \u0645\u062A\u0641\u0627\u0648\u062A \u0627\u0646\u062F \u06CC\u0627\
+      \ \u0645\u0634\u0627\u0628\u0647\u061F\n- \u0645\u0634\u0627\u0628\u0647\n-\
+      \ \u0645\u062A\u0641\u0627\u0648\u062A\n\n\n\u0645\u062A\u0646 \u0627\u0648\u0644\
+      : {{q1}}\n\u0645\u062A\u0646 \u062F\u0648\u0645: {{q2}}\n:\u062C\u0648\u0627\
+      \u0628\n||| \n{{ {\"0\": \"\u0645\u062A\u0641\u0627\u0648\u062A\"\n,\"1\":\"\
+      \u0645\u0634\u0627\u0628\u0647\"}[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -17,21 +20,67 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: give_sent1_can_sent2_paraphrase
+    name: different_or_same
+    reference: ''
+  7d554aaf-aefa-4d22-9382-7e85088df1ff: !Template
+    answer_choices: "\u0646\u0627\u0645\u0648\u0641\u0642 \u0628\u0648\u062F\u06CC\
+      \u0645|||\u0645\u0648\u0641\u0642 \u0628\u0648\u062F\u06CC\u0645"
+    id: 7d554aaf-aefa-4d22-9382-7e85088df1ff
+    jinja: "\u0633\u0639\u06CC \u06A9\u0631\u062F\u06CC\u0645 \u06A9\u0647 \u062C\u0645\
+      \u0644\u0647 \u06CC \u062F\u0648\u0645 \u0631\u0627 \u0628\u0647 \u0646\u062D\
+      \u0648 \u062F\u06CC\u06AF\u0631\u06CC \u0627\u0632 \u062C\u0645\u0644\u0647\
+      \ \u0627\u0648\u0644 \u0628\u06CC\u0627\u0646 \u06A9\u0646\u06CC\u0645 \u06A9\
+      \u0647 \u0645\u0642\u0635\u0648\u062F \u0628\u062F\u0648\u0646 \u062A\u063A\u06CC\
+      \u06CC\u0631 \u0628\u0627\u0642\u06CC \u0628\u0645\u0627\u0646\u062F. \u0645\
+      \u06CC\u0632\u0627\u0646 \u0645\u0648\u0641\u0642\u06CC\u062A \u0686\u0642\u062F\
+      \u0631 \u0627\u0633\u062A\u061F\n- \u0645\u0648\u0641\u0642 \u0628\u0648\u062F\
+      \u06CC\u0645\n- \u0646\u0627\u0645\u0648\u0641\u0642 \u0628\u0648\u062F\u06CC\
+      \u0645\n\n\n\u062C\u0645\u0644\u0647 \u0627\u0648\u0644: {{q1}}\n\u062C\u0645\
+      \u0644\u0647 \u062F\u0648\u0645: {{q2}}\n:\u062C\u0648\u0627\u0628\n||| \n{{\
+      \ { \"0\": \"\u0646\u0627\u0645\u0648\u0641\u0642 \u0628\u0648\u062F\u06CC\u0645\
+      \",\n\"1\": \"\u0645\u0648\u0641\u0642 \u0628\u0648\u062F\u06CC\u0645\"}[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: sucess_level
+    reference: ''
+  8a958a19-959f-4a87-be84-033645bb7c7e: !Template
+    answer_choices: "\u0622\u0631\u0647|||\u0646\u0647"
+    id: 8a958a19-959f-4a87-be84-033645bb7c7e
+    jinja: "\u0628\u0627 \u062A\u0648\u062C\u0647 \u0628\u0647 \u062C\u0645\u0644\u0647\
+      \ \u0627\u0648\u0644 \u0622\u06CC\u0627 \u062C\u0645\u0644\u0647 \u062F\u0648\
+      \u0645 \u0645\u0631\u062A\u0628\u0637 \u0628\u0647 \u0622\u0646 \u0627\u0633\
+      \u062A\u061F\n- \u0622\u0631\u0647\n- \u0646\u0647\n\n\n\u062C\u0645\u0644\u0647\
+      \ \u0627\u0648\u0644: {{q1}}\n\u062C\u0645\u0644\u0647 \u062F\u0648\u0645: {{q2}}\n\
+      :\u062C\u0648\u0627\u0628\n||| \n{{ { \"0\": \"\u0646\u0647\",\n        \"1\"\
+      : \"\u0622\u0631\u0647\"}[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: relatable_or_not
     reference: ''
   8c6bed72-faaf-431f-91e5-61222e034499: !Template
     answer_choices: null
     id: 8c6bed72-faaf-431f-91e5-61222e034499
     jinja: "\u0628\u0627 \u062A\u0648\u062C\u0647 \u0628\u0647 \u0633\u0648\u0627\u0644\
-      \ \u0648 \u0628\u0631\u0686\u0633\u0628 \"\u0645\u0631\u062A\u0628\u0637\" \u06CC\
-      \u0627 \"\u063A\u06CC\u0631 \u0645\u0631\u062A\u0628\u0637\"  \u0628\u0627\u0632\
-      \u0646\u0648\u06CC\u0633 \u0633\u0648\u0627\u0644 \u0631\u0627 \u0628\u0646\u0648\
-      \u06CC\u0633. \u0633\u0648\u0627\u0644 \u0648 \u0628\u0631\u0686\u0633\u0628\
-      \ \u0631\u0627 \u0628\u0627 \u062F\u0642\u062A \u0648 \u0645\u0644\u0627\u062D\
-      \u0638\u0647 \u0628\u062E\u0648\u0627\u0646\n\n\n\u0633\u0648\u0627\u0644: {{q1}}\n\
-      \u0628\u0631\u0686\u0633\u0628: {{ {\"0\": \"\u063A\u06CC\u0631 \u0645\u0631\
-      \u062A\u0628\u0637\", \"1\":\"\u0645\u0631\u062A\u0628\u0637\"}[label] }}\n\u0628\
-      \u0627\u0632\u0646\u0648\u06CC\u0633:\n||| \n{{q2}}\n"
+      \ \u0648 \u0628\u0631\u0686\u0633\u0628\u060C \u0628\u0647 \u06AF\u0648\u0646\
+      \u0647 \u06CC \"\u0645\u0631\u062A\u0628\u0637\" \u06CC\u0627 \"\u063A\u06CC\
+      \u0631 \u0645\u0631\u062A\u0628\u0637\" \u0633\u0648\u0627\u0644 \u0631\u0627\
+      \ \u062A\u06A9\u0631\u0627\u0631 \u06A9\u0646. \u0633\u0648\u0627\u0644 \u0648\
+      \ \u0628\u0631\u0686\u0633\u0628 \u0631\u0627 \u0628\u0627 \u062F\u0642\u062A\
+      \ \u0648 \u0645\u0644\u0627\u062D\u0638\u0647 \u0628\u062E\u0648\u0627\u0646\
+      \n\n\n\u0633\u0648\u0627\u0644: {{q1}}\n\u0628\u0631\u0686\u0633\u0628: {{ {\"\
+      0\": \"\u063A\u06CC\u0631 \u0645\u0631\u062A\u0628\u0637\", \"1\":\"\u0645\u0631\
+      \u062A\u0628\u0637\"}[label] }}\n:\u062A\u06A9\u0631\u0627\u0631\n||| \n{{q2}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -41,17 +90,41 @@ templates:
       original_task: true
     name: gen_new_paraphrase
     reference: ''
+  af00ed60-66b3-413b-9e8f-5c57fcd183f4: !Template
+    answer_choices: null
+    id: af00ed60-66b3-413b-9e8f-5c57fcd183f4
+    jinja: "\u0633\u0648\u0627\u0644 \u062F\u0627\u062F\u0647 \u0634\u062F\u0647 \u0631\
+      \u0627 \u0628\u0647 \u06AF\u0648\u0646\u0647 \u0627\u06CC \u062F\u06CC\u06AF\
+      \u0631 \u0628\u0627\u0632\u0646\u0648\u06CC\u0633\u06CC \u06A9\u0646. \u0628\
+      \u0627\u0632\u0646\u0648\u06CC\u0633\u06CC \u0628\u0627\u06CC\u062F \u0645\u0637\
+      \u0627\u0628\u0642 \u0628\u0627 \u0628\u0631\u0686\u0633\u0628 \u0622\u0646\u060C\
+      \ \u06CC\u0627 \u0645\u0634\u0627\u0628\u0647 \u0648 \u06CC\u0627 \u0645\u062A\
+      \u0641\u0627\u0648\u062A \u0628\u0627 \u0633\u0648\u0627\u0644 \u0627\u0648\u0644\
+      \ \u0646\u06AF\u0627\u0631\u0634 \u0634\u0648\u062F\n\n\n\u0633\u0648\u0627\u0644\
+      : {{q1}}\n\u0628\u0631\u0686\u0633\u0628: {{ {\"0\": \"\u0645\u062A\u0641\u0627\
+      \u0648\u062A\", \"1\":\"\u0645\u0634\u0627\u0628\u0647\"}[label] }}\n:\u0628\
+      \u0627\u0632\u0646\u0648\u06CC\u0633\n||| \n{{q2}}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: gen_diff_or_same
+    reference: ''
   b61739e4-69ac-4326-8fbb-452803b8ab70: !Template
-    answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
+    answer_choices: "\u0628\u0644\u0647|||\u062E\u06CC\u0631"
     id: b61739e4-69ac-4326-8fbb-452803b8ab70
-    jinja: "\u0633\u0648\u0627\u0644 \u0627\u0648\u0644 \u0648 \u062F\u0648\u0645\
-      \ \u0631\u0627 \u0628\u0627 \u062F\u0642\u062A \u0628\u062E\u0648\u0627\u0646\
-      \ \u0648 \u0645\u0642\u0627\u06CC\u0633\u0647 \u06A9\u0646 \u06A9\u0647 \u0622\
-      \u06CC\u0627 \u0628\u0627\u0632\u0646\u0648\u06CC\u0633 \u0647\u0645 \u0647\u0633\
-      \u062A\u0646\u062F\u061F\n- \u0628\u0644\u0647\n- \u062E\u06CC\u0631\n\n\n\u0633\
-      \u0648\u0627\u0644 \u0627\u0648\u0644: {{q1}}\n\u0633\u0648\u0627\u0644 \u062F\
-      \u0648\u0645: {{q2}}\n\u062C\u0648\u0627\u0628: \n||| \n{{ { \"0\": \"\u062E\
-      \u06CC\u0631\",\n           \"1\": \"\u0628\u0644\u0647\"}[label] }}\n"
+    jinja: "\u0633\u0648\u0627\u0644 \u062F\u0648\u0645 \u0631\u0627 \u0628\u0627\
+      \ \u0633\u0648\u0627\u0644 \u0627\u0635\u0644\u06CC \u0645\u0642\u0627\u06CC\
+      \u0633\u0647 \u06A9\u0646. \u0622\u06CC\u0627 \u0633\u0648\u0627\u0644 \u062F\
+      \u0648\u0645 \u0627\u0632 \u0633\u0648\u0627\u0644 \u0627\u0635\u0644\u06CC\
+      \ \u0628\u0627\u0632\u0646\u0648\u06CC\u0633\u06CC \u0634\u062F\u0647 \u0627\
+      \u0633\u062A\u061F\n- \u0628\u0644\u0647\n- \u062E\u06CC\u0631\n\n\n\u0633\u0648\
+      \u0627\u0644 \u0627\u0635\u0644\u06CC: {{q1}}\n\u0633\u0648\u0627\u0644 \u062F\
+      \u0648\u0645: {{q2}}\n:\u062C\u0648\u0627\u0628\n||| \n{{ { \"0\": \"\u062E\u06CC\
+      \u0631\",\n           \"1\": \"\u0628\u0644\u0647\"}[label] }}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -59,10 +132,10 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: compare_2_sents
+    name: compare_two_sents
     reference: ''
   be1d91d1-3ae6-4a0c-994a-523d1f3b8679: !Template
-    answer_choices: "\u0647\u0645\u06CC\u0634\u0647 ||| \u0647\u06CC\u0686\u0648\u0642\
+    answer_choices: "\u0647\u0645\u06CC\u0634\u0647|||\u0647\u06CC\u0686\u0648\u0642\
       \u062A"
     id: be1d91d1-3ae6-4a0c-994a-523d1f3b8679
     jinja: "\u0633\u0648\u0627\u0644 \u0627\u0648\u0644 \u0648 \u0633\u0648\u0627\u0644\
@@ -75,7 +148,7 @@ templates:
       \ \u0647\u0645 \u0647\u0633\u062A\u0646\u062F\u061F\n- \u0647\u0645\u06CC\u0634\
       \u0647\n- \u0647\u06CC\u0686\u0648\u0642\u062A\n\n\n\u0633\u0648\u0627\u0644\
       \ \u0627\u0648\u0644: {{q1}}\n\u0633\u0648\u0627\u0644 \u062F\u0648\u0645: {{q2}}\n\
-      \u062C\u0648\u0627\u0628:\n||| \n{{\n   {\"0\":\"\u0647\u06CC\u0686\u0648\u0642\
+      :\u062C\u0648\u0627\u0628\n||| \n{{\n   {\"0\":\"\u0647\u06CC\u0686\u0648\u0642\
       \u062A\", \n    \"1\": \"\u0647\u0645\u06CC\u0634\u0647\"}[label]\n}}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -84,19 +157,19 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: given_sent1_sent2_paraphrase
+    name: never_always
     reference: ''
   bfa55a1d-61f3-40a1-95a6-ab10b96073f9: !Template
-    answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
+    answer_choices: "\u0628\u0644\u0647|||\u062E\u06CC\u0631"
     id: bfa55a1d-61f3-40a1-95a6-ab10b96073f9
     jinja: "\u0645\u062D\u062A\u0648\u0627\u06CC \u062F\u0648 \u0645\u062A\u0646 \u0627\
       \u0631\u0627\u0626\u0647 \u0634\u062F\u0647 \u0627\u0633\u062A. \u062A\u0635\
       \u0645\u06CC\u0645 \u0628\u06AF\u06CC\u0631 \u06A9\u0647 \u0622\u06CC\u0627\
-      \ \u0627\u06CC\u0646 \u062F\u0648 \u0628\u0627 \u0647\u0645 \u0645\u0634\u0627\
-      \u0628\u0647\u0646\u062F \u06CC\u0627 \u062E\u06CC\u0631\u061F\n- \u0628\u0644\
-      \u0647\n- \u062E\u06CC\u0631\n\n\n\u0627\u0648\u0644: {{q1}}\n\u062F\u0648\u0645\
-      : {{q2}}\n\u062C\u0648\u0627\u0628: \n||| \n{{ {\"0\": \"\u062E\u06CC\u0631\"\
-      ,  \"1\":\"\u0628\u0644\u0647\"}[label]}}"
+      \ \u0627\u06CC\u0646 \u062F\u0648 \u0647\u0645 \u0645\u0639\u0646\u06CC \u0627\
+      \u0646\u062F \u06CC\u0627 \u062E\u06CC\u0631\u061F\n- \u0628\u0644\u0647\n-\
+      \ \u062E\u06CC\u0631\n\n\n\u0645\u062A\u0646 \u0627\u0648\u0644: {{q1}}\n\u0645\
+      \u062A\u0646 \u062F\u0648\u0645: {{q2}}\n:\u062C\u0648\u0627\u0628\n||| \n{{\
+      \ {\"0\": \"\u062E\u06CC\u0631\", \n\"1\":\"\u0628\u0644\u0647\"}[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -104,5 +177,46 @@ templates:
       metrics:
       - Accuracy
       original_task: true
-    name: is_it_paraphrase
+    name: similar_or_not
+    reference: ''
+  e027b11d-be6b-4f40-a25f-a69426e9dade: !Template
+    answer_choices: "\u0628\u0644\u0647|||\u062E\u06CC\u0631"
+    id: e027b11d-be6b-4f40-a25f-a69426e9dade
+    jinja: "\u0622\u06CC\u0627 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0627\u062A \u0628\
+      \u0627 \u06CC\u06A9 \u0645\u0639\u0646\u06CC \u0645\u0634\u062A\u0631\u06A9\
+      \ \u0631\u0627 \u0628\u0647 \u0630\u0647\u0646 \u0645\u062E\u0627\u0637\u0628\
+      \ \u0645\u06CC\u0631\u0633\u0627\u0646\u0646\u062F\u061F\n- \u0628\u0644\u0647\
+      \n- \u062E\u06CC\u0631\n\n\n\u062C\u0645\u0644\u0647 \u0627\u0648\u0644: {{q1}}\n\
+      \u062C\u0645\u0644\u0647 \u062F\u0648\u0645: {{q2}}\n:\u062C\u0648\u0627\u0628\
+      \n||| \n{{ { \"0\": \"\u0646\u0647\",\n        \"1\": \"\u0627\u0631\u0647\"\
+      }[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same_meaning
+    reference: ''
+  f619a6b2-c714-4288-86bd-b65795c019b0: !Template
+    answer_choices: null
+    id: f619a6b2-c714-4288-86bd-b65795c019b0
+    jinja: "\u0647\u062F\u0641 \u0627\u0632 \u067E\u0631\u0633\u0634 \u062F\u0648\
+      \ \u0633\u0648\u0627\u0644 \u0632\u06CC\u0631 \u0631\u0627 \u0627\u0631\u0632\
+      \u06CC\u0627\u0628\u06CC \u06A9\u0646\u06CC\u062F\n\n\n\u0633\u0648\u0627\u0644\
+      : {{q1}}\n\u0633\u0648\u0627\u0644 \u062F\u0648\u0645: {{q2}}\n:\u0627\u0631\
+      \u0632\u06CC\u0627\u0628\u06CC\n|||\n{{ {\" 0\": \"\u0647\u062F\u0641 \u067E\
+      \u0631\u0633\u0634 \u0627\u06CC\u0646 \u0633\u0648\u0627\u0644 \u0647\u0627\
+      \ \u0645\u062A\u0641\u0627\u0648\u062A \u0627\u0633\u062A\"\n, \"1\":\"\u0647\
+      \u062F\u0641 \u067E\u0631\u0633\u0634 \u0627\u06CC\u0646 \u0633\u0648\u0627\u0644\
+      \ \u0647\u0627 \u06CC\u06A9\u06CC \u0627\u0633\u062A\"}[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: goal_comparison
     reference: ''

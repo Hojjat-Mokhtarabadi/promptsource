@@ -70,13 +70,14 @@ templates:
     answer_choices: "\u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC|||\u0641\u0627\u0631\
       \u0633\u06CC"
     id: 89526f76-d938-4db3-8d04-540f2b2349f4
-    jinja: "\u06A9\u062F\u0627\u0645 \u0645\u062A\u0646 \u0641\u0627\u0631\u0633\u06CC\
-      \ \u0648 \u06A9\u062F\u0627\u0645 \u0645\u062A\u0646 \u0627\u0646\u06AF\u0644\
-      \u06CC\u0633\u06CC \u0627\u0633\u062A\u061F\n\n\n{% set random_number = range(2)|random\
-      \ %}{% if random_number == 1 %}\u0645\u062A\u0646: {{source}}\n{% else %} \u0645\
-      \u062A\u0646: {{targets[0]}}{% endif %}\n:\u062C\u0648\u0627\u0628\n|||\n{%\
-      \ if random_number == 1 %}\n \u0641\u0627\u0631\u0633\u06CC\n{% else %}\n\u0627\
-      \u0646\u06AF\u0644\u06CC\u0633\u06CC\n{% endif %}"
+    jinja: "\u0627\u06CC\u0646 \u0645\u062A\u0646 \u0628\u0647 \u0686\u0647 \u0632\
+      \u0628\u0627\u0646\u06CC \u0646\u0648\u0634\u062A\u0647 \u0634\u062F\u0647 \u0627\
+      \u0633\u062A\u060C \u0641\u0627\u0631\u0633\u06CC \u06CC\u0627 \u0627\u0646\u06AF\
+      \u0644\u06CC\u0633\u06CC\u061F\n\n\n{% set random_number = range(2)|random %}{%\
+      \ if random_number == 1 %}\u0645\u062A\u0646: {{source}}\n{% else %} \u0645\u062A\
+      \u0646: {{targets[0]}}{% endif %}\n:\u062C\u0648\u0627\u0628\n|||\n{% if random_number\
+      \ == 1 %}\n \u0641\u0627\u0631\u0633\u06CC\n{% else %}\n\u0627\u0646\u06AF\u0644\
+      \u06CC\u0633\u06CC\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
