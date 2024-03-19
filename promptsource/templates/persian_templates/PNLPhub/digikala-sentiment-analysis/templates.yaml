@@ -43,17 +43,19 @@ templates:
     answer_choices: "\u0628\u0644\u0647|||\u062E\u06CC\u0631"
     id: 4da79537-25dd-4ffe-9c9f-6f44ec4b3d35
     jinja: "\u0622\u06CC\u0627 \u0627\u0632 \u0645\u062A\u0646 \u062F\u0627\u062F\u0647\
-      \ \u0634\u062F\u0647 \u0627\u062D\u0633\u0627\u0633 \u0632\u06CC\u0631 \u0631\
-      \u0627 \u0628\u0631\u062F\u0627\u0634\u062A \u0645\u06CC\u0634\u0648\u062F\u061F\
-      \n\n\n{% set random =  range(0, 5) | random %}\n\u0627\u062D\u0633\u0627\u0633\
-      : \n\"{{{\n0:\"\u0627\u0641\u062A\u0636\u0627\u062D\", \n1:\"\u0628\u062F\"\
-      , \n2:\"\u0645\u062A\u0648\u0633\u0637\", \n3:\"\u062E\u0648\u0628\", \n4:\"\
-      \u0639\u0627\u0644\u06CC\"\n}[random]}}\"\n\u0645\u062A\u0646: {{Text}}\n:\u062C\
-      \u0648\u0627\u0628\n|||\n{% if random == 0 %}\n    {{ \"\u0627\u0641\u062A\u0636\
-      \u0627\u062D\" }}\n{% elif random == 1 %}\n    {{ \"\u0628\u062F\" }}\n{% elif\
-      \ random == 2 %}\n    {{ \"\u0645\u062A\u0648\u0633\u0637\" }}\n{% elif random\
-      \ == 3 %}\n    {{ \"\u062E\u0648\u0628\" }}\n{% else %}\n    {{ \"\u0639\u0627\
-      \u0644\u06CC\" }}\n{% endif %}"
+      \ \u0634\u062F\u0647\u060C \u0627\u062D\u0633\u0627\u0633 \u0632\u06CC\u0631\
+      \ \u0628\u0647 \u062E\u0648\u0627\u0646\u0646\u062F\u0647 \u0627\u0644\u0642\
+      \u0627 \u0645\u06CC\u0634\u0648\u062F\u061F\n\n\n{% set random =  range(0, 5)\
+      \ | random %}\u0627\u062D\u0633\u0627\u0633: \"{{{\n0:\"\u0627\u0641\u062A\u0636\
+      \u0627\u062D\", \n1:\"\u0628\u062F\", \n2:\"\u0645\u062A\u0648\u0633\u0637\"\
+      , \n3:\"\u062E\u0648\u0628\", \n4:\"\u0639\u0627\u0644\u06CC\"}[random]}}\"\n\
+      \u0645\u062A\u0646: {{Text}}\n:\u062C\u0648\u0627\u0628\n|||\n{% set score_int\
+      \ = Score | int %}{% if score_int >= 90 and random == 4 %}\u0628\u0644\u0647\
+      \n{% elif score_int >= 70 and score_int < 90 and random == 3%}\u0628\u0644\u0647\
+      \n{% elif score_int >= 50 and score_int < 70 and random == 2 %}\u0628\u0644\u0647\
+      \n{% elif score_int >= 30 and score_int <50 and random == 1 %}\u0628\u0644\u0647\
+      \n{% elif score_int >= 0 and score_int <30 and random == 0 %}\u0628\u0644\u0647\
+      \n{% else %}\u062E\u06CC\u0631\n{% endif %}\n\n{{random}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -72,14 +74,12 @@ templates:
       \u0644 \u0645\u06CC\u06A9\u0646\u062F\u061F \n- \u0627\u0641\u062A\u0636\u0627\
       \u062D\n- \u0628\u062F\n- \u0645\u062A\u0648\u0633\u0637\n- \u062E\u0648\u0628\
       \n- \u0639\u0627\u0644\u06CC\n\n\n\u0645\u062A\u0646 : {{Text}}\n:\u0627\u062D\
-      \u0633\u0627\u0633\n|||\n{% macro round_score(score) %}\n  {% set quotient =\
-      \ score // 25 %}\n  {% set remainder = score % 25 %}\n\n  {% if remainder >=\
-      \ 13 %}\n    {% set rounded_score = (quotient + 1) * 25 %}\n  {% else %}\n \
-      \   {% set rounded_score = quotient * 25 %}\n  {% endif %}\n\n  {{\n  {\n  \
-      \  '0':  \"\u0627\u0641\u062A\u0636\u0627\u062D\",\n    '25': \"\u0628\u062F\
-      \",\n    '50': \"\u0645\u062A\u0648\u0633\u0637\",\n    '75': \"\u062E\u0648\
-      \u0628\",\n    '100': \"\u0639\u0627\u0644\u06CC\"\n  }[rounded_score|string]\n\
-      }}\n{% endmacro %}\n\n{% set rounded_score = round_score(Score) %}\n\n{{rounded_score}}\n"
+      \u0633\u0627\u0633\n|||\n{% set score_int = Score | int %}\n{% if score_int\
+      \ >= 90 %}\n{{ \"\u0639\u0627\u0644\u06CC\" }}\n{% elif score_int >= 70 and\
+      \ score_int <90 %}\n{{ \"\u062E\u0648\u0628\" }}\n{% elif score_int >= 50 and\
+      \ score_int <70 %}\n{{ \"\u0645\u062A\u0648\u0633\u0637\" }}\n{% elif score_int\
+      \ >= 30 and score_int <50 %}\n{{ \"\u0628\u062F\" }}\n{% else %}\n{{ \"\u0627\
+      \u0641\u062A\u0636\u0627\u062D\" }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -142,15 +142,13 @@ templates:
       \u0647\u060C \u0633\u0647 \u0633\u062A\u0627\u0631\u0647\u060C \u0686\u0647\u0627\
       \u0631 \u0633\u062A\u0627\u0631\u0647\u060C \u067E\u0646\u062C \u0633\u062A\u0627\
       \u0631\u0647\n\n\n\u0646\u0638\u0631: {{Text}}\n:\u0627\u0645\u062A\u06CC\u0627\
-      \u0632\n|||\n{% macro round_score(score) %}\n  {% set quotient = score // 25\
-      \ %}\n  {% set remainder = score % 25 %}\n\n  {% if remainder >= 13 %}\n   \
-      \ {% set rounded_score = (quotient + 1) * 25 %}\n  {% else %}\n    {% set rounded_score\
-      \ = quotient * 25 %}\n  {% endif %}\n\n  {{\n  {\n    '0':  \"\u06CC\u06A9 \u0633\
-      \u062A\u0627\u0631\u0647\",\n    '25': \"\u062F\u0648 \u0633\u062A\u0627\u0631\
-      \u0647\",\n    '50': \"\u0633\u0647 \u0633\u062A\u0627\u0631\u0647\",\n    '75':\
-      \ \"\u0686\u0647\u0627\u0631 \u0633\u062A\u0627\u0631\u0647\",\n    '100': \"\
-      \u067E\u0646\u062C \u0633\u062A\u0627\u0631\u0647\"\n  }[rounded_score|string]\n\
-      }}\n{% endmacro %}\n\n{% set rounded_score = round_score(Score) %}\n\n{{rounded_score}}"
+      \u0632\n|||\n{% set score_int = Score | int %}{% if score_int >= 90 %}\n{{ \"\
+      \u067E\u0646\u062C \u0633\u062A\u0627\u0631\u0647\" }}\n{% elif score_int >=\
+      \ 70 and score_int <90 %}\n{{ \"\u0686\u0647\u0627\u0631 \u0633\u062A\u0627\u0631\
+      \u0647\" }}\n{% elif score_int >= 50 and score_int <70 %}\n{{ \"\u0633\u0647\
+      \ \u0633\u062A\u0627\u0631\u0647\" }}\n{% elif score_int >= 30 and score_int\
+      \ <50 %}\n{{ \"\u062F\u0648 \u0633\u062A\u0627\u0631\u0647\" }}\n{% else %}\n\
+      {{ \"\u06CC\u06A9 \u0633\u062A\u0627\u0631\u0647\" }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -168,9 +166,8 @@ templates:
       \ \u062F\u0627\u062F\u0647 \u0634\u062F\u0647 \u0627\u062D\u0633\u0627\u0633\
       \ \"\u0639\u0627\u0644\u06CC\n\u0631\u0627 \u0645\u0646\u062A\u0642\u0644 \u0645\
       \u06CC\u06A9\u0646\u062F\u061F \n\n\n\u0645\u062A\u0646: {{Text}}\n:\u062C\u0648\
-      \u0627\u0628\n|||\n{% set score_int = Score | int %}\n{% if score_int >= 90\
-      \ and score_int <= 100%}\n\u0628\u0644\u0647\n{% else %}\n\u062E\u06CC\u0631\
-      \n{% endif %}"
+      \u0627\u0628\n|||\n{% set score_int = Score | int %}\n{% if score_int >= 90%}\n\
+      \u0628\u0644\u0647\n{% else %}\n\u062E\u06CC\u0631\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -190,10 +187,11 @@ templates:
       \u0627 \u0628\u0646\u0648\u06CC\u0633\n\n\n\u0645\u062A\u0646: {{Text}}\n:\u0628\
       \u0627\u0631 \u0627\u062D\u0633\u0627\u0633\u06CC\n|||\n{% set score_int = Score\
       \ | int %}\n{% if score_int >= 90 %}\n    {{ \"\u0639\u0627\u0644\u06CC\" }}\n\
-      {% elif score_int >= 70 %}\n    {{ \"\u062E\u0648\u0628\" }}\n{% elif score_int\
-      \ >= 50 %}\n    {{ \"\u0645\u062A\u0648\u0633\u0637\" }}\n{% elif score_int\
-      \ >= 30 %}\n    {{ \"\u0628\u062F\" }}\n{% else %}\n    {{ \"\u0627\u0641\u062A\
-      \u0636\u0627\u062D\" }}\n{% endif %}"
+      {% elif score_int >= 70 and score_int <90 %}\n    {{ \"\u062E\u0648\u0628\"\
+      \ }}\n{% elif score_int >= 50 and score_int <70 %}\n    {{ \"\u0645\u062A\u0648\
+      \u0633\u0637\" }}\n{% elif score_int >= 30 and score_int <50 %}\n    {{ \"\u0628\
+      \u062F\" }}\n{% else %}\n    {{ \"\u0627\u0641\u062A\u0636\u0627\u062D\" }}\n\
+      {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -207,19 +205,19 @@ templates:
     answer_choices: "\u0627\u0641\u062A\u0636\u0627\u062D|||\u0628\u062F|||\u0645\u062A\
       \u0648\u0633\u0637|||\u062E\u0648\u0628|||\u0639\u0627\u0644\u06CC"
     id: d854905a-fdd3-4b8b-8bba-6af3c418b1be
-    jinja: "\u0627\u062D\u0633\u0627\u0633 \u0645\u062A\u0646 \u0631\u0627 \u0645\u0634\
-      \u062E\u0635 \u06A9\u0646\n\u0627\u062D\u0633\u0627\u0633 \u0647\u0627: \u0627\
-      \u0641\u062A\u0636\u0627\u062D\u060C \u0628\u062F\u060C \u0645\u062A\u0648\u0633\
-      \u0637\u060C \u062E\u0648\u0628\u060C \u0639\u0627\u0644\u06CC\n\n\n\u0645\u062A\
-      \u0646: {{Text}}\n:\u0627\u062D\u0633\u0627\u0633\n|||\n{% macro round_score(score)\
-      \ %}\n  {% set quotient = score // 25 %}\n  {% set remainder = score % 25 %}\n\
-      \n  {% if remainder >= 13 %}\n    {% set rounded_score = (quotient + 1) * 25\
-      \ %}\n  {% else %}\n    {% set rounded_score = quotient * 25 %}\n  {% endif\
-      \ %}\n\n  {{\n  {\n    '0':  \"\u0627\u0641\u062A\u0636\u0627\u062D\",\n   \
-      \ '25': \"\u0628\u062F\",\n    '50': \"\u0645\u062A\u0648\u0633\u0637\",\n \
-      \   '75': \"\u062E\u0648\u0628\",\n    '100': \"\u0639\u0627\u0644\u06CC\"\n\
-      \  }[rounded_score|string]\n}}\n{% endmacro %}\n\n{% set rounded_score = round_score(Score)\
-      \ %}\n\n{{rounded_score}}"
+    jinja: "\u06A9\u062F\u0627\u0645\u06CC\u06A9 \u0627\u0632 \u06AF\u0632\u06CC\u0646\
+      \u0647 \u0647\u0627\u06CC \u0632\u06CC\u0631 \u062A\u062F\u0627\u0639\u06CC\
+      \ \u06AF\u0631 \u0628\u0627\u0631 \u0627\u062D\u0633\u0627\u0633\u06CC \u0645\
+      \u062A\u0646 \u062F\u0627\u062F\u0647 \u0634\u062F\u0647 \u0627\u0633\u062A\u061F\
+      \n\u0627\u062D\u0633\u0627\u0633 \u0647\u0627: \u0627\u0641\u062A\u0636\u0627\
+      \u062D\u060C \u0628\u062F\u060C \u0645\u062A\u0648\u0633\u0637\u060C \u062E\u0648\
+      \u0628\u060C \u0639\u0627\u0644\u06CC\n\n\n\u0645\u062A\u0646: {{Text}}\n:\u0627\
+      \u062D\u0633\u0627\u0633\n|||\n{% set score_int = Score | int %}\n{% if score_int\
+      \ >= 90 %}\n{{ \"\u0639\u0627\u0644\u06CC\" }}\n{% elif score_int >= 70 and\
+      \ score_int <90 %}\n{{ \"\u062E\u0648\u0628\" }}\n{% elif score_int >= 50 and\
+      \ score_int <70 %}\n{{ \"\u0645\u062A\u0648\u0633\u0637\" }}\n{% elif score_int\
+      \ >= 30 and score_int <50 %}\n{{ \"\u0628\u062F\" }}\n{% else %}\n{{ \"\u0627\
+      \u0641\u062A\u0636\u0627\u062D\" }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
