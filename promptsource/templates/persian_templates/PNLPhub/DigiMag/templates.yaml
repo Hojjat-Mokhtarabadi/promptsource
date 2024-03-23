@@ -6,7 +6,7 @@ templates:
     jinja: "\u0622\u06CC\u0627 \u0645\u062A\u0646 \u062F\u0627\u062F\u0647 \u0634\u062F\
       \u0647 \u0628\u0647 \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC \u0639\
       \u0645\u0648\u0645\u06CC \u062A\u0639\u0644\u0642 \u062F\u0627\u0631\u062F\u061F\
-      \n\n\n\u0645\u062A\u0646: {{content}}\n:\u062C\u0648\u0627\u0628\n|||{% if label_id\
+      \n\n\n\u0645\u062A\u0646: {{content}}\n\u062C\u0648\u0627\u0628:\n|||{% if label_id\
       \ == 4 %}\n \u0628\u0644\u0647\n{% else %}\n \u062E\u06CC\u0631\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -24,7 +24,7 @@ templates:
       \u0647 \u0628\u0647 \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC \u0631\
       \u0627\u0647\u0646\u0645\u0627\u06CC \u062E\u0631\u06CC\u062F \u062A\u0639\u0644\
       \u0642 \u062F\u0627\u0631\u062F\u061F\n\n\n\u0645\u062A\u0646: {{content}}\n\
-      :\u062C\u0648\u0627\u0628\n|||{% if label_id == 1 %}\n \u0628\u0644\u0647\n\
+      \u062C\u0648\u0627\u0628:\n|||{% if label_id == 1 %}\n \u0628\u0644\u0647\n\
       {% else %}\n \u062E\u06CC\u0631\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -70,7 +70,7 @@ templates:
       \u0647 \u0628\u0647 \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC \u06A9\
       \u062A\u0627\u0628 \u0648 \u0627\u062F\u0628\u06CC\u0627\u062A \u062A\u0639\u0644\
       \u0642 \u062F\u0627\u0631\u062F\u061F\n\n\n\u0645\u062A\u0646: {{content}}\n\
-      :\u062C\u0648\u0627\u0628\n|||{% if label_id == 6 %}\n \u0628\u0644\u0647\n\
+      \u062C\u0648\u0627\u0628:\n|||{% if label_id == 6 %}\n \u0628\u0644\u0647\n\
       {% else %}\n \u062E\u06CC\u0631\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -88,7 +88,7 @@ templates:
       \u0647 \u0628\u0647 \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC \u0639\
       \u0644\u0645 \u0648 \u062A\u06A9\u0646\u0648\u0644\u0648\u0698\u06CC \u062A\u0639\
       \u0644\u0642 \u062F\u0627\u0631\u062F\u061F\n\n\n\u0645\u062A\u0646: {{content}}\n\
-      :\u062C\u0648\u0627\u0628\n|||{% if label_id == 3 %}\n \u0628\u0644\u0647\n\
+      \u062C\u0648\u0627\u0628:\n|||{% if label_id == 3 %}\n \u0628\u0644\u0647\n\
       {% else %}\n \u062E\u06CC\u0631\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -105,8 +105,8 @@ templates:
     jinja: "\u0622\u06CC\u0627 \u0645\u062A\u0646 \u062F\u0627\u062F\u0647 \u0634\u062F\
       \u0647 \u0628\u0647 \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC \u0647\
       \u0646\u0631 \u0648 \u0633\u06CC\u0646\u0645\u0627 \u062A\u0639\u0644\u0642\
-      \ \u062F\u0627\u0631\u062F\u061F\n\n\n\u0645\u062A\u0646: {{content}}\n:\u062C\
-      \u0648\u0627\u0628\n|||{% if label_id == 5 %}\n \u0628\u0644\u0647\n{% else\
+      \ \u062F\u0627\u0631\u062F\u061F\n\n\n\u0645\u062A\u0646: {{content}}\n\u062C\
+      \u0648\u0627\u0628:\n|||{% if label_id == 5 %}\n \u0628\u0644\u0647\n{% else\
       \ %}\n \u062E\u06CC\u0631\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -138,8 +138,8 @@ templates:
       \u0628 \u0648 \u0627\u062F\u0628\u06CC\u0627\u062A \n- \u0633\u0644\u0627\u0645\
       \u062A \u0648 \u0632\u06CC\u0628\u0627\u06CC\u06CC \n- \u0639\u0645\u0648\u0645\
       \u06CC \n- \u0631\u0627\u0647\u0646\u0645\u0627\u06CC \u062E\u0631\u06CC\u062F\
-      \n\n\n\u0645\u062A\u0646: {{content}}\n:\u062F\u0633\u062A\u0647 \u0628\u0646\
-      \u062F\u06CC\n|||\n{{label}}"
+      \n\n\n\u0645\u062A\u0646: {{content}}\n\u062F\u0633\u062A\u0647 \u0628\u0646\
+      \u062F\u06CC:\n|||\n{{label}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -156,7 +156,7 @@ templates:
       \ \u0645\u062A\u0646 \u0631\u0627 \u062F\u0631 \u062F\u0633\u062A\u0647 \u0628\
       \u0646\u062F\u06CC \u0628\u0627\u0632\u06CC \u0648\u06CC\u062F\u06CC\u0648\u06CC\
       \u06CC \u062C\u0627 \u062F\u0627\u062F\u061F\n\n\n\u0645\u062A\u0646: {{content}}\n\
-      :\u062C\u0648\u0627\u0628\n|||{% if label_id == 0 %}\n \u0628\u0644\u0647\n\
+      \u062C\u0648\u0627\u0628:\n|||{% if label_id == 0 %}\n \u0628\u0644\u0647\n\
       {% else %}\n \u062E\u06CC\u0631\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -174,7 +174,7 @@ templates:
       \u0647 \u0628\u0647 \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC \u0632\
       \u06CC\u0628\u0627\u06CC\u06CC \u0648 \u0633\u0644\u0627\u0645\u062A \u0645\u062A\
       \u0639\u0644\u0642 \u0627\u0633\u062A\u061F\n\n\n\u0645\u062A\u0646: {{content}}\n\
-      :\u062C\u0648\u0627\u0628\n|||{% if label_id == 2 %}\n \u0628\u0644\u0647\n\
+      \u062C\u0648\u0627\u0628:\n|||{% if label_id == 2 %}\n \u0628\u0644\u0647\n\
       {% else %}\n \u062E\u06CC\u0631\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -188,12 +188,21 @@ templates:
   eb6947bf-4d45-4f0f-9fc0-67e21d6bb137: !Template
     answer_choices: null
     id: eb6947bf-4d45-4f0f-9fc0-67e21d6bb137
-    jinja: "\u0645\u062A\u0646 \u0632\u06CC\u0631 \u0631\u0627 \u06AF\u0627\u0645\
-      \ \u0628\u0647 \u06AF\u0627\u0645 \u0648 \u0628\u0627 \u062D\u0648\u0635\u0644\
-      \u0647 \u0645\u0637\u0627\u0644\u0639\u0647 \u06A9\u0646 \u0648 \u0645\u0646\
-      \u0627\u0633\u0628 \u062A\u0631\u06CC\u0646 \u062F\u0633\u062A\u0647 \u0628\u0646\
-      \u062F\u06CC \u0631\u0627 \u0628\u0646\u0648\u06CC\u0633\n\n\n\u0645\u062A\u0646\
-      : {{content}}\n:\u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC\n|||\n{{label}}\n"
+    jinja: "\u06CC\u06A9 \u0645\u062A\u0646 \u0628\u0631\u0627\u06CC \u0634\u0645\u0627\
+      \ \u0641\u0631\u0627\u0647\u0645 \u0634\u062F\u0647 \u0627\u0633\u062A. \u0648\
+      \u0638\u06CC\u0641\u0647 \u0634\u0645\u0627 \u0627\u06CC\u0646 \u0627\u0633\u062A\
+      \ \u06A9\u0647 \u0627\u0628\u062A\u062F\u0627 \u0645\u062A\u0646 \u0631\u0627\
+      \ \u0628\u0627 \u062F\u0642\u062A \u0645\u0637\u0627\u0644\u0639\u0647 \u06A9\
+      \u0646\u06CC\u062F \u0648 \u0633\u067E\u0633 \u0628\u0627 \u062A\u0648\u062C\
+      \u0647 \u0628\u0647 \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC \u0627\
+      \u0639\u0644\u0627\u0645 \u0634\u062F\u0647 \u0627\u062F\u0627\u0645\u0647 \u0645\
+      \u062A\u0646 \u0631\u0627 \u0628\u0646\u0648\u06CC\u0633\u06CC\u062F. \u062C\
+      \u0648\u0627\u0628 \u0634\u0645\u0627 \u0628\u0627\u06CC\u062F \u0645\u0631\u062A\
+      \u0628\u0637 \u0628\u0627 \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC\
+      \ \u0628\u0627\u0634\u062F.\n{% set midpoint = (content|length // 2) %}{% set\
+      \ first_half = content[:midpoint] %}\n{% set second_half = content[midpoint:]\
+      \ %}\n\u0645\u062A\u0646: {{ first_half }}\n\u062F\u0633\u062A\u0647 \u0628\u0646\
+      \u062F\u06CC: {{label}}\n\u062C\u0648\u0627\u0628: \n|||\n{{ second_half }}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -201,5 +210,5 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: generate_class
+    name: generate_text
     reference: ''
