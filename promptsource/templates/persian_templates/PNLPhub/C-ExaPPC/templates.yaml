@@ -1,0 +1,134 @@
+dataset: PNLPhub/C-ExaPPC
+templates:
+  08abbfd5-1f2b-4bd1-aa82-8f6c64507d36: !Template
+    answer_choices: "\u0628\u0644\u0647|||\u062E\u06CC\u0631"
+    id: 08abbfd5-1f2b-4bd1-aa82-8f6c64507d36
+    jinja: "\u0622\u06CC\u0627 \u062C\u0645\u0644\u0647 \u06CC \u0627\u0648\u0644\
+      \ \u0648 \u062F\u0648\u0645 \u0628\u06CC\u0627\u0646 \u06CC\u06A9\u0633\u0627\
+      \u0646 \u062F\u0627\u0631\u0646\u062F\u061F\n- \u0628\u0644\u0647\n- \u062E\u06CC\
+      \u0631\n\n\n\u062C\u0645\u0644\u0647 \u0627\u0648\u0644: {{sentence1}}\n\u062C\
+      \u0645\u0644\u0647 \u062F\u0648\u0645: {{sentence2}}\n\u062C\u0648\u0627\u0628\
+      :\n|||\n{{ { \"non-paraphrase\": \"\u062E\u06CC\u0631\",\n\"paraphrase\": \"\
+      \u0628\u0644\u0647\"}[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: similar
+    reference: ''
+  3c23e89b-cff1-4ba2-8d4d-b7e3252ed779: !Template
+    answer_choices: "\u062E\u06CC\u0631|||\u0628\u0644\u0647"
+    id: 3c23e89b-cff1-4ba2-8d4d-b7e3252ed779
+    jinja: "\u067E\u0633 \u0627\u0632 \u062E\u0648\u0627\u0646\u062F\u0646 \u062C\u0645\
+      \u0644\u0647 \u06CC \u0627\u0648\u0644 \u0648 \u062F\u0648\u0645 \u062A\u0635\
+      \u0645\u06CC\u0645 \u0628\u06AF\u06CC\u0631\u06CC\u062F \u06A9\u0647 \u0622\u06CC\
+      \u0627 \u0645\u0642\u0635\u0648\u062F \u0627\u0635\u0644\u06CC \u062C\u0645\u0644\
+      \u0627\u062A \u0628\u0627 \u06CC\u06A9\u062F\u06CC\u06AF\u0631 \u0645\u062A\u0641\
+      \u0627\u0648\u062A \u0627\u0633\u062A \u06CC\u0627 \u062E\u06CC\u0631\n- \u0628\
+      \u0644\u0647\n- \u062E\u06CC\u0631\n\n\n\u062C\u0645\u0644\u0647 \u0627\u0648\
+      \u0644: {{sentence1}}\n\u062C\u0645\u0644\u0647 \u062F\u0648\u0645: {{sentence2}}\n\
+      \u062C\u0648\u0627\u0628:\n||| \n{{ { \"non-paraphrase\": \"\u0628\u0644\u0647\
+      \",\n           \"paraphrase\": \"\u062E\u06CC\u0631\"}[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: different_point
+    reference: ''
+  3ef5b9c1-2011-4ead-88bd-311d82b71812: !Template
+    answer_choices: null
+    id: 3ef5b9c1-2011-4ead-88bd-311d82b71812
+    jinja: "\u062A\u0648\u0636\u06CC\u062D\u0627\u062A \u0646\u0648\u0634\u062A\u0647\
+      \ \u0634\u062F\u0647 \u0631\u0627 \u0628\u062E\u0648\u0627\u0646 \u0648 \u0622\
+      \u0646 \u0631\u0627 \u0628\u0647 \u06AF\u0648\u0646\u0647 \u0627\u06CC \u062F\
+      \u06AF\u0631\u0646\u0648\u06CC\u0633\u06CC \u06A9\u0646 \u06A9\u0647 \u0628\u0627\
+      \ \u0628\u0631\u0686\u0633\u0628 \u0645\u0637\u0627\u0628\u0642\u062A \u062F\
+      \u0627\u0634\u062A\u0647 \u0628\u0627\u0634\u062F\n\n\n\u062A\u0648\u0636\u06CC\
+      \u062D\u0627\u062A: {{sentence1}}\n\u0628\u0631\u0686\u0633\u0628: {{ { \"non-paraphrase\"\
+      : \"\u062A\u0648\u0636\u06CC\u062D\u0627\u062A \u0631\u0627 \u0628\u0647 \u0634\
+      \u06A9\u0644\u06CC \u062C\u062F\u06CC\u062F \u0648 \u0628\u062F\u0648\u0646\
+      \ \u062D\u0641\u0638 \u0645\u0639\u0646\u06CC\u060C \u062F\u06AF\u0631\u0646\
+      \u0648\u06CC\u0633\u06CC \u06A9\u0646\",\n\"paraphrase\": \"\u062A\u0648\u0636\
+      \u06CC\u062D\u0627\u062A \u0631\u0627 \u0628\u0647 \u0634\u06A9\u0644\u06CC\
+      \ \u062C\u062F\u06CC\u062F \u0648 \u0628\u0627 \u062D\u0641\u0638 \u0645\u0639\
+      \u0646\u06CC\u060C \u062F\u06AF\u0631\u0646\u0648\u06CC\u0633\u06CC \u06A9\u0646\
+      \"}[label] }}\n\u062F\u06AF\u0631\u0646\u0648\u06CC\u0633\u06CC:\n|||\n{{sentence2}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: rewrite_label
+    reference: ''
+  63ec398b-bb4a-4a2a-8453-424d1db45b12: !Template
+    answer_choices: "\u0635\u062D\u06CC\u062D|||\u063A\u0644\u0637"
+    id: 63ec398b-bb4a-4a2a-8453-424d1db45b12
+    jinja: "\u0622\u06CC\u0627 \u0645\u06CC\u062A\u0648\u0627\u0646 \u06AF\u0641\u062A\
+      \ \u06A9\u0647 \u0628\u0631\u062F\u0627\u0634\u062A \u062E\u0648\u0627\u0646\
+      \u0646\u062F\u0647 \u0627\u0632 \u062F\u0648 \u0645\u062A\u0646 \u0646\u0648\
+      \u0634\u062A\u0647 \u0634\u062F\u0647 \u06CC\u06A9\u0633\u0627\u0646 \u0627\u0633\
+      \u062A\u061F\n- \u0635\u062D\u06CC\u062D\n- \u063A\u0644\u0637\n\n\n\u0645\u062A\
+      \u0646 \u0627\u0648\u0644: {{sentence1}}\n\u0645\u062A\u0646 \u062F\u0648\u0645\
+      : {{sentence2}}\n\u062C\u0648\u0627\u0628:\n||| \n{{ { \"non-paraphrase\": \"\
+      \u063A\u0644\u0637\",\n           \"paraphrase\": \"\u0635\u062D\u06CC\u062D\
+      \"}[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fa
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same_point
+    reference: ''
+  7484480c-6c8a-4b92-b40e-2a78309ba227: !Template
+    answer_choices: null
+    id: 7484480c-6c8a-4b92-b40e-2a78309ba227
+    jinja: "\u0627\u0631\u062A\u0628\u0627\u0637 \u0645\u06CC\u0627\u0646 \u062C\u0645\
+      \u0644\u0647 \u0627\u0648\u0644 \u0648 \u062F\u0648\u0645 \u0628\u0647 \u0686\
+      \u0647 \u0646\u0648\u0639 \u0627\u0633\u062A\n\n\n\u062C\u0645\u0644\u0647 \u0627\
+      \u0648\u0644: {{sentence1}}\n\u062C\u0645\u0644\u0647 \u062F\u0648\u0645: {{sentence2}}\n\
+      \u062C\u0648\u0627\u0628:\n|||\n{{ { \"non-paraphrase\": \"\u062C\u0645\u0644\
+      \u0627\u062A \u0646\u0627\u0645\u0631\u062A\u0628\u0637 \u0647\u0633\u062A\u0646\
+      \u062F\",\n\"paraphrase\": \"\u062C\u0645\u0644\u0627\u062A \u0645\u0631\u062A\
+      \u0628\u0637 \u0647\u0633\u062A\u0646\u062F\"}[label] }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: relation
+    reference: ''
+  8b25cbb1-dd16-4bd5-8721-8172a59507fe: !Template
+    answer_choices: null
+    id: 8b25cbb1-dd16-4bd5-8721-8172a59507fe
+    jinja: "\u0647\u062F\u0641 \u0627\u0635\u0644\u06CC \u0645\u062A\u0646 \u0646\u062E\
+      \u0633\u062A \u0631\u0627 \u0628\u0631\u0631\u0633\u06CC \u06A9\u0646\u06CC\u062F\
+      \ \u0648 \u0633\u067E\u0633 \u0628\u0631\u0627\u0633\u0627\u0633 \u062F\u0633\
+      \u062A\u0648\u0631 \u0632\u06CC\u0631\u060C \u0622\u0646 \u0631\u0627 \u0628\
+      \u0627\u0632\u0646\u06AF\u0627\u0631\u06CC \u06A9\u0646\u06CC\u062F\n\n\n\u0645\
+      \u062A\u0646: {{sentence1}}\n\u062F\u0633\u062A\u0648\u0631: {{ { \"non-paraphrase\"\
+      : \"\u0647\u062F\u0641 \u0627\u0635\u0644\u06CC \u0645\u062A\u0646 \u062A\u063A\
+      \u06CC\u06CC\u0631 \u06A9\u0646\u062F\",\n           \"paraphrase\": \"\u0647\
+      \u062F\u0641 \u0627\u0635\u0644\u06CC \u0645\u062A\u0646 \u062A\u063A\u06CC\u06CC\
+      \u0631 \u0646\u06A9\u0646\u062F\"}[label] }}\n\u0628\u0627\u0632\u0646\u06AF\
+      \u0627\u0631\u06CC:\n|||\n{{sentence2}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fa
+      metrics:
+      - BLEU
+      original_task: true
+    name: rewrite_order
+    reference: ''
