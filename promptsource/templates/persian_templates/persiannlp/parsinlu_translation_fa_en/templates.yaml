@@ -7,7 +7,7 @@ templates:
       \u0647 \u0631\u0627 \u0627\u0632 \u0632\u0628\u0627\u0646 \u0641\u0627\u0631\
       \u0633\u06CC \u0628\u0647 \u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC \u0628\u0646\
       \u0648\u06CC\u0633\u06CC\u062F\n\n\n\u0639\u0628\u0627\u0631\u062A: {{source}}\n\
-      :\u062C\u0648\u0627\u0628\n|||\n{{targets[0]}}"
+      \u062C\u0648\u0627\u0628:\n|||\n{{targets[0]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -22,8 +22,8 @@ templates:
     id: 631f4f5e-5e41-4528-b83e-9ee65546149f
     jinja: "\u0645\u062A\u0646 \u0641\u0627\u0631\u0633\u06CC \u0631\u0627 \u0628\u0647\
       \ \u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC \u062A\u0628\u062F\u06CC\u0644\
-      \ \u06A9\u0646\u06CC\u062F\n\n\n\u0645\u062A\u0646: {{source}}\n:\u062C\u0648\
-      \u0627\u0628\n|||\n{{targets[0]}}"
+      \ \u06A9\u0646\u06CC\u062F\n\n\n\u0645\u062A\u0646: {{source}}\n\u062C\u0648\
+      \u0627\u0628:\n|||\n{{targets[0]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -38,8 +38,8 @@ templates:
     id: 6fc8e88b-8d5f-49bc-90a0-8b8003264dc6
     jinja: "\u0627\u0632 \u0632\u0628\u0627\u0646 \u0641\u0627\u0631\u0633\u06CC \u0628\
       \u0647 \u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC \u062A\u0631\u062C\u0645\u0647\
-      \ \u06A9\u0646\u06CC\u062F\n\n\n\u0645\u062A\u0646: {{source}}\n:\u062C\u0648\
-      \u0627\u0628\n|||\n{{targets[0]}}"
+      \ \u06A9\u0646\u06CC\u062F\n\n\n\u0645\u062A\u0646: {{source}}\n\u062C\u0648\
+      \u0627\u0628:\n|||\n{{targets[0]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -55,7 +55,7 @@ templates:
     jinja: "\u062A\u0631\u062C\u0645\u0647 \u06CC \u0641\u0627\u0631\u0633\u06CC \u0628\
       \u0647 \u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC \u0627\u06CC\u0646 \u0645\u0637\
       \u0644\u0628 \u0631\u0627 \u0641\u0631\u0627\u0647\u0645 \u06A9\u0646\u06CC\u062F\
-      \n\n\n\u0645\u0637\u0644\u0628: {{source}}\n:\u062A\u0631\u062C\u0645\u0647\n\
+      \n\n\n\u0645\u0637\u0644\u0628: {{source}}\n\u062A\u0631\u062C\u0645\u0647:\n\
       |||\n{{targets[0]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -75,7 +75,7 @@ templates:
       \u0633\u062A\u060C \u0641\u0627\u0631\u0633\u06CC \u06CC\u0627 \u0627\u0646\u06AF\
       \u0644\u06CC\u0633\u06CC\u061F\n\n\n{% set random_number = range(2)|random %}{%\
       \ if random_number == 1 %}\u0645\u062A\u0646: {{source}}\n{% else %} \u0645\u062A\
-      \u0646: {{targets[0]}}{% endif %}\n:\u062C\u0648\u0627\u0628\n|||\n{% if random_number\
+      \u0646: {{targets[0]}}{% endif %}\n\u062C\u0648\u0627\u0628:\n|||\n{% if random_number\
       \ == 1 %}\n \u0641\u0627\u0631\u0633\u06CC\n{% else %}\n\u0627\u0646\u06AF\u0644\
       \u06CC\u0633\u06CC\n{% endif %}"
     metadata: !TemplateMetadata
@@ -96,7 +96,7 @@ templates:
       \ \u0627\u0632 \u0632\u0628\u0627\u0646 \u0641\u0627\u0631\u0633\u06CC \u0628\
       \u0647 \u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC \u0631\u0648\u0627\u0646 \u0628\
       \u0631\u06AF\u0631\u062F\u0627\u0646\u06CC\u062F\n\n\n\u0645\u0637\u0644\u0628\
-      : {{source}}\n:\u062C\u0648\u0627\u0628\n|||\n{{targets[0]}}"
+      : {{source}}\n\u062C\u0648\u0627\u0628:\n|||\n{{targets[0]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:

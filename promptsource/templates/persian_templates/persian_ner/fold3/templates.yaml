@@ -6,15 +6,18 @@ templates:
     id: 1d96d74b-6f0c-4671-9c42-6f512d5e8367
     jinja: "\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0627\u0633\u0627\
       \u0645\u06CC \u0633\u0627\u0632\u0645\u0627\u0646 \u0647\u0627\u0631\u0627 \u067E\
-      \u06CC\u062F\u0627 \u06A9\u0646 \u0648 \u0627\u06AF\u0631 \u0645\u0648\u062C\
-      \u0648\u062F\u06CC\u062A\u06CC \u0634\u0646\u0627\u0633\u0627\u06CC\u06CC \u0646\
-      \u06A9\u0631\u062F\u06CC \"\u0646\u062F\u0627\u0631\u062F\" \u0631\u0627 \u062F\
-      \u0631 \u062C\u0648\u0627\u0628 \u0628\u0646\u0648\u06CC\u0633\n\n\n\u062C\u0645\
-      \u0644\u0647 : {{ tokens|join(' ') }}\n\u062C\u0648\u0627\u0628: \n|||\n{% set\
-      \ sentence = [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n    {% if\
-      \ tag==10 or tag == 4 %}\n        {% set _ = sentence.append(token) %}\n   \
-      \ {% endif %}\n{% endfor %}\n{% if sentence %} {{ sentence | unique | join('\
-      \ ') }}\n{% else %} \u0646\u062F\u0627\u0631\u062F {% endif %}\n"
+      \u06CC\u062F\u0627 \u06A9\u0646\u06CC\u062F \u0648 \u0627\u06AF\u0631 \u0645\
+      \u0648\u062C\u0648\u062F\u06CC\u062A\u06CC \u0634\u0646\u0627\u0633\u0627\u06CC\
+      \u06CC \u0646\u06A9\u0631\u062F\u06CC\u062F \"\u0646\u0627\u0645 \u0647\u06CC\
+      \u0686 \u0633\u0627\u0632\u0645\u0627\u0646\u06CC \u06CC\u0627\u0641\u062A \u0646\
+      \u0634\u062F\" \u0631\u0627 \u062F\u0631 \u062C\u0648\u0627\u0628 \u0628\u0646\
+      \u0648\u06CC\u0633\u06CC\u062F\n\n\n\u062C\u0645\u0644\u0647 : {{ tokens|join('\
+      \ ') }}\n\u062C\u0648\u0627\u0628:\n|||\n{% set sentence = [] %}\n{% for token,\
+      \ tag in zip(tokens, ner_tags) %}\n    {% if tag==10 or tag == 4 %}\n      \
+      \  {% set _ = sentence.append(token) %}\n    {% endif %}\n{% endfor %}\n{% if\
+      \ sentence %} {{ sentence | unique | join(' ') }}\n{% else %} \u0646\u0627\u0645\
+      \ \u0647\u06CC\u0686 \u0633\u0627\u0632\u0645\u0627\u0646\u06CC \u06CC\u0627\
+      \u0641\u062A \u0646\u0634\u062F {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -27,14 +30,15 @@ templates:
   24613875-26ad-458f-a71e-6e2d9db7d2c7: !Template
     answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
     id: 24613875-26ad-458f-a71e-6e2d9db7d2c7
-    jinja: "\u0622\u06CC\u0627 \u062F\u0631 \u0645\u062A\u0646 \u0632\u06CC\u0631\
-      \ \u0646\u0627\u0645 \u0645\u062D\u0635\u0648\u0644\u06CC \u06CC\u0627\u0641\
-      \u062A \u0645\u06CC\u200C\u0634\u0648\u062F\u061F\n- \u0628\u0644\u0647\n- \u062E\
-      \u06CC\u0631\n\n\n\u0645\u062A\u0646 : {{ tokens|join(' ') }}\n\u062C\u0648\u0627\
-      \u0628: \n|||\n{% set sentence = [] %}\n{% for token, tag in zip(tokens, ner_tags)\
-      \ %}\n    {% if tag==6 or tag ==12 %}\n        {% set _ = sentence.append(token)\
-      \ %}\n    {% endif %}\n{% endfor %}\n{% if sentence %}\n\u0628\u0644\u0647\n\
-      {% else %}\n\u062E\u06CC\u0631\n {% endif %}\n"
+    jinja: "\u0622\u06CC\u0627 \u062F\u0631 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647\
+      \ \u0646\u0627\u0645 \u0647\u06CC\u0686 \u0645\u0648\u0631\u062F\u06CC \u0627\
+      \u0632 \u0645\u062D\u0635\u0648\u0644\u0627\u062A \u0628\u06CC\u0627\u0646 \u0634\
+      \u062F\u0647\u061F\n- \u0628\u0644\u0647\n- \u062E\u06CC\u0631\n\n\n\u062C\u0645\
+      \u0644\u0647: {{ tokens|join(' ') }}\n\u062C\u0648\u0627\u0628:\n|||\n{% set\
+      \ sentence = [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n    {% if\
+      \ tag==12 or tag == 6 %}\n        {% set _ = sentence.append(token) %}\n   \
+      \ {% endif %}\n{% endfor %}\n{% if sentence %} \u0628\u0644\u0647\n{% else %}\
+      \ \u062E\u06CC\u0631{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -47,14 +51,14 @@ templates:
   31d6c37f-221d-4b1d-92e3-7f89b169a32c: !Template
     answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
     id: 31d6c37f-221d-4b1d-92e3-7f89b169a32c
-    jinja: "\u0622\u06CC\u0627 \u062F\u0631 \u0645\u062A\u0646 \u0632\u06CC\u0631\
-      \ \u0627\u0633\u0645 \u0634\u062E\u0635 \u06CC\u0627\u0641\u062A \u0645\u06CC\
-      \u200C\u0634\u0648\u062F\u061F\n- \u0628\u0644\u0647\n- \u062E\u06CC\u0631\n\
-      \n\n\u0645\u062A\u0646 : {{ tokens|join(' ') }}\n\u062C\u0648\u0627\u0628: \n\
-      |||\n{% set sentence = [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n\
-      \    {% if tag==5 or tag == 11 %}\n        {% set _ = sentence.append(token)\
-      \ %}\n    {% endif %}\n{% endfor %}\n{% if sentence %}\n\u0628\u0644\u0647\n\
-      {% else %}\n\u062E\u06CC\u0631\n {% endif %}\n"
+    jinja: "\u0622\u06CC\u0627 \u062F\u0631 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647\
+      \ \u0646\u0627\u0645 \u0647\u06CC\u0686 \u0634\u062E\u0635\u06CC \u0628\u06CC\
+      \u0627\u0646 \u0634\u062F\u0647\u061F\n- \u0628\u0644\u0647\n- \u062E\u06CC\u0631\
+      \n\n\n\u062C\u0645\u0644\u0647: {{ tokens|join(' ') }}\n\u062C\u0648\u0627\u0628\
+      :\n|||\n{% set sentence = [] %}\n{% for token, tag in zip(tokens, ner_tags)\
+      \ %}\n    {% if tag==11 or tag == 5 %}\n        {% set _ = sentence.append(token)\
+      \ %}\n    {% endif %}\n{% endfor %}\n{% if sentence %} \u0628\u0644\u0647\n\
+      {% else %} \u062E\u06CC\u0631{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -70,24 +74,23 @@ templates:
     jinja: " \u06A9\u062F\u0627\u0645 \u06CC\u06A9 \u0627\u0632 \u0627\u06CC\u0646\
       \ \u0645\u0648\u0627\u0631\u062F \u062F\u0631 \u062C\u0645\u0644\u0647 \u06CC\
       \ \u062F\u0627\u062F\u0647 \u0634\u062F\u0647 \u0648\u062C\u0648\u062F \u062F\
-      \u0627\u0631\u062F\u061F (\u0645\u062D\u0635\u0648\u0644\u060C \u062A\u0633\u0647\
-      \u06CC\u0644\u0627\u062A \u06CC\u0627 \u0633\u0627\u062E\u062A\u0645\u0627\u0646\
-      \u060C \u0633\u0627\u0632\u0645\u0627\u0646\u060C \u0634\u062E\u0635\u060C \u0631\
-      \u0648\u06CC\u062F\u0627\u062F\u060C \u0645\u06A9\u0627\u0646\u060C \u0647\u06CC\
-      \u0686\u06A9\u062F\u0627\u0645)\n\n\n\u062C\u0645\u0644\u0647 : {{ tokens|join('\
-      \ ') }}\n\u067E\u0627\u0633\u062E:\n|||\n{% set sentence = [] %}\n{% for token,\
-      \ tag in zip(tokens, ner_tags) %}\n    {% if tag==7 %}\n        {% set _ = sentence.append(\"\
-      \u0631\u0648\u06CC\u062F\u0627\u062F\") %}\n    {% endif %}\n{% if tag==8 %}\n\
-      \        {% set _ = sentence.append(\"\u062A\u0633\u0647\u06CC\u0644\u0627\u062A\
-      \ \u06CC\u0627 \u0633\u0627\u062E\u062A\u0645\u0627\u0646\") %}\n    {% endif\
-      \ %}\n{% if tag==9 %}\n        {% set _ = sentence.append(\"\u0645\u06A9\u0627\
-      \u0646\") %}\n    {% endif %}\n{% if tag==10 %}\n        {% set _ = sentence.append(\"\
-      \u0633\u0627\u0632\u0645\u0627\u0646\") %}\n    {% endif %}\n{% if tag==11 %}\n\
-      \        {% set _ = sentence.append(\"\u0634\u062E\u0635\") %}\n    {% endif\
-      \ %}\n{% if tag==12 %}\n        {% set _ = sentence.append(\"\u0645\u062D\u0635\
-      \u0648\u0644\") %}\n    {% endif %}\n{% endfor %}\n\n{% if sentence %}\n   \
-      \ {{ sentence | unique | join(' ') }}\n{% else %}\n    \u0647\u06CC\u0686\u06A9\
-      \u062F\u0627\u0645\n{% endif %}\n"
+      \u0627\u0631\u062F\u061F (\u0645\u062D\u0635\u0648\u0644\u060C \u0627\u0645\u06A9\
+      \u0627\u0646\u0627\u062A\u060C \u0633\u0627\u0632\u0645\u0627\u0646\u060C \u0634\
+      \u062E\u0635\u060C \u0631\u0648\u06CC\u062F\u0627\u062F\u060C \u0645\u06A9\u0627\
+      \u0646\u060C \u0647\u06CC\u0686\u06A9\u062F\u0627\u0645)\n\n\n\u062C\u0645\u0644\
+      \u0647 : {{ tokens|join(' ') }}\n\u067E\u0627\u0633\u062E:\n|||\n{% set sentence\
+      \ = [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n    {% if tag==7 %}\n\
+      \        {% set _ = sentence.append(\"\u0631\u0648\u06CC\u062F\u0627\u062F\"\
+      ) %}\n    {% endif %}\n{% if tag==8 %}\n        {% set _ = sentence.append(\"\
+      \u0627\u0645\u06A9\u0627\u0646\u0627\u062A\") %}\n    {% endif %}\n{% if tag==9\
+      \ %}\n        {% set _ = sentence.append(\"\u0645\u06A9\u0627\u0646\") %}\n\
+      \    {% endif %}\n{% if tag==10 %}\n        {% set _ = sentence.append(\"\u0633\
+      \u0627\u0632\u0645\u0627\u0646\") %}\n    {% endif %}\n{% if tag==11 %}\n  \
+      \      {% set _ = sentence.append(\"\u0634\u062E\u0635\") %}\n    {% endif %}\n\
+      {% if tag==12 %}\n        {% set _ = sentence.append(\"\u0645\u062D\u0635\u0648\
+      \u0644\") %}\n    {% endif %}\n{% endfor %}\n\n{% if sentence %}\n    {{ sentence\
+      \ | unique | join(' ') }}\n{% else %}\n    \u0647\u06CC\u0686\u06A9\u062F\u0627\
+      \u0645\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -102,14 +105,18 @@ templates:
     id: aee6d8fb-f69a-499f-ac97-1cf5a47b2780
     jinja: "\u062F\u0631 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0628\u0647\
       \ \u062F\u0646\u0628\u0627\u0644 \u0646\u0627\u0645 \u0645\u06A9\u0627\u0646\
-      \u200C\u0647\u0627 \u0628\u0627\u0634 \u0648 \u0627\u06AF\u0631 \u0647\u06CC\
-      \u0686 \u0646\u0627\u0645\u06CC \u06CC\u0627\u0641\u062A \u0646\u0634\u062F\u060C\
-      \ \u062C\u0648\u0627\u0628\u062A \"\u0646\u062F\u0627\u0631\u062F\" \u0628\u0627\
-      \u0634\u062F\n\n\n\u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n\u062C\u0648\
-      \u0627\u0628: \n|||\n{% set sentence = [] %}\n{% for token, tag in zip(tokens,\
-      \ ner_tags) %}\n    {% if tag==9 or tag == 3 %}\n        {% set _ = sentence.append(token)\
+      \ \u0647\u0627 \u0628\u0627\u0634 \u0648 \u0627\u06AF\u0631 \u0647\u06CC\u0686\
+      \ \u0646\u0627\u0645\u06CC \u06CC\u0627\u0641\u062A \u0646\u0634\u062F\u060C\
+      \ \u062C\u0648\u0627\u0628\u062A \"\u0646\u0627\u0645 \u0645\u06A9\u0627\u0646\
+      \u06CC \u062F\u0631 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0648\u062C\
+      \u0648\u062F \u0646\u062F\u0627\u0631\u062F\" \u0628\u0627\u0634\u062F\n\n\n\
+      \u062C\u0645\u0644\u0647 : {{ tokens|join(' ') }}\n\u062C\u0648\u0627\u0628\
+      :\n|||\n{% set sentence = [] %}\n{% for token, tag in zip(tokens, ner_tags)\
+      \ %}\n    {% if tag==9 or tag == 3 %}\n        {% set _ = sentence.append(token)\
       \ %}\n    {% endif %}\n{% endfor %}\n{% if sentence %} {{ sentence | unique\
-      \ | join(' ') }}\n{% else %} \u0646\u062F\u0627\u0631\u062F {% endif %}\n"
+      \ | join(' ') }}\n{% else %} \u0646\u0627\u0645 \u0645\u06A9\u0627\u0646\u06CC\
+      \ \u062F\u0631 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0648\u062C\u0648\
+      \u062F \u0646\u062F\u0627\u0631\u062F {% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -122,17 +129,18 @@ templates:
   b970ede0-63f1-4ef8-b05f-1ab3e328f34c: !Template
     answer_choices: null
     id: b970ede0-63f1-4ef8-b05f-1ab3e328f34c
-    jinja: "\u0627\u0632 \u0627\u06CC\u0646 \u062C\u0645\u0644\u0647 \u0627\u0633\u0627\
-      \u0645\u06CC \u0627\u0646\u0633\u0627\u0646 \u0647\u0627\u0631\u0627 \u067E\u06CC\
-      \u062F\u0627 \u06A9\u0646 \u0648 \u0627\u06AF\u0631 \u0645\u0648\u062C\u0648\
-      \u062F\u06CC\u062A\u06CC \u0634\u0646\u0627\u0633\u0627\u06CC\u06CC \u0646\u06A9\
-      \u0631\u062F\u06CC \"\u0646\u062F\u0627\u0631\u062F\" \u0631\u0627 \u062F\u0631\
-      \ \u062C\u0648\u0627\u0628 \u0628\u0646\u0648\u06CC\u0633\n\n\n\u062C\u0645\u0644\
-      \u0647 : {{ tokens|join(' ') }}\n\u062C\u0648\u0627\u0628: \n|||\n{% set sentence\
-      \ = [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n    {% if tag==11\
-      \ or tag == 5 %}\n        {% set _ = sentence.append(token) %}\n    {% endif\
-      \ %}\n{% endfor %}\n{% if sentence %} {{ sentence | unique | join(' ') }}\n\
-      {% else %} \u0646\u062F\u0627\u0631\u062F {% endif %}\n"
+    jinja: "\u062F\u0631 \u0627\u06CC\u0646 \u0639\u0628\u0627\u0631\u062A \u0627\u06AF\
+      \u0631 \u0646\u0627\u0645\u06CC \u0627\u0632 \u0627\u0634\u062E\u0627\u0635\
+      \ \u0628\u0631\u062F\u0647 \u0634\u062F\u0647 \u0627\u0633\u062A\u060C \u0622\
+      \u0646 \u0631\u0627 \u0628\u0646\u0648\u06CC\u0633 \u0648 \u062F\u0631 \u063A\
+      \u06CC\u0631 \u0627\u06CC\u0646\u0635\u0648\u0631\u062A \"\u0648\u062C\u0648\
+      \u062F \u0646\u062F\u0627\u0631\u062F\" \u0631\u0627 \u06CC\u0627\u062F\u062F\
+      \u0627\u0634\u062A \u06A9\u0646\n\n\n\u062C\u0645\u0644\u0647 : {{ tokens|join('\
+      \ ') }}\n\u062C\u0648\u0627\u0628:\n|||\n{% set sentence = [] %}\n{% for token,\
+      \ tag in zip(tokens, ner_tags) %}\n    {% if tag==11 or tag == 5 %}\n      \
+      \  {% set _ = sentence.append(token) %}\n    {% endif %}\n{% endfor %}\n{% if\
+      \ sentence %} {{ sentence | unique | join(' ') }}\n{% else %} \u0648\u062C\u0648\
+      \u062F \u0646\u062F\u0627\u0631\u062F {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -145,27 +153,27 @@ templates:
   c8efdd7f-d561-4b29-886b-074207f42664: !Template
     answer_choices: "\u0628\u0644\u0647 ||| \u062E\u06CC\u0631"
     id: c8efdd7f-d561-4b29-886b-074207f42664
-    jinja: "\u0622\u06CC\u0627 \u062F\u0631 \u0645\u062A\u0646 \u0627\u0631\u0627\u0626\
-      \u0647 \u0634\u062F\u0647\u060C \u062F\u0633\u062A\u0647 \u0628\u0646\u062F\u06CC\
-      \ \u0647\u0627\u06CC \u0631\u0648\u0628\u0631\u0648 \u0642\u0627\u0628\u0644\
-      \ \u0634\u0646\u0627\u0633\u0627\u06CC\u06CC \u0627\u0633\u062A: \u0645\u062D\
-      \u0635\u0648\u0644\u060C \u062A\u0633\u0647\u06CC\u0644\u0627\u062A \u06CC\u0627\
-      \ \u0633\u0627\u062E\u062A\u0645\u0627\u0646\u060C \u0633\u0627\u0632\u0645\u0627\
-      \u0646\u060C \u0634\u062E\u0635\u060C \u0631\u0648\u06CC\u062F\u0627\u062F,\
-      \ \u0645\u06A9\u0627\u0646\n- \u0628\u0644\u0647\n- \u062E\u06CC\u0631\n\n\n\
+    jinja: "\u0622\u06CC\u0627 \u0645\u06CC\u062A\u0648\u0627\u0646 \u062F\u0631 \u0645\
+      \u062A\u0646 \u0632\u06CC\u0631 \u06CC\u06A9 \u06CC\u0627 \u0686\u0646\u062F\
+      \ \u0646\u0645\u0648\u0646\u0647 \u0627\u0632 \u06AF\u0631\u0648\u0647 \u06A9\
+      \u0644\u0645\u0627\u062A \u0622\u0648\u0631\u062F\u0647 \u0634\u062F\u0647 \u0631\
+      \u0627 \u067E\u06CC\u062F\u0627 \u06A9\u0631\u062F\u061F\n\u06AF\u0631\u0648\
+      \u0647 \u06A9\u0644\u0645\u0627\u062A: \u0645\u062D\u0635\u0648\u0644\u060C\
+      \ \u0627\u0645\u06A9\u0627\u0646\u0627\u062A\u060C \u0633\u0627\u0632\u0645\u0627\
+      \u0646\u060C \u0634\u062E\u0635\u060C \u0631\u0648\u06CC\u062F\u0627\u062F\u060C\
+      \ \u0645\u06A9\u0627\u0646 \n- \u0628\u0644\u0647\n- \u062E\u06CC\u0631\n\n\n\
       \u0645\u062A\u0646: {{ tokens|join(' ') }}\n\u067E\u0627\u0633\u062E:\n|||\n\
       {% set sentence = [] %}\n{% for token, tag in zip(tokens, ner_tags) %}\n   \
       \ {% if tag==7 %}\n        {% set _ = sentence.append(\"\u0631\u0648\u06CC\u062F\
       \u0627\u062F\") %}\n    {% endif %}\n{% if tag==8 %}\n        {% set _ = sentence.append(\"\
-      \u062A\u0633\u0647\u06CC\u0644\u0627\u062A \u06CC\u0627 \u0633\u0627\u062E\u062A\
-      \u0645\u0627\u0646\") %}\n    {% endif %}\n{% if tag==9 %}\n        {% set _\
-      \ = sentence.append(\"\u0645\u06A9\u0627\u0646\") %}\n    {% endif %}\n{% if\
-      \ tag==10 %}\n        {% set _ = sentence.append(\"\u0633\u0627\u0632\u0645\u0627\
-      \u0646\") %}\n    {% endif %}\n{% if tag==11 %}\n        {% set _ = sentence.append(\"\
-      \u0634\u062E\u0635\") %}\n    {% endif %}\n{% if tag==12 %}\n        {% set\
-      \ _ = sentence.append(\"\u0645\u062D\u0635\u0648\u0644\") %}\n    {% endif %}\n\
-      {% endfor %}\n\n{% if sentence %}\u0628\u0644\u0647\n{% else %}\n\u062E\u06CC\
-      \u0631\n{% endif %}\n"
+      \u0627\u0645\u06A9\u0627\u0646\u0627\u062A\") %}\n    {% endif %}\n{% if tag==9\
+      \ %}\n        {% set _ = sentence.append(\"\u0645\u06A9\u0627\u0646\") %}\n\
+      \    {% endif %}\n{% if tag==10 %}\n        {% set _ = sentence.append(\"\u0633\
+      \u0627\u0632\u0645\u0627\u0646\") %}\n    {% endif %}\n{% if tag==11 %}\n  \
+      \      {% set _ = sentence.append(\"\u0634\u062E\u0635\") %}\n    {% endif %}\n\
+      {% if tag==12 %}\n        {% set _ = sentence.append(\"\u0645\u062D\u0635\u0648\
+      \u0644\") %}\n    {% endif %}\n{% endfor %}\n\n{% if sentence %}\n\u0628\u0644\
+      \u0647\n{% else %}\n\u062E\u06CC\u0631\n{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
