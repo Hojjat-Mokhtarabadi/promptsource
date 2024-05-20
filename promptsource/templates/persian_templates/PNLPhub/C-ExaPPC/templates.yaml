@@ -8,8 +8,8 @@ templates:
       \u0646 \u062F\u0627\u0631\u0646\u062F\u061F\n- \u0628\u0644\u0647\n- \u062E\u06CC\
       \u0631\n\n\n\u062C\u0645\u0644\u0647 \u0627\u0648\u0644: {{sentence1}}\n\u062C\
       \u0645\u0644\u0647 \u062F\u0648\u0645: {{sentence2}}\n\u062C\u0648\u0627\u0628\
-      :\n|||\n{{ { \"non-paraphrase\": \"\u062E\u06CC\u0631\",\n\"paraphrase\": \"\
-      \u0628\u0644\u0647\"}[label] }}"
+      :\n|||\n{{ { \"non-paraphrase\": \"\u062E\u06CC\u0631\",\"paraphrase\": \"\u0628\
+      \u0644\u0647\"}[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -30,8 +30,8 @@ templates:
       \u0627\u0648\u062A \u0627\u0633\u062A\u061F\n- \u0628\u0644\u0647\n- \u062E\u06CC\
       \u0631\n\n\n\u062C\u0645\u0644\u0647 \u0627\u0648\u0644: {{sentence1}}\n\u062C\
       \u0645\u0644\u0647 \u062F\u0648\u0645: {{sentence2}}\n\u062C\u0648\u0627\u0628\
-      :\n||| \n{{ { \"non-paraphrase\": \"\u0628\u0644\u0647\",\n           \"paraphrase\"\
-      : \"\u062E\u06CC\u0631\"}[label] }}"
+      :\n||| \n{{ { \"non-paraphrase\": \"\u0628\u0644\u0647\",\"paraphrase\": \"\u062E\
+      \u06CC\u0631\"}[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -78,8 +78,7 @@ templates:
       \u062A\u061F\n- \u0635\u062D\u06CC\u062D\n- \u063A\u0644\u0637\n\n\n\u0645\u062A\
       \u0646 \u0627\u0648\u0644: {{sentence1}}\n\u0645\u062A\u0646 \u062F\u0648\u0645\
       : {{sentence2}}\n\u062C\u0648\u0627\u0628:\n||| \n{{ { \"non-paraphrase\": \"\
-      \u063A\u0644\u0637\",\n           \"paraphrase\": \"\u0635\u062D\u06CC\u062D\
-      \"}[label] }}"
+      \u063A\u0644\u0637\",\"paraphrase\": \"\u0635\u062D\u06CC\u062D\"}[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -98,8 +97,8 @@ templates:
       \u0648\u0644: {{sentence1}}\n\u062C\u0645\u0644\u0647 \u062F\u0648\u0645: {{sentence2}}\n\
       \u062C\u0648\u0627\u0628:\n|||\n{{ { \"non-paraphrase\": \"\u062C\u0645\u0644\
       \u0627\u062A \u0646\u0627\u0645\u0631\u062A\u0628\u0637 \u0647\u0633\u062A\u0646\
-      \u062F\",\n\"paraphrase\": \"\u062C\u0645\u0644\u0627\u062A \u0645\u0631\u062A\
-      \u0628\u0637 \u0647\u0633\u062A\u0646\u062F\"}[label] }}\n"
+      \u062F\",\"paraphrase\": \"\u062C\u0645\u0644\u0627\u062A \u0645\u0631\u062A\
+      \u0628\u0637 \u0647\u0633\u062A\u0646\u062F\"}[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -119,10 +118,10 @@ templates:
       \u0627\u0632\u0646\u06AF\u0627\u0631\u06CC \u06A9\u0646\u06CC\u062F\n\n\n\u0645\
       \u062A\u0646: {{sentence1}}\n\u062F\u0633\u062A\u0648\u0631: {{ { \"non-paraphrase\"\
       : \"\u0647\u062F\u0641 \u0627\u0635\u0644\u06CC \u0645\u062A\u0646 \u062A\u063A\
-      \u06CC\u06CC\u0631 \u06A9\u0646\u062F\",\n           \"paraphrase\": \"\u0647\
-      \u062F\u0641 \u0627\u0635\u0644\u06CC \u0645\u062A\u0646 \u062A\u063A\u06CC\u06CC\
-      \u0631 \u0646\u06A9\u0646\u062F\"}[label] }}\n\u0628\u0627\u0632\u0646\u06AF\
-      \u0627\u0631\u06CC:\n|||\n{{sentence2}}"
+      \u06CC\u06CC\u0631 \u06A9\u0646\u062F\",\"paraphrase\": \"\u0647\u062F\u0641\
+      \ \u0627\u0635\u0644\u06CC \u0645\u062A\u0646 \u062A\u063A\u06CC\u06CC\u0631\
+      \ \u0646\u06A9\u0646\u062F\"}[label] }}\n\u0628\u0627\u0632\u0646\u06AF\u0627\
+      \u0631\u06CC:\n|||\n{{sentence2}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -143,7 +142,7 @@ templates:
       \u0641\u0627\u0648\u062A\u061F\n\n\n\u0639\u0628\u0627\u0631\u062A \u0627\u0648\
       \u0644: {{sentence1}}\n\u0639\u0628\u0627\u0631\u062A \u062F\u0648\u0645: {{sentence2}}\n\
       \u062C\u0648\u0627\u0628:\n|||\n{{ { \"non-paraphrase\": \"\u0645\u062A\u0641\
-      \u0627\u0648\u062A\",\n\"paraphrase\": \"\u06CC\u06A9\u0633\u0627\u0646\"}[label]\
+      \u0627\u0648\u062A\",\"paraphrase\": \"\u06CC\u06A9\u0633\u0627\u0646\"}[label]\
       \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false

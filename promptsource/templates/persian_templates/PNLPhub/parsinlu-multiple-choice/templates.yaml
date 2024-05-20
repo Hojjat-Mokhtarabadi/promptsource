@@ -66,9 +66,9 @@ templates:
       \u06AF\u0632\u06CC\u0646\u0647 \u062F\u0648\u0645: {{candidates[1]}}\n\u06AF\
       \u0632\u06CC\u0646\u0647 \u0633\u0648\u0645: {{candidates[2]}}\n\u06AF\u0632\
       \u06CC\u0646\u0647 \u0686\u0647\u0627\u0631\u0645: {{candidates[3]}}\n\u062C\
-      \u0648\u0627\u0628:\n|||{% if answer == 1%}\n{{candidates[answer-1]}}\n{%elif\
+      \u0648\u0627\u0628:\n|||\n{% if answer == 1%}\n{{candidates[answer-1]}}\n{%elif\
       \ answer==2 %}\n  {{candidates[answer-1]}}\n{%elif answer==3 %}\n  {{candidates[answer-1]}}\n\
-      {%else %}\n {{candidates[answer-1]}}\n{% endif %}\n"
+      {%else %}\n {{candidates[answer-1]}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -107,13 +107,13 @@ templates:
   8b9b06d1-1b8d-458c-b408-e064d2efba99: !Template
     answer_choices: '{{candidates[3]}}|||{{candidates[2]}}|||{{candidates[1]}}|||{{candidates[0]}}'
     id: 8b9b06d1-1b8d-458c-b408-e064d2efba99
-    jinja: "\u06AF\u0632\u06CC\u0646\u0647 \u0645\u0646\u0627\u0633\u0628 \u0628\u0631\
-      \u0627\u06CC \u0633\u0648\u0627\u0644 \u0631\u0627 \u0627\u0632 \u0628\u06CC\
-      \u0646 \u062C\u0648\u0627\u0628 \u0647\u0627\u06CC \u0632\u06CC\u0631 \u0627\
-      \u0646\u062A\u062E\u0627\u0628 \u06A9\u0646\n1) \"{{candidates[0]}}\"\n2) \"\
-      {{candidates[1]}}\"\n3) \"{{candidates[2]}}\" \n4) \"{{candidates[3]}}\" \n\n\
-      \n\u0633\u0648\u0627\u0644: {{question}}\n\u062C\u0648\u0627\u0628:\n|||\n{%\
-      \ if answer == 1 %}\n{{candidates[0]}}\n{% elif answer == 2 %}\n{{candidates[1]}}\n\
+    jinja: "\u06AF\u0632\u06CC\u0646\u0647 \u06CC \u0645\u0646\u0627\u0633\u0628 \u0628\
+      \u0631\u0627\u06CC \u0633\u0648\u0627\u0644 \u0631\u0627 \u0627\u0632 \u0628\
+      \u06CC\u0646 \u062C\u0648\u0627\u0628 \u0647\u0627\u06CC \u0632\u06CC\u0631\
+      \ \u0627\u0646\u062A\u062E\u0627\u0628 \u06A9\u0646\n1) \"{{candidates[0]}}\"\
+      \n2) \"{{candidates[1]}}\"\n3) \"{{candidates[2]}}\" \n4) \"{{candidates[3]}}\"\
+      \ \n\n\n\u0633\u0648\u0627\u0644: {{question}}\n\u062C\u0648\u0627\u0628:\n\
+      |||\n{% if answer == 1 %}\n{{candidates[0]}}\n{% elif answer == 2 %}\n{{candidates[1]}}\n\
       {% elif answer == 3 %}\n{{candidates[2]}}\n{% elif answer == 4 %}\n{{candidates[3]}}\n\
       {% endif %}"
     metadata: !TemplateMetadata
@@ -180,7 +180,7 @@ templates:
       \ \u0645\u0637\u0631\u062D \u0634\u062F\u0647 \u0627\u0633\u062A\n\u062F\u0631\
       \ \u0627\u06CC\u0646 \u0632\u0645\u06CC\u0646\u0647 \u062A\u062D\u0642\u06CC\
       \u0642 \u06A9\u0646\u06CC\u062F \u0648 \u0628\u06AF\u0648\u06CC\u06CC\u062F\
-      \ \u062C\u0648\u0627\u0628 \u0627\u0646 \u06A9\u062F\u0627\u0645 \u06AF\u0632\
+      \ \u062C\u0648\u0627\u0628 \u0622\u0646 \u06A9\u062F\u0627\u0645 \u06AF\u0632\
       \u06CC\u0646\u0647 \u0627\u0633\u062A\n\u067E\u0631\u0633\u0634: {{question}}\n\
       \u06AF\u0632\u06CC\u0646\u0647 \u0647\u0627: \n- {{candidates[0]}}\n- {{candidates[1]}}\n\
       - {{candidates[2]}}\n- {{candidates[3]}}\n\u062C\u0648\u0627\u0628:\n|||\n{{candidates[answer-1]}}"
