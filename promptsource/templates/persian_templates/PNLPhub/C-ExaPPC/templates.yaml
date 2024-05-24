@@ -7,7 +7,7 @@ templates:
       \ \u0648 \u062F\u0648\u0645 \u0628\u06CC\u0627\u0646 \u06CC\u06A9\u0633\u0627\
       \u0646 \u062F\u0627\u0631\u0646\u062F\u061F\n- \u0628\u0644\u0647\n- \u062E\u06CC\
       \u0631\n\n\n\u062C\u0645\u0644\u0647 \u0627\u0648\u0644: {{sentence1}}\n\u062C\
-      \u0645\u0644\u0647 \u062F\u0648\u0645: {{sentence2}}\n\u062C\u0648\u0627\u0628\
+      \u0645\u0644\u0647 \u062F\u0648\u0645: {{sentence2}}\n\u067E\u0627\u0633\u062E\
       :\n|||\n{{ { \"non-paraphrase\": \"\u062E\u06CC\u0631\",\"paraphrase\": \"\u0628\
       \u0644\u0647\"}[label] }}"
     metadata: !TemplateMetadata
@@ -27,11 +27,11 @@ templates:
       \u0645\u06CC\u0645 \u0628\u06AF\u06CC\u0631\u06CC\u062F \u06A9\u0647 \u0622\u06CC\
       \u0627 \u0645\u0642\u0635\u0648\u062F \u0627\u0635\u0644\u06CC \u062C\u0645\u0644\
       \u0627\u062A \u0628\u0627 \u06CC\u06A9\u062F\u06CC\u06AF\u0631 \u0645\u062A\u0641\
-      \u0627\u0648\u062A \u0627\u0633\u062A\u061F\n- \u0628\u0644\u0647\n- \u062E\u06CC\
-      \u0631\n\n\n\u062C\u0645\u0644\u0647 \u0627\u0648\u0644: {{sentence1}}\n\u062C\
-      \u0645\u0644\u0647 \u062F\u0648\u0645: {{sentence2}}\n\u062C\u0648\u0627\u0628\
-      :\n||| \n{{ { \"non-paraphrase\": \"\u0628\u0644\u0647\",\"paraphrase\": \"\u062E\
-      \u06CC\u0631\"}[label] }}"
+      \u0627\u0648\u062A \u0627\u0633\u062A\u061F\n\u0628\u0644\u0647 \u06CC\u0627\
+      \ \u062E\u06CC\u0631\n\n\n\u062C\u0645\u0644\u0647 \u0627\u0648\u0644: {{sentence1}}\n\
+      \u062C\u0645\u0644\u0647 \u062F\u0648\u0645: {{sentence2}}\n\u062C\u0648\u0627\
+      \u0628:\n||| \n{{ { \"non-paraphrase\": \"\u0628\u0644\u0647\",\"paraphrase\"\
+      : \"\u062E\u06CC\u0631\"}[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -95,10 +95,11 @@ templates:
       \u0644\u0647 \u0627\u0648\u0644 \u0648 \u062F\u0648\u0645 \u0628\u0647 \u0686\
       \u0647 \u0646\u0648\u0639 \u0627\u0633\u062A\n\n\n\u062C\u0645\u0644\u0647 \u0627\
       \u0648\u0644: {{sentence1}}\n\u062C\u0645\u0644\u0647 \u062F\u0648\u0645: {{sentence2}}\n\
-      \u062C\u0648\u0627\u0628:\n|||\n{{ { \"non-paraphrase\": \"\u062C\u0645\u0644\
-      \u0627\u062A \u0646\u0627\u0645\u0631\u062A\u0628\u0637 \u0647\u0633\u062A\u0646\
-      \u062F\",\"paraphrase\": \"\u062C\u0645\u0644\u0627\u062A \u0645\u0631\u062A\
-      \u0628\u0637 \u0647\u0633\u062A\u0646\u062F\"}[label] }}"
+      \u0646\u0648\u0639 \u0627\u0631\u062A\u0628\u0627\u0637:\n|||\n{{ { \"non-paraphrase\"\
+      : \"\u062C\u0645\u0644\u0627\u062A \u0646\u0627\u0645\u0631\u062A\u0628\u0637\
+      \ \u0647\u0633\u062A\u0646\u062F\",\"paraphrase\": \"\u062C\u0645\u0644\u0627\
+      \u062A \u0645\u0631\u062A\u0628\u0637 \u0647\u0633\u062A\u0646\u062F\"}[label]\
+      \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
