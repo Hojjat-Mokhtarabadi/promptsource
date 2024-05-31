@@ -7,10 +7,11 @@ templates:
       \ \u0648\u0627\u0698\u06AF\u0627\u0646 \u062F\u0631 \u0645\u062A\u0646 \u062F\
       \u0627\u062F\u0647 \u0634\u062F\u0647 \u0627\u062D\u0633\u0627\u0633 \u0646\u0627\
       \u0631\u0627\u0636\u06CC \u0628\u0648\u062F\u0646 \n\u0631\u0627 \u0645\u0646\
-      \u062A\u0642\u0644 \u0645\u06CC\u06A9\u0646\u062F\u061F \n\n\n\u0645\u062A\u0646\
-      : {{Text}}\n\u062C\u0648\u0627\u0628:\n|||\n{% set score_int = Score | int %}{%\
-      \ if score_int >= 30 and score_int < 50%}\n\u0628\u0644\u0647\n{% else %}\n\u062E\
-      \u06CC\u0631\n{% endif %}"
+      \u062A\u0642\u0644 \u0645\u06CC\u06A9\u0646\u062F\u061F \u0628\u0644\u0647\u060C\
+      \ \u062E\u06CC\u0631\n\n\n\u0645\u062A\u0646: {{Text}}\n\u067E\u0627\u0633\u062E\
+      \ \u0635\u062D\u06CC\u062D:\n|||\n{% set score_int = Score | int %}{% if score_int\
+      \ >= 30 and score_int < 50%}\n\u0628\u0644\u0647\n{% else %}\n\u062E\u06CC\u0631\
+      \n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -42,22 +43,26 @@ templates:
     name: is_terrible
     reference: ''
   4da79537-25dd-4ffe-9c9f-6f44ec4b3d35: !Template
-    answer_choices: "\u0628\u0644\u0647|||\u062E\u06CC\u0631"
+    answer_choices: "\u0635\u062D\u06CC\u062D|||\u063A\u0644\u0637"
     id: 4da79537-25dd-4ffe-9c9f-6f44ec4b3d35
     jinja: "\u0622\u06CC\u0627 \u0627\u0632 \u0645\u062A\u0646 \u062F\u0627\u062F\u0647\
       \ \u0634\u062F\u0647\u060C \u0627\u062D\u0633\u0627\u0633 \u0632\u06CC\u0631\
       \ \u0628\u0647 \u062E\u0648\u0627\u0646\u0646\u062F\u0647 \u0627\u0644\u0642\
-      \u0627 \u0645\u06CC\u0634\u0648\u062F\u061F\n\n\n{% set random =  range(0, 5)\
-      \ | random %}\u0627\u062D\u0633\u0627\u0633: \"{{{\n0:\"\u0627\u0641\u062A\u0636\
-      \u0627\u062D\", \n1:\"\u0628\u062F\", \n2:\"\u0645\u062A\u0648\u0633\u0637\"\
-      , \n3:\"\u062E\u0648\u0628\", \n4:\"\u0639\u0627\u0644\u06CC\"}[random]}}\"\n\
-      \u0645\u062A\u0646: {{Text}}\n\u062C\u0648\u0627\u0628:\n|||\n{% set score_int\
-      \ = Score | int %}{% if score_int >= 90 and random == 4 %}\u0628\u0644\u0647\
-      \n{% elif score_int >= 70 and score_int < 90 and random == 3%}\u0628\u0644\u0647\
-      \n{% elif score_int >= 50 and score_int < 70 and random == 2 %}\u0628\u0644\u0647\
-      \n{% elif score_int >= 30 and score_int <50 and random == 1 %}\u0628\u0644\u0647\
-      \n{% elif score_int >= 0 and score_int <30 and random == 0 %}\u0628\u0644\u0647\
-      \n{% else %}\u062E\u06CC\u0631\n{% endif %}"
+      \u0627 \u0645\u06CC\u0634\u0648\u062F\u061F \u06A9\u062F\u0627\u0645 \u06AF\u0632\
+      \u06CC\u0646\u0647 \u062F\u0631\u0633\u062A \u0627\u0633\u062A\n\u06AF\u0632\
+      \u06CC\u0646\u0647 \u0647\u0627:\n\u0635\u062D\u06CC\u062D -\u06CC\u06A9\n\u063A\
+      \u0644\u0637 -\u062F\u0648\n\n\n{% set random =  range(0, 5) | random %}\u0627\
+      \u062D\u0633\u0627\u0633: \"{{{\n0:\"\u0627\u0641\u062A\u0636\u0627\u062D\"\
+      , \n1:\"\u0628\u062F\", \n2:\"\u0645\u062A\u0648\u0633\u0637\", \n3:\"\u062E\
+      \u0648\u0628\", \n4:\"\u0639\u0627\u0644\u06CC\"}[random]}}\"\n\u0645\u062A\u0646\
+      : {{Text}}\n\u06AF\u0632\u06CC\u0646\u0647 \u062F\u0631\u0633\u062A:\n|||\n\
+      {% set score_int = Score | int %}{% if score_int >= 90 and random == 4 %}\u0635\
+      \u062D\u06CC\u062D\n{% elif score_int >= 70 and score_int < 90 and random ==\
+      \ 3%}\u0635\u062D\u06CC\u062D\n{% elif score_int >= 50 and score_int < 70 and\
+      \ random == 2 %}\u0635\u062D\u06CC\u062D\n{% elif score_int >= 30 and score_int\
+      \ <50 and random == 1 %}\u0635\u062D\u06CC\u062D\n{% elif score_int >= 0 and\
+      \ score_int <30 and random == 0 %}\u0635\u062D\u06CC\u062D\n{% else %}\u063A\
+      \u0644\u0637\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -99,16 +104,17 @@ templates:
     name: what_is_sentiment
     reference: ''
   6df72b8e-49d9-46f6-86d6-b390acfe1604: !Template
-    answer_choices: "\u0628\u0644\u0647|||\u062E\u06CC\u0631"
+    answer_choices: "\u0627\u0631\u0647|||\u0646\u0647"
     id: 6df72b8e-49d9-46f6-86d6-b390acfe1604
     jinja: "\u0628\u0631 \u0627\u0633\u0627\u0633 \u0645\u062A\u0646 \u062F\u0627\u062F\
       \u0647 \u0634\u062F\u0647\u060C \u0644\u0637\u0641\u0627\u064B \u0645\u0634\u062E\
       \u0635 \u06A9\u0646\u06CC\u062F \u06A9\u0647 \u0622\u06CC\u0627 \u0627\u06CC\
       \u0646 \u0645\u062A\u0646 \u062D\u0627\u0648\u06CC \u0627\u062D\u0633\u0627\u0633\
-      \ \u0631\u0636\u0627\u06CC\u062A \u0627\u0633\u062A\u061F\n\n\n\u0645\u062A\u0646\
-      : {{Text}}\n\u062C\u0648\u0627\u0628:\n|||\n{% set score_int = Score | int %}\n\
-      {% if score_int >= 70 and score_int < 90%}\n\u0628\u0644\u0647\n{% else %}\n\
-      \u062E\u06CC\u0631\n{% endif %}"
+      \ \u0631\u0636\u0627\u06CC\u062A \u0627\u0633\u062A\u061F\n\u0627\u0631\u0647\
+      \n\u0646\u0647\n\n\n\u0645\u062A\u0646: {{Text}}\n\u062C\u0648\u0627\u0628 \u062F\
+      \u0631\u0633\u062A:\n|||\n{% set score_int = Score | int %}\n{% if score_int\
+      \ >= 70 and score_int < 90%}\n\u0627\u0631\u0647\n{% else %}\n\u0646\u0647\n\
+      {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -127,10 +133,10 @@ templates:
       \u0627\u0698\u06AF\u0627\u0646 \u0627\u0633\u062A\u0641\u0627\u062F\u0647 \u0634\
       \u062F\u0647 \u062F\u0631 \u0645\u062A\u0646  \u0628\u0627\u0631 \u0645\u0639\
       \u0646\u0627\u06CC\u06CC \u062E\u0646\u062B\u06CC \n\u0631\u0627 \u0645\u0646\
-      \u062A\u0642\u0644 \u0645\u06CC\u06A9\u0646\u062F\u061F \n\n\n\u0645\u062A\u0646\
-      : {{Text}}\n\u062C\u0648\u0627\u0628:\n|||\n{% set score_int = Score | int %}\n\
-      {% if score_int >= 50 and score_int < 70%}\n\u0628\u0644\u0647\n{% else %}\n\
-      \u062E\u06CC\u0631\n{% endif %}"
+      \u062A\u0642\u0644 \u0645\u06CC\u06A9\u0646\u0646\u062F\u061F \n\n\n\u0645\u062A\
+      \u0646: {{Text}}\n\u067E\u0627\u0633\u062E:\n|||\n{% set score_int = Score |\
+      \ int %}\n{% if score_int >= 50 and score_int < 70%}\n\u0628\u0644\u0647\n{%\
+      \ else %}\n\u062E\u06CC\u0631\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -178,7 +184,7 @@ templates:
     name: star_rating
     reference: ''
   b58bf0f2-aabb-45e6-9e46-c43e1dc4e6d5: !Template
-    answer_choices: "\u0628\u0644\u0647|||\u062E\u06CC\u0631"
+    answer_choices: "\u062F\u0631\u0633\u062A|||\u0646\u0627\u062F\u0631\u0633\u062A"
     id: b58bf0f2-aabb-45e6-9e46-c43e1dc4e6d5
     jinja: "\u0628\u0627 \u062A\u0648\u062C\u0647 \u0628\u0647 \u0645\u062A\u0646\
       \ \u0632\u06CC\u0631\u060C \u0644\u0637\u0641\u0627\u064B \u062A\u0639\u06CC\
@@ -187,9 +193,11 @@ templates:
       \u062F\u0647 \u062F\u0631 \u0645\u062A\u0646 \u0627\u062D\u0633\u0627\u0633\
       \ \u0641\u0648\u0642 \u0627\u0644\u0639\u0627\u062F\u0647 \u0628\u0648\u062F\
       \u0646 \u0631\u0627 \u0645\u0646\u062A\u0642\u0644 \u0645\u06CC\u06A9\u0646\u0646\
-      \u062F\u061F\n\n\n\u0645\u062A\u0646: {{Text}}\n\u062C\u0648\u0627\u0628:\n\
-      |||\n{% set score_int = Score | int %}\n{% if score_int >= 90%}\n\u0628\u0644\
-      \u0647\n{% else %}\n\u062E\u06CC\u0631\n{% endif %}"
+      \u062F\u061F\n\u06AF\u0632\u06CC\u0646\u0647 \u0647\u0627: \u062F\u0631\u0633\
+      \u062A\u060C \u0646\u0627\u062F\u0631\u0633\u062A\n\n\n\u0645\u062A\u0646: {{Text}}\n\
+      \u06AF\u0632\u06CC\u0646\u0647 \u0645\u0646\u0627\u0633\u0628:\n|||\n{% set\
+      \ score_int = Score | int %}\n{% if score_int >= 90%}\n\u062F\u0631\u0633\u062A\
+      \n{% else %}\n\u0646\u0627\u062F\u0631\u0633\u062A\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -218,15 +226,15 @@ templates:
       \u0646\u062A\u0642\u0644 \u06A9\u0646\u062F \u0628\u0644\u06A9\u0647 \u062C\u0632\
       \u0626\u06CC\u0627\u062A \u0645\u0631\u062A\u0628\u0637 \u0628\u0627 \u062A\u062C\
       \u0631\u0628\u0647 \u0645\u062D\u0635\u0648\u0644 \u0631\u0627 \u0646\u06CC\u0632\
-      \ \u0634\u0627\u0645\u0644 \u0634\u0648\u062F.\n\n{% set score_int = Score |\
-      \ int %} \n\u0627\u062D\u0633\u0627\u0633 \u06A9\u0644\u06CC: {% if score_int\
-      \ >= 90 %} {{ \"\u0627\u0633\u062A\u062B\u0646\u0627\u06CC\u06CC\" }} \n{% elif\
-      \ score_int >= 70 and score_int <90 %} {{ \"\u0631\u0627\u0636\u06CC\" }}\n\
-      {% elif score_int >= 50 and score_int <70 %} {{ \"\u0645\u0639\u0645\u0648\u0644\
-      \u06CC\" }}\n{% elif score_int >= 30 and score_int <50 %} {{ \"\u0646\u0627\u0631\
+      \ \u0634\u0627\u0645\u0644 \u0634\u0648\u062F.\n\n\n{% set score_int = Score\
+      \ | int %} \u0627\u062D\u0633\u0627\u0633 \u06A9\u0644\u06CC: {% if score_int\
+      \ >= 90 %}{{ \"\u0627\u0633\u062A\u062B\u0646\u0627\u06CC\u06CC\" }} \n{% elif\
+      \ score_int >= 70 and score_int <90 %}{{ \"\u0631\u0627\u0636\u06CC\" }}\n{%\
+      \ elif score_int >= 50 and score_int <70 %}{{ \"\u0645\u0639\u0645\u0648\u0644\
+      \u06CC\" }}\n{% elif score_int >= 30 and score_int <50 %}{{ \"\u0646\u0627\u0631\
       \u0627\u0636\u06CC\" }}\n{% else %} {{ \"\u0646\u0627\u0627\u0645\u06CC\u062F\
-      \u06A9\u0646\u0646\u062F\u0647\" }} {% endif %}\u0645\u062A\u0646:\n|||  \n\
-      {{Text}}"
+      \u06A9\u0646\u0646\u062F\u0647\" }} {% endif %}\u06A9\u0627\u0645\u0646\u062A\
+      :\n|||  \n{{Text}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
